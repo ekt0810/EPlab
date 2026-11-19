@@ -1,0 +1,39 @@
+body .auth-layout.login-layout {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 32rem;
+  min-height: 0;
+}
+.password-control {
+  position: relative;
+  width: 100%;
+}
+.password-control input {
+  width: 100%;
+  padding-right: 3.25rem;
+}
+.password-toggle {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.password-toggle:hover {
+  background: var(--line);
+}
+.password-toggle:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+}
+.login-session-hint {
+  color: var(--muted);
+  line-height: 1.6;
+}

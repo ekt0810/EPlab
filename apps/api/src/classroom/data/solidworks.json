@@ -1,0 +1,2268 @@
+{
+  "track": "solidworks",
+  "title": "Thiết kế cơ khí SOLIDWORKS",
+  "description": "Từ Sketch và design intent tới Part, Assembly, Drawing, thiết kế vỏ và bàn giao liên môn.",
+  "version": "EP LAB 6.0 · 17/11/2026",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Chuẩn bị và ý đồ thiết kế",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 2,
+      "title": "Sketch có ràng buộc",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 3,
+      "title": "Part và feature cơ bản",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 4,
+      "title": "Hình học tham chiếu, Sweep và Loft",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 5,
+      "title": "Assembly và cấu hình",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 6,
+      "title": "Drawing và truyền đạt kỹ thuật",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 7,
+      "title": "Sheet Metal, Weldments và Simulation",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    },
+    {
+      "id": 8,
+      "title": "Bàn giao và phối hợp cơ điện",
+      "description": "Học kiến thức, tự thực hiện và kiểm chứng trước khi chuyển tiếp."
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Môi trường, đơn vị và quản lý tài liệu CAD",
+      "module": 1,
+      "videos": [],
+      "concepts": [
+        [
+          "Ba loại tài liệu có quan hệ",
+          "Part chứa hình học chi tiết; Assembly tham chiếu các Part/subassembly và quan hệ lắp; Drawing mô tả mô hình bằng hình chiếu/kích thước. Sửa Part có thể ảnh hưởng Assembly và Drawing. Không đổi tên hoặc di chuyển tệp tham chiếu tùy ý bằng file explorer rồi kỳ vọng mọi liên kết tự đúng."
+        ],
+        [
+          "Chuẩn bị project có thể mở lại",
+          "Chọn template, hệ đơn vị MMGS khi bài yêu cầu mm, plane gốc và tên feature rõ nghĩa. Lưu một revision trước thay đổi lớn. SOLIDWORKS có nhiều gói và add-in; kiểm chức năng có trong giấy phép đang dùng thay vì coi tất cả công cụ đều sẵn có."
+        ]
+      ],
+      "steps": [
+        "Tạo Part mới, kiểm MMGS và lưu vào thư mục bài riêng.",
+        "Xác định Front/Top/Right Plane, origin, FeatureManager và PropertyManager.",
+        "Tạo Assembly/Drawing tham chiếu Part, đóng rồi mở lại để kiểm liên kết."
+      ],
+      "quiz": {
+        "question": "Drawing thường lấy hình học từ đâu?",
+        "options": [
+          "Mô hình Part hoặc Assembly được tham chiếu",
+          "Chỉ từ ảnh chụp",
+          "Từ tên file",
+          "Từ màu vật liệu"
+        ],
+        "answer": 0,
+        "explanation": "Drawing có thể tham chiếu mô hình và cập nhật theo thay đổi hình học."
+      },
+      "deliverable": "Bộ ba tài liệu mở lại được và README phiên bản/đơn vị.",
+      "id": "sb01",
+      "summary": "Part chứa hình học chi tiết; Assembly tham chiếu các Part/subassembly và quan hệ lắp; Drawing mô tả mô hình bằng hình chiếu/kích thước.",
+      "preview": true,
+      "level": "basic",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Ba loại tài liệu có quan hệ",
+        "Chuẩn bị project có thể mở lại"
+      ],
+      "mistakes": [
+        "Không đổi tên hoặc di chuyển tệp tham chiếu tùy ý bằng file explorer rồi kỳ vọng mọi liên kết tự đúng.."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_drawings_overview.htm"
+      ],
+      "rubric": [
+        "Bộ ba tài liệu mở lại được và README phiên bản/đơn vị.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Môi trường, đơn vị và quản lý tài liệu CAD”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "title": "Design intent và lựa chọn chuẩn",
+      "module": 1,
+      "videos": [],
+      "concepts": [
+        [
+          "Hình đúng hiện tại chưa đủ",
+          "Một plate có lỗ giữa cần giữ lỗ ở giữa khi chiều dài thay đổi. Kích thước tới hai mép tùy ý có thể tái tạo hình ban đầu nhưng làm mất ý đồ khi sửa. Chọn origin, centerline, symmetry hoặc quan hệ tâm để mô hình thể hiện yêu cầu chức năng."
+        ],
+        [
+          "Hạn chế tham chiếu mong manh",
+          "Plane gốc và geometry chủ đạo thường ổn định hơn cạnh sinh ra từ fillet ở cuối cây feature. Tham chiếu theo mặt/cạnh vẫn cần khi đúng ý đồ, nhưng phải hiểu phụ thuộc. Đặt tên các feature quan trọng và thử thay một tham số chủ đạo để kiểm mô hình rebuild."
+        ]
+      ],
+      "steps": [
+        "Tạo plate tâm tại origin, lỗ tâm được ràng buộc với chuẩn.",
+        "Đổi chiều dài 60→90 mm và kiểm lỗ vẫn ở giữa.",
+        "Viết bảng tham số độc lập/phụ thuộc cùng điều kiện hình học."
+      ],
+      "quiz": {
+        "question": "Hai mô hình cùng hình ban đầu có thể phản ứng khác khi đổi kích thước không?",
+        "options": [
+          "Có, do relations và tham chiếu khác nhau",
+          "Chỉ khi đổi màu",
+          "Chỉ khi đổi máy",
+          "Không"
+        ],
+        "answer": 0,
+        "explanation": "Design intent nằm trong cách ràng buộc và chuỗi phụ thuộc, không chỉ hình hiện tại."
+      },
+      "deliverable": "Hai revision và báo cáo phép thử thay tham số.",
+      "id": "sb02",
+      "summary": "Một plate có lỗ giữa cần giữ lỗ ở giữa khi chiều dài thay đổi.",
+      "preview": true,
+      "level": "basic",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Hình đúng hiện tại chưa đủ",
+        "Hạn chế tham chiếu mong manh"
+      ],
+      "mistakes": [
+        "Chỉ xem hình kết quả mà chưa kiểm yêu cầu và điều kiện của bài."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2025/english/SolidWorks/acadhelp/c_Design_Intent.htm"
+      ],
+      "rubric": [
+        "Hai revision và báo cáo phép thử thay tham số.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Design intent và lựa chọn chuẩn”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "title": "Sketch: relations, kích thước và chẩn đoán lỗi",
+      "module": 1,
+      "videos": [],
+      "concepts": [
+        [
+          "Bậc tự do là cách đọc Sketch",
+          "Under Defined nghĩa còn bậc tự do; Fully Defined nghĩa solver đã khống chế hết theo mô hình; Over Defined thường có ràng buộc dư/mâu thuẫn. Màu hiển thị có thể bị tùy chỉnh, nên đọc cả trạng thái. Fully Defined không chứng minh kích thước đã đúng bản vẽ."
+        ],
+        [
+          "Thêm constraint theo ý đồ",
+          "Dùng horizontal, vertical, coincident, tangent, equal hoặc symmetry khi chúng thể hiện quan hệ thật. Kích thước driving điều khiển mô hình; driven chỉ báo giá trị. Không dùng Fix để khóa mọi thứ rồi bỏ qua thiết kế tham số. Khi có lỗi, xem từng relation thay vì xóa hàng loạt."
+        ]
+      ],
+      "steps": [
+        "Vẽ biên dạng plate có hai lỗ đối xứng, dùng centerline và relation.",
+        "Kéo geometry để nhận diện bậc tự do còn thiếu.",
+        "Thêm một kích thước dư để quan sát, sau đó sửa và kiểm thay tham số."
+      ],
+      "quiz": {
+        "question": "Fully Defined có đảm bảo Sketch đúng yêu cầu kích thước không?",
+        "options": [
+          "Có nếu màu đen",
+          "Có nếu có Fix",
+          "Có",
+          "Không, vẫn phải đối chiếu yêu cầu"
+        ],
+        "answer": 3,
+        "explanation": "Solver kiểm bậc tự do, không biết yêu cầu chức năng ngoài dữ liệu đã nhập."
+      },
+      "deliverable": "Sketch đầy đủ ràng buộc và bảng kích thước kiểm lại.",
+      "id": "sb03",
+      "summary": "Under Defined nghĩa còn bậc tự do; Fully Defined nghĩa solver đã khống chế hết theo mô hình; Over Defined thường có ràng buộc dư/mâu thuẫn.",
+      "preview": false,
+      "level": "basic",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Bậc tự do là cách đọc Sketch",
+        "Thêm constraint theo ý đồ"
+      ],
+      "mistakes": [
+        "Fully Defined không chứng minh kích thước đã đúng bản vẽ..",
+        "Không dùng Fix để khóa mọi thứ rồi bỏ qua thiết kế tham số."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_Fully_Defined_Sketches.htm"
+      ],
+      "rubric": [
+        "Sketch đầy đủ ràng buộc và bảng kích thước kiểm lại.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Sketch: relations, kích thước và chẩn đoán lỗi”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s01",
+      "module": 2,
+      "title": "Sketch và ý đồ thiết kế",
+      "summary": "Dựng Sketch tấm chữ nhật 80×50 mm, tâm tại gốc; hai lỗ Ø8 có tâm (-25,0) và (25,0). Tất cả ràng buộc phải đầy đủ.",
+      "level": "basic",
+      "minutes": 50,
+      "preview": false,
+      "prerequisites": [
+        "Đọc phần không gian mô hình và thao tác nền tảng."
+      ],
+      "objectives": [
+        "Ràng buộc tấm đối xứng quanh gốc mà không dùng Fix hàng loạt.",
+        "Dự đoán hình học khi thay một kích thước."
+      ],
+      "concepts": [
+        [
+          "Hình học cần vị trí và kích thước",
+          "Một hình chữ nhật có đúng dài/rộng vẫn có thể trôi nếu chưa gắn với gốc. Sketch xác định hình dạng bằng kích thước và relations như Coincident, Horizontal, Vertical, Equal hoặc Symmetric. Mỗi quan hệ nên phục vụ ý đồ; thêm đủ ràng buộc không đồng nghĩa thêm càng nhiều càng tốt."
+        ],
+        [
+          "Fully Defined cần được hiểu theo thiết kế",
+          "Trạng thái Fully Defined cho biết các bậc tự do hình học đã được ràng buộc theo solver. Dùng Fix có thể khóa mọi thứ nhưng làm mất khả năng thay đổi có chủ đích. Kiểm bằng cách kéo thử trước/sau, đọc trạng thái và đổi một kích thước chính để xem mô hình giữ đối xứng đúng không."
+        ],
+        [
+          "Chọn chuẩn đo một cách nhất quán",
+          "Tấm 80×50 có tâm tại gốc nên các mép nằm x=±40 và y=±25. Hai lỗ tại x=±25, y=0 giữ nguyên vị trí theo gốc khi chiều dài tấm đổi. Đây khác với yêu cầu lỗ luôn cách mép một khoảng cố định; cùng hình ban đầu nhưng hai ý đồ tạo hành vi sửa khác nhau."
+        ]
+      ],
+      "steps": [
+        "Tạo Part, đặt MMGS và Sketch trên Top Plane.",
+        "Dùng Center Rectangle ở origin, đặt 80 và 50.",
+        "Vẽ hai đường tròn Ø8, đặt tâm trên trục giữa và tọa độ ±25.",
+        "Đọc trạng thái, kéo thử, đổi L=90 rồi trả lại L=80 trước khi nộp."
+      ],
+      "mistakes": [
+        "Sketch còn di chuyển cả khối → Thiếu quan hệ với origin hoặc chuẩn cố định.",
+        "Sketch over-defined → Tìm kích thước/quan hệ trùng tác dụng; không xóa ngẫu nhiên."
+      ],
+      "quiz": {
+        "question": "Thay chiều dài plate, lỗ phải vẫn ở tâm: cần kiểm gì?",
+        "options": [
+          "Chỉ khối lượng",
+          "Chỉ màu",
+          "Relations/chuẩn và hành vi sau đổi tham số",
+          "Chỉ tên Sketch"
+        ],
+        "answer": 2,
+        "explanation": "Ý đồ được kiểm bằng quan hệ và phép thử thay tham số."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2025/English/SolidWorks/acadhelp/t_Sketching_Concepts_Overview.htm"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Kích thước/hệ tọa độ và đơn vị đúng. (25 điểm).",
+        "Quan hệ hình học thể hiện đối xứng, không ràng buộc thừa. (25 điểm).",
+        "Sketch đầy đủ ràng buộc và sửa kích thước được. (25 điểm).",
+        "Nộp SLDPRT cùng ảnh kích thước và trạng thái Sketch. (25 điểm)."
+      ],
+      "discussion": "Vì sao hai Sketch cùng hình có thể phản ứng khác khi sửa?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Thử thay đổi để kiểm ý đồ",
+        "body": "Đổi chiều dài tấm từ 80 lên 90. Nếu tâm tấm ở gốc, mép chuyển tới x=±45. Hai tâm lỗ vẫn ở ±25 theo đề, nên khoảng từ tâm lỗ tới mép đổi từ 15 thành 20. Nếu khoảng đó vẫn là 15, Sketch đang thể hiện một ý đồ khác.",
+        "rows": [
+          [
+            "Đặc tính",
+            "L=80",
+            "L=90"
+          ],
+          [
+            "Mép theo x",
+            "±40",
+            "±45"
+          ],
+          [
+            "Tâm lỗ theo x",
+            "±25",
+            "±25"
+          ],
+          [
+            "Tâm lỗ tới mép gần",
+            "15",
+            "20"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Vì sao hai Sketch cùng hình có thể phản ứng khác khi sửa?",
+          "Vì kích thước và relations mã hóa ý đồ, không chỉ hình dạng ban đầu."
+        ],
+        [
+          "Màu đen đã đủ kết luận đúng đề chưa?",
+          "Chưa. Còn tọa độ, kích thước, đơn vị và hành vi khi thay tham số."
+        ]
+      ],
+      "assignment": {
+        "id": "s01",
+        "brief": "Dựng Sketch tấm chữ nhật 80×50 mm, tâm tại gốc; hai lỗ Ø8 có tâm (-25,0) và (25,0). Tất cả ràng buộc phải đầy đủ.",
+        "checks": [
+          [
+            "Đo bao ngoài và lỗ",
+            "80×50; Ø8; khoảng hai tâm 50 mm"
+          ],
+          [
+            "Trạng thái Sketch",
+            "Fully Defined, không lỗi over-defined"
+          ],
+          [
+            "Đổi chiều dài sang 90",
+            "Tâm tấm vẫn ở gốc, vị trí lỗ giữ theo kích thước đề"
+          ]
+        ],
+        "criteria": [
+          "Kích thước/hệ tọa độ và đơn vị đúng. (25 điểm).",
+          "Quan hệ hình học thể hiện đối xứng, không ràng buộc thừa. (25 điểm).",
+          "Sketch đầy đủ ràng buộc và sửa kích thước được. (25 điểm).",
+          "Nộp SLDPRT cùng ảnh kích thước và trạng thái Sketch. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Hole Wizard, pattern và mirror có chủ đích",
+      "module": 3,
+      "videos": [],
+      "concepts": [
+        [
+          "Lỗ mang thông tin công nghệ",
+          "Hole Wizard hỗ trợ định nghĩa loại lỗ, kích thước và điều kiện kết thúc theo thư viện/tiêu chuẩn được chọn. Lỗ ren mô hình hóa/hiển thị không đồng nghĩa hình học gia công thật ở mọi chế độ. Kiểm gọi kích thước trên Drawing và ghi yêu cầu gia công rõ."
+        ],
+        [
+          "Pattern cần đúng tham chiếu và số lượng",
+          "Linear/Circular Pattern nhân feature hoặc body theo lựa chọn. Số instance thường bao gồm instance gốc theo công cụ; kiểm kết quả thay vì suy từ tên. Mirror dựa trên plane chuẩn giúp giữ đối xứng. Với tính năng phức tạp, kiểm geometry/rebuild sau đổi spacing hoặc count."
+        ]
+      ],
+      "steps": [
+        "Tạo plate 80×50×6 mm và nhóm bốn lỗ theo chuẩn đã chọn.",
+        "Dùng Hole Wizard cùng pattern; kiểm vị trí bằng Measure.",
+        "Đổi kích thước plate và spacing, bảo đảm không tạo lỗ ra mép hoặc chồng nhau."
+      ],
+      "quiz": {
+        "question": "Sau đổi số instance pattern, cần kiểm gì?",
+        "options": [
+          "Số lượng, vị trí và rebuild",
+          "Chỉ tên feature",
+          "Chỉ kích thước file",
+          "Chỉ màu"
+        ],
+        "answer": 0,
+        "explanation": "Pattern có thể rebuild nhưng vẫn vi phạm yêu cầu khoảng cách hoặc biên chi tiết."
+      },
+      "deliverable": "Part tham số, bảng vị trí lỗ và Drawing callout.",
+      "id": "sb04",
+      "summary": "Hole Wizard hỗ trợ định nghĩa loại lỗ, kích thước và điều kiện kết thúc theo thư viện/tiêu chuẩn được chọn.",
+      "preview": false,
+      "level": "intermediate",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Lỗ mang thông tin công nghệ",
+        "Pattern cần đúng tham chiếu và số lượng"
+      ],
+      "mistakes": [
+        "Lỗ ren mô hình hóa/hiển thị không đồng nghĩa hình học gia công thật ở mọi chế độ."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_SolidWorks_Features.htm"
+      ],
+      "rubric": [
+        "Part tham số, bảng vị trí lỗ và Drawing callout.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Hole Wizard, pattern và mirror có chủ đích”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "title": "Shell, draft và khả năng chế tạo",
+      "module": 3,
+      "videos": [],
+      "concepts": [
+        [
+          "Shell cần giữ chiều dày và topology hợp lý",
+          "Shell làm rỗng body theo thickness và mặt được loại bỏ. Chiều dày quá lớn tại góc/feature nhỏ có thể làm thất bại hoặc tạo hình không mong muốn. Dùng mặt cắt kiểm wall, đáy, boss và vùng nối; không chỉ nhìn mặt ngoài."
+        ],
+        [
+          "Draft là quyết định gắn công nghệ",
+          "Góc thoát khuôn liên quan hướng kéo, neutral plane/parting line và bề mặt. Với chi tiết in 3D hoặc gia công khác, yêu cầu khác ép nhựa. Ghi công nghệ giả định trước khi áp dụng draft, fillet, ribs và độ dày; không dùng một bộ số cho mọi vật liệu."
+        ]
+      ],
+      "steps": [
+        "Tạo hộp 60×40×25 mm, shell 2 mm theo giả định bài luyện.",
+        "Dùng section view để kiểm đáy và thành.",
+        "Thêm draft theo hướng đã chọn, kiểm kích thước miệng/đáy sau thay đổi."
+      ],
+      "quiz": {
+        "question": "Nhìn mặt ngoài có đủ để kiểm shell không?",
+        "options": [
+          "Đủ nếu model đẹp",
+          "Đủ nếu chọn vật liệu",
+          "Đủ",
+          "Không, cần kiểm mặt cắt và chiều dày"
+        ],
+        "answer": 3,
+        "explanation": "Sai chiều dày hoặc hình học bên trong có thể không nhìn thấy từ ngoài."
+      },
+      "deliverable": "Part hộp, mặt cắt và bảng chiều dày có giả định công nghệ.",
+      "id": "sb05",
+      "summary": "Shell làm rỗng body theo thickness và mặt được loại bỏ.",
+      "preview": false,
+      "level": "intermediate",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Shell cần giữ chiều dày và topology hợp lý",
+        "Draft là quyết định gắn công nghệ"
+      ],
+      "mistakes": [
+        "Chiều dày quá lớn tại góc/feature nhỏ có thể làm thất bại hoặc tạo hình không mong muốn.",
+        "Dùng mặt cắt kiểm wall, đáy, boss và vùng nối; không chỉ nhìn mặt ngoài.."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/English/SolidWorks/sldworks/c_Shells.htm"
+      ],
+      "rubric": [
+        "Part hộp, mặt cắt và bảng chiều dày có giả định công nghệ.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Shell, draft và khả năng chế tạo”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s02",
+      "module": 3,
+      "title": "Feature và chi tiết có lỗ xuyên",
+      "summary": "Tạo tấm 80×50×8 mm có hai lỗ xuyên Ø8 tại x=±25, y=0. Dùng Extruded Boss và Cut; chưa bo cạnh.",
+      "level": "basic",
+      "minutes": 60,
+      "preview": false,
+      "prerequisites": [
+        "S01."
+      ],
+      "objectives": [
+        "Dựng Part bằng feature có mục đích rõ.",
+        "Đối chiếu thể tích để tìm sai hình học."
+      ],
+      "concepts": [
+        [
+          "Feature ghi lại cách tạo hình",
+          "FeatureManager thể hiện trình tự tạo, thêm và cắt vật liệu. Dùng một Sketch chữ nhật cho khối tấm, sau đó Sketch lỗ riêng cho Cut để thể hiện rõ từng nhiệm vụ. Đặt tên như TamDe và HaiLoXuyen giúp người khác đọc cây dựng. Không cần một Sketch phức tạp chứa mọi thao tác."
+        ],
+        [
+          "End condition thể hiện yêu cầu",
+          "Lỗ xuyên nên dùng Through All khi ý đồ là xuyên mọi chiều dày. Một Cut sâu 8 mm có thể trông đúng với tấm dày 8 nhưng không còn xuyên khi tấm đổi thành 10. Kiểm direction và feature scope nếu mô hình có nhiều body; bài này yêu cầu một solid body."
+        ],
+        [
+          "Đo độc lập với nhìn mô hình",
+          "Measure xác nhận dài/rộng/dày và đường kính. Section View cho thấy lỗ có thực xuyên hay còn đáy. Mass Properties cho thể tích; khi chưa chọn vật liệu, không dùng con số khối lượng để thay phép kiểm hình học. Sai thể tích gợi ý lỗ thiếu, chiều dày sai hoặc body dư."
+        ]
+      ],
+      "steps": [
+        "Tạo Extruded Boss/Base dày 8 từ biên chữ nhật.",
+        "Tạo Sketch hai lỗ theo S01 rồi Cut Through All.",
+        "Đo kích thước, xem mặt cắt và đọc volume.",
+        "Đổi dày 10, rebuild, kiểm lỗ vẫn xuyên; trả về 8 và lưu."
+      ],
+      "mistakes": [
+        "Lỗ có đáy sau khi tăng bề dày → Cut đang dùng Blind hoặc direction/end condition chưa đúng.",
+        "Có nhiều solid body → Kiểm các feature thêm vật liệu và Merge result; không xóa body để che sai quy trình."
+      ],
+      "quiz": {
+        "question": "Lỗ phải xuyên qua chi tiết dù chiều dày đổi, end condition phù hợp?",
+        "options": [
+          "Offset tùy ý",
+          "Chỉ vẽ vòng tròn",
+          "Blind luôn 1 mm",
+          "Through All khi đúng ý đồ"
+        ],
+        "answer": 3,
+        "explanation": "Through All thể hiện yêu cầu xuyên qua theo hướng và geometry phù hợp."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Kích thước phôi và vị trí lỗ đúng. (25 điểm).",
+        "Feature tree có Boss/Cut hợp lý, không lỗi rebuild. (25 điểm).",
+        "Lỗ xuyên vẫn đúng khi thử đổi bề dày. (25 điểm).",
+        "Nộp SLDPRT, STEP và ảnh Measure/section hoặc volume. (25 điểm)."
+      ],
+      "discussion": "Thể tích đúng có đủ chứng minh mọi kích thước đúng không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Tính thể tích lý tưởng để đối chiếu",
+        "body": "Thể tích khối hộp là 80×50×8=32000 mm³. Hai lỗ bỏ đi 2×π×4²×8≈804,25 mm³. Phần còn lại khoảng 31195,75 mm³. Con số chỉ áp dụng khi chưa thêm bo/vát và đúng hai lỗ Ø8. Dung sai đối chiếu trong bài là 1 mm³.",
+        "rows": [
+          [
+            "Thành phần",
+            "Biểu thức",
+            "Thể tích mm³"
+          ],
+          [
+            "Tấm nguyên",
+            "80×50×8",
+            "32000"
+          ],
+          [
+            "Hai lỗ",
+            "2×π×4²×8",
+            "804,25"
+          ],
+          [
+            "Phần còn lại",
+            "Tấm trừ lỗ",
+            "31195,75"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Thể tích đúng có đủ chứng minh mọi kích thước đúng không?",
+          "Không. Hai hình khác nhau có thể có cùng thể tích; vẫn phải đo các kích thước chức năng."
+        ],
+        [
+          "Thêm fillet có nên giữ nguyên expected volume cũ không?",
+          "Không. Hình học đã đổi; phải cập nhật bài kiểm hoặc trả về đúng phạm vi đề."
+        ]
+      ],
+      "assignment": {
+        "id": "s02",
+        "brief": "Tạo tấm 80×50×8 mm có hai lỗ xuyên Ø8 tại x=±25, y=0. Dùng Extruded Boss và Cut; chưa bo cạnh.",
+        "checks": [
+          [
+            "Measure và section view",
+            "Đúng 80×50×8; hai lỗ xuyên Ø8"
+          ],
+          [
+            "Mass Properties: volume",
+            "Khoảng 31195,75 mm³, sai khác tối đa 1 mm³"
+          ],
+          [
+            "Rebuild sau thay bề dày",
+            "Không lỗi, lỗ vẫn xuyên"
+          ]
+        ],
+        "criteria": [
+          "Kích thước phôi và vị trí lỗ đúng. (25 điểm).",
+          "Feature tree có Boss/Cut hợp lý, không lỗi rebuild. (25 điểm).",
+          "Lỗ xuyên vẫn đúng khi thử đổi bề dày. (25 điểm).",
+          "Nộp SLDPRT, STEP và ảnh Measure/section hoặc volume. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "module": 3,
+      "title": "Revolve và xử lý cạnh",
+      "summary": "Dựng trục đồng tâm dài 60 mm: đoạn Ø20 dài 40 mm, đoạn Ø12 dài 20 mm. Bo vai R1 và vát mép ngoài đầu Ø12 kích thước 1×45°.",
+      "level": "basic",
+      "minutes": 75,
+      "preview": false,
+      "prerequisites": [
+        "S01-S02."
+      ],
+      "objectives": [
+        "Dựng trục từ một nửa tiết diện và trục quay rõ ràng.",
+        "Tách hình cơ sở khỏi Fillet và Chamfer."
+      ],
+      "concepts": [
+        [
+          "Revolve tạo hình từ tiết diện",
+          "Chi tiết tròn xoay phù hợp với biên dạng trong mặt phẳng chứa trục. Vẽ một nửa tiết diện kín ở một phía trục và quay 360°. Trên bản vẽ, Ø20 là đường kính, nên khoảng từ trục tới biên là 10. Nhầm bán kính/đường kính sẽ làm sai toàn bộ kích thước dù feature vẫn rebuild."
+        ],
+        [
+          "Bo vai và vát đầu có chức năng khác nhau",
+          "Fillet R1 tạo góc lượn ở vai giữa hai đoạn; Chamfer 1×45° ở mép ngoài đầu Ø12 tạo mặt vát. Chọn đúng cạnh bằng preview và mặt cắt. Cạnh trong và cạnh ngoài gần nhau trên màn hình có thể dẫn tới hai kết quả khác nhau."
+        ],
+        [
+          "Thứ tự feature ảnh hưởng khả năng sửa",
+          "Dựng hình cơ sở, kiểm đường kính/chiều dài rồi mới thêm xử lý cạnh. Khi feature sau lỗi, tìm feature đầu tiên lỗi trong cây và xem tham chiếu. Sửa hình nền hoặc bán kính cần đánh giá lại các cạnh mà Fillet/Chamfer đang tham chiếu."
+        ]
+      ],
+      "steps": [
+        "Tạo centerline làm trục và tiết diện nửa trục bậc.",
+        "Đặt kích thước đầy đủ, kiểm contour đóng rồi Revolve.",
+        "Thêm Fillet và Chamfer thành hai feature riêng có tên.",
+        "Dùng Section View và Measure; suppress/unsuppress để đối chiếu hình cơ sở."
+      ],
+      "mistakes": [
+        "Revolve báo biên dạng không hợp lệ → Tìm khe hở, đoạn chồng hoặc biên cắt qua trục.",
+        "Fillet lỗi sau sửa kích thước → Kiểm cạnh tham chiếu và bán kính có còn khả thi không."
+      ],
+      "quiz": {
+        "question": "Revolve cần thành phần nào cùng biên dạng?",
+        "options": [
+          "BOM",
+          "Mate",
+          "Drawing view",
+          "Trục quay phù hợp"
+        ],
+        "answer": 3,
+        "explanation": "Trục và profile xác định hình học quay."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Tiết diện/trục quay và kích thước trục bậc đúng. (25 điểm).",
+        "Bo vai và vát đúng cạnh, đúng giá trị. (25 điểm).",
+        "Mô hình một solid body, feature sửa được. (25 điểm).",
+        "Nộp SLDPRT/STEP, ảnh section và feature tree rõ thông số. (25 điểm)."
+      ],
+      "discussion": "Có nên vẽ luôn mọi cung bo trong Sketch gốc không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Kiểm hình cơ sở trước khi bo",
+        "body": "Tiết diện dùng bán kính 10 cho đoạn dài 40 và bán kính 6 cho đoạn dài 20, tổng chiều dài 60. Sau Revolve, đo Ø20/Ø12 rồi lưu một mốc. Bật lần lượt Fillet và Chamfer để thấy phần hình học nào thay đổi; không đo chiều dài đoạn dựa vào cạnh bo không còn sắc.",
+        "rows": [
+          [
+            "Bước",
+            "Điểm kiểm"
+          ],
+          [
+            "Revolve",
+            "Trục đúng, 360°, một body"
+          ],
+          [
+            "Fillet",
+            "R1 tại vai chuyển bậc"
+          ],
+          [
+            "Chamfer",
+            "1×45° ở đầu ngoài đoạn Ø12"
+          ],
+          [
+            "Rebuild",
+            "Không lỗi, tham chiếu có nghĩa"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Có nên vẽ luôn mọi cung bo trong Sketch gốc không?",
+          "Có thể trong một số thiết kế, nhưng bài này tách để dễ đọc và sửa từng chức năng."
+        ],
+        [
+          "Đo từ mép chamfer có luôn cho chiều dài danh nghĩa đoạn trục không?",
+          "Không. Cần chọn chuẩn đo đúng của kích thước danh nghĩa."
+        ]
+      ],
+      "assignment": {
+        "id": "s03",
+        "brief": "Dựng trục đồng tâm dài 60 mm: đoạn Ø20 dài 40 mm, đoạn Ø12 dài 20 mm. Bo vai R1 và vát mép ngoài đầu Ø12 kích thước 1×45°.",
+        "checks": [
+          [
+            "Measure hình gốc",
+            "Tổng dài 60, Ø20/Ø12, hai đoạn 40/20"
+          ],
+          [
+            "Kiểm tra feature",
+            "Revolve 360°, Fillet R1 và Chamfer 1×45°"
+          ],
+          [
+            "Rebuild",
+            "Một solid body, không lỗi feature"
+          ]
+        ],
+        "criteria": [
+          "Tiết diện/trục quay và kích thước trục bậc đúng. (25 điểm).",
+          "Bo vai và vát đúng cạnh, đúng giá trị. (25 điểm).",
+          "Mô hình một solid body, feature sửa được. (25 điểm).",
+          "Nộp SLDPRT/STEP, ảnh section và feature tree rõ thông số. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Multibody, Boolean và surface căn bản",
+      "module": 4,
+      "videos": [],
+      "concepts": [
+        [
+          "Body khác component",
+          "Một Part có thể chứa nhiều solid hoặc surface body. Component trong Assembly là một instance tham chiếu tài liệu với transform và mates. Chọn multibody khi các hình học cùng một ý đồ thiết kế; chọn Assembly khi cần quan hệ lắp và quản lý chi tiết riêng."
+        ],
+        [
+          "Surface không tự là solid",
+          "Surface mô tả mặt không có thể tích vật liệu. Knit/Trim/Extend hỗ trợ dựng biên liên tục, nhưng cần đóng kín và đủ điều kiện để tạo solid. Kiểm gap, continuity và mass properties; một hình nhìn kín từ một góc có thể còn cạnh hở."
+        ]
+      ],
+      "steps": [
+        "Tạo hai solid body và thử Combine add/subtract trên bản sao.",
+        "Tạo một surface mở rồi kiểm vì sao không có thể tích như solid.",
+        "Xuất STEP, mở lại và kiểm số body/kích thước."
+      ],
+      "quiz": {
+        "question": "Surface mở có luôn có thể tích vật liệu như solid không?",
+        "options": [
+          "Có nếu tô màu",
+          "Có nếu lưu SLDPRT",
+          "Có",
+          "Không"
+        ],
+        "answer": 3,
+        "explanation": "Cần một solid kín hợp lệ mới có thể tích vật liệu theo mô hình khối."
+      },
+      "deliverable": "Part multibody và báo cáo solid/surface sau import/export.",
+      "id": "sb06",
+      "summary": "Một Part có thể chứa nhiều solid hoặc surface body.",
+      "preview": false,
+      "level": "intermediate",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Body khác component",
+        "Surface không tự là solid"
+      ],
+      "mistakes": [
+        "Surface mô tả mặt không có thể tích vật liệu."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/English/SolidWorks/sldworks/c_Multibody_Parts.htm"
+      ],
+      "rubric": [
+        "Part multibody và báo cáo solid/surface sau import/export.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Multibody, Boolean và surface căn bản”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s04",
+      "module": 4,
+      "title": "Hình học tham chiếu và hướng cắt",
+      "summary": "Tạo khối 60×40×20 mm có đáy trên Top Plane. Tạo plane nghiêng 30° quanh một cạnh dài trên mặt trên; dùng plane ấy để cắt lỗ Ø6 đi xuyên khối.",
+      "level": "basic",
+      "minutes": 80,
+      "preview": false,
+      "prerequisites": [
+        "S01-S03."
+      ],
+      "objectives": [
+        "Xác định plane bằng mặt chuẩn và trục xoay.",
+        "Kiểm đường kính lỗ theo mặt phẳng vuông góc trục lỗ."
+      ],
+      "concepts": [
+        [
+          "Một góc chưa đủ xác định một plane",
+          "Plane nghiêng 30° cần có mặt gốc và cạnh/trục xoay cụ thể. Bài dùng khối 60×40×20, đáy tại z=0, mặt trên z=20. Chọn cạnh dài song song X trên mặt trên làm trục. Ghi chiều nghiêng để người khác dựng cùng phía; đảo hướng plane có thể làm Cut không gặp khối."
+        ],
+        [
+          "Sketch quyết định hướng Extruded Cut",
+          "Hướng cắt mặc định vuông góc plane Sketch. Lỗ Ø6 theo trục nghiêng có giao tuyến với mặt trên thường là ellipse, không phải vòng tròn Ø6 nhìn từ trên. Đường kính phải đo trên tiết diện vuông góc trục; dùng hình chiếu trên mặt nghiêng làm chuẩn."
+        ],
+        [
+          "Tham chiếu ổn định giúp sửa được",
+          "Ưu tiên origin, plane và trục có ý nghĩa thiết kế. Một cạnh nhỏ sinh ra bởi bo/vát có thể biến mất khi sửa feature trước đó. Sau khi đổi góc plane, rebuild và kiểm lỗ vẫn đi qua vùng mong muốn; việc feature không báo lỗi chưa bảo đảm vị trí chức năng còn đúng."
+        ]
+      ],
+      "steps": [
+        "Tạo khối và đặt tên các plane/axis sẽ dùng.",
+        "Tạo plane góc 30° với tham chiếu đã mô tả.",
+        "Vẽ circle Ø6, định vị tâm và xem preview Cut.",
+        "Cắt xuyên, tạo section qua trục lỗ và thử sửa góc rồi trả về 30°."
+      ],
+      "mistakes": [
+        "Cut không giao khối → Kiểm tâm profile, chiều plane và mũi tên hướng cắt.",
+        "Đo miệng lỗ lớn hơn 6 → Có thể đang đo ellipse trên mặt nghiêng thay vì tiết diện pháp tuyến."
+      ],
+      "quiz": {
+        "question": "Lỗ cắt nghiêng phụ thuộc điều gì?",
+        "options": [
+          "Chỉ tên feature",
+          "Chỉ đường kính",
+          "Plane, hướng pháp tuyến và hướng cắt",
+          "Chỉ màu mặt"
+        ],
+        "answer": 2,
+        "explanation": "Đường đi vật lý của lỗ phụ thuộc hệ chuẩn và hướng feature."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Khối và plane 30° đúng, tham chiếu được chỉ rõ. (25 điểm).",
+        "Sketch Ø6 có vị trí xác định và đường cắt giao khối. (25 điểm).",
+        "Lỗ theo pháp tuyến plane, xuyên khối như section chứng minh. (25 điểm).",
+        "Nộp file nguồn, ảnh plane/section và kích thước vị trí đã chọn. (25 điểm)."
+      ],
+      "discussion": "Góc plane 30° có bằng góc của pháp tuyến so với cùng mặt không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Chọn một vị trí tâm lỗ có thể dựng lại",
+        "body": "Một phương án: cạnh xoay là y=-20, z=20; plane nghiêng lên 30° về phía +Y. Đặt tâm theo X tại 0 và cách cạnh xoay 20 mm đo trong plane. Tâm nằm phía trên khối, nhưng hướng cắt xuống theo pháp tuyến giao khối. Dùng preview và Through All theo chiều phù hợp; ghi phương án trong bài.",
+        "rows": [
+          [
+            "Chuẩn",
+            "Phương án ví dụ"
+          ],
+          [
+            "Hình cơ sở",
+            "X: -30..30; Y: -20..20; Z: 0..20"
+          ],
+          [
+            "Cạnh xoay",
+            "Song song X tại Y=-20, Z=20"
+          ],
+          [
+            "Plane",
+            "Nghiêng lên 30° về +Y"
+          ],
+          [
+            "Tâm profile",
+            "X=0; cách cạnh 20 mm trên plane"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Góc plane 30° có bằng góc của pháp tuyến so với cùng mặt không?",
+          "Không. Góc giữa pháp tuyến và mặt gốc là góc bù tới 90° trong trường hợp này."
+        ],
+        [
+          "Tại sao phải mô tả chiều nghiêng?",
+          "Vì cùng trị số góc có thể tạo nhiều phương án đối xứng khác nhau."
+        ]
+      ],
+      "assignment": {
+        "id": "s04",
+        "brief": "Tạo khối 60×40×20 mm có đáy trên Top Plane. Tạo plane nghiêng 30° quanh một cạnh dài trên mặt trên; dùng plane ấy để cắt lỗ Ø6 đi xuyên khối.",
+        "checks": [
+          [
+            "Kích thước khối/plane",
+            "60×40×20; plane lệch 30° so với mặt trên"
+          ],
+          [
+            "Section qua tâm lỗ",
+            "Lỗ xuyên khối, đường kính vuông góc trục là 6 mm"
+          ],
+          [
+            "Edit plane và rebuild",
+            "Quan hệ tham chiếu rõ, không mất feature"
+          ]
+        ],
+        "criteria": [
+          "Khối và plane 30° đúng, tham chiếu được chỉ rõ. (25 điểm).",
+          "Sketch Ø6 có vị trí xác định và đường cắt giao khối. (25 điểm).",
+          "Lỗ theo pháp tuyến plane, xuyên khối như section chứng minh. (25 điểm).",
+          "Nộp file nguồn, ảnh plane/section và kích thước vị trí đã chọn. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "module": 4,
+      "title": "Sweep và đường dẫn tiếp tuyến",
+      "summary": "Tạo thanh tròn Ø6 theo hai đoạn tâm dài 40 và 30 mm vuông góc trong cùng plane, nối góc bằng Sketch Fillet R10.",
+      "level": "intermediate",
+      "minutes": 75,
+      "preview": false,
+      "prerequisites": [
+        "S04 và relations Tangent/Pierce."
+      ],
+      "objectives": [
+        "Liên hệ profile với đầu path và hướng tiếp tuyến.",
+        "Phân biệt độ dài đoạn trước bo với chiều dài path sau bo."
+      ],
+      "concepts": [
+        [
+          "Sweep mang một tiết diện dọc đường dẫn",
+          "Profile và path là hai Sketch có vai trò khác nhau. Với thanh Ø6, profile là vòng tròn trên plane vuông góc tiếp tuyến đầu path. Tâm profile phải gắn với path bằng quan hệ phù hợp; đặt gần bằng mắt có thể tạo lệch hoặc làm feature thất bại."
+        ],
+        [
+          "Một góc vuông sắc không giống đoạn chuyển tiếp",
+          "Hai đoạn tâm 40 và 30 mm được đo tới giao điểm lý thuyết trước bo. Sketch Fillet R10 cắt bớt 10 mm trên mỗi đoạn và thay bằng cung 90°. Sau bo còn hai đoạn thẳng 30 và 20 mm; chiều dài tâm không còn bằng 70 mm."
+        ],
+        [
+          "Liên tục hình học cần được kiểm",
+          "Tangent làm hướng đi liền tại điểm nối. Nếu path tự giao hoặc bán kính quá nhỏ so với profile, Sweep có thể tự giao. Quan sát preview, đo tiết diện và kiểm một solid body; không dùng hình shading để che một chỗ gãy hoặc thay đổi tiết diện ngoài ý muốn."
+        ]
+      ],
+      "steps": [
+        "Tạo hai đoạn path vuông góc, kích thước 40 và 30 theo giao điểm lý thuyết.",
+        "Thêm Sketch Fillet R10 và kiểm Tangent ở hai đầu cung.",
+        "Tạo plane profile vuông góc đầu path, circle Ø6 gắn tâm đúng.",
+        "Sweep, đo và kiểm mặt cắt ở đầu, vùng cong và cuối."
+      ],
+      "mistakes": [
+        "Profile bị đặt lệch path → Rà quan hệ tâm và đầu path; không kéo bằng mắt.",
+        "Kích thước 40/30 mất nghĩa sau bo → Giữ construction geometry hoặc kích thước tham chiếu tới giao điểm lý thuyết."
+      ],
+      "quiz": {
+        "question": "Sweep cần tiết diện liên hệ với đâu?",
+        "options": [
+          "BOM",
+          "Drawing sheet",
+          "Điểm đầu đường dẫn theo điều kiện công cụ",
+          "Bất kỳ điểm nào ngoài model"
+        ],
+        "answer": 2,
+        "explanation": "Quan hệ giữa profile và path quyết định sweep hợp lệ và hình tạo ra."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Đường dẫn và cung bo đúng kích thước/tiếp tuyến. (25 điểm).",
+        "Profile Ø6 tại đầu path, liên hệ hình học rõ. (25 điểm).",
+        "Sweep tạo solid liên tục, không tự giao. (25 điểm).",
+        "Nộp SLDPRT/STEP và ảnh path, profile, kết quả. (25 điểm)."
+      ],
+      "discussion": "Vì sao path sau bo ngắn hơn 70 mm?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Tính chiều dài đường tâm",
+        "body": "Chiều dài sau bo là (40-10)+(30-10)+π×10/2≈65,708 mm. Con số này kiểm path, không phải chiều dài bao ngoài của vật thể. Với tiết diện tròn bán kính 3, phần cong phải được kiểm xem profile có tự giao hoặc lệch tâm hay không.",
+        "rows": [
+          [
+            "Phần path",
+            "Chiều dài mm"
+          ],
+          [
+            "Đoạn thẳng ngang",
+            "30"
+          ],
+          [
+            "Đoạn thẳng đứng",
+            "20"
+          ],
+          [
+            "Cung 90° R10",
+            "15,708"
+          ],
+          [
+            "Tổng",
+            "65,708"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Vì sao path sau bo ngắn hơn 70 mm?",
+          "Hai đoạn thẳng bị cắt tổng 20 mm và chỉ thêm cung khoảng 15,708 mm."
+        ],
+        [
+          "Có thể dùng đường hở làm profile solid tròn ở bài này không?",
+          "Không theo mô hình này; circle phải là contour kín."
+        ]
+      ],
+      "assignment": {
+        "id": "s05",
+        "brief": "Tạo thanh tròn Ø6 theo hai đoạn tâm dài 40 và 30 mm vuông góc trong cùng plane, nối góc bằng Sketch Fillet R10.",
+        "checks": [
+          [
+            "Path trước bo",
+            "Hai đoạn vuông góc 40/30; R10 tiếp tuyến"
+          ],
+          [
+            "Đo tiết diện",
+            "Ø6, không bị xoắn hoặc tự giao"
+          ],
+          [
+            "Số body/rebuild",
+            "Một solid body, không lỗi"
+          ]
+        ],
+        "criteria": [
+          "Đường dẫn và cung bo đúng kích thước/tiếp tuyến. (25 điểm).",
+          "Profile Ø6 tại đầu path, liên hệ hình học rõ. (25 điểm).",
+          "Sweep tạo solid liên tục, không tự giao. (25 điểm).",
+          "Nộp SLDPRT/STEP và ảnh path, profile, kết quả. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "module": 4,
+      "title": "Loft và kiểm hình chuyển tiếp",
+      "summary": "Tạo khối đặc chuyển từ hình tròn Ø30 sang chữ nhật 40×25 trên hai plane song song cách 50 mm, hai profile đồng tâm.",
+      "level": "intermediate",
+      "minutes": 80,
+      "preview": false,
+      "prerequisites": [
+        "S04-S05."
+      ],
+      "objectives": [
+        "Chọn thứ tự profile và kiểm connector của Loft.",
+        "Phân biệt solid với surface và mô hình thành mỏng."
+      ],
+      "concepts": [
+        [
+          "Loft nối các tiết diện",
+          "Tạo profile tròn Ø30 và chữ nhật 40×25 trên hai plane song song cách 50 mm. Mỗi profile đóng kín, tâm cùng trục. Thứ tự chọn và điểm bắt đầu trên mỗi contour ảnh hưởng cách nối; một Loft tạo được không có nghĩa hình chuyển tiếp đúng chủ đích."
+        ],
+        [
+          "Preview phải được đọc ở nhiều hướng",
+          "Quan sát các connector nối giữa profile để tìm xoắn. Với circle nối rectangle, chọn điểm tương ứng nhất quán; nếu cần, chỉnh connector hoặc cách chia profile. Guide curve là công cụ bổ sung khi cần điều khiển hình, nhưng phải giao/quan hệ đúng với các profile; không thêm chỉ để thử may rủi."
+        ],
+        [
+          "Đầu ra của bài là một khối đặc",
+          "Hai biên dạng kín tạo solid khi feature thành công theo cách chọn ở bài này. Shell và thickness là yêu cầu khác, chưa thuộc S06. Kiểm Solid Bodies, section và xuất STEP rồi mở lại để xác minh hình học trao đổi, không nhầm một surface kín nhìn như solid."
+        ]
+      ],
+      "steps": [
+        "Tạo plane offset 50 từ plane đầu.",
+        "Dựng hai profile với kích thước và vị trí đầy đủ.",
+        "Loft theo thứ tự, quan sát connector và sửa điểm nối khi cần.",
+        "Rebuild, section, xuất STEP rồi mở trong tài liệu mới để đo."
+      ],
+      "mistakes": [
+        "Loft bị xoắn → Kiểm điểm bắt đầu, hướng contour và thứ tự/connector.",
+        "Xuất ra chỉ có surface → Kiểm kiểu feature, contour đóng và trạng thái Solid Bodies."
+      ],
+      "quiz": {
+        "question": "Loft bị xoắn cần xem xét gì?",
+        "options": [
+          "Thứ tự profile và connector mapping",
+          "Chỉ màu",
+          "Số file",
+          "Tên Part"
+        ],
+        "answer": 0,
+        "explanation": "Tương ứng điểm giữa các tiết diện ảnh hưởng trực tiếp tới xoắn."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Profile và khoảng plane đúng đề. (25 điểm).",
+        "Connector/Loft tạo chuyển tiếp hợp lý. (25 điểm).",
+        "Một solid body, rebuild và xuất STEP đúng. (25 điểm).",
+        "Nộp nguồn/STEP và ảnh profile, section, kiểm tra mở lại. (25 điểm)."
+      ],
+      "discussion": "Thêm guide curve có tự làm Loft tốt hơn không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Đánh giá hình chuyển tiếp mà không suy diễn độ bền",
+        "body": "Dùng một section dọc trục và vài section ngang để xem thay đổi tiết diện. Kiểm hai đầu vẫn đúng Ø30 và 40×25, khoảng plane 50. Hình nối mượt trên màn hình không chứng minh không có tập trung ứng suất; bài chỉ đánh giá hình học và khả năng rebuild.",
+        "rows": [
+          [
+            "Kiểm tra",
+            "Kết quả mong đợi"
+          ],
+          [
+            "Profile",
+            "Hai contour kín và tâm cùng trục"
+          ],
+          [
+            "Plane",
+            "Song song, cách 50 mm"
+          ],
+          [
+            "Preview/section",
+            "Không xoắn hoặc tự giao bất thường"
+          ],
+          [
+            "STEP mở lại",
+            "Một solid body, hai đầu giữ kích thước"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Thêm guide curve có tự làm Loft tốt hơn không?",
+          "Không. Guide curve sai quan hệ có thể gây lỗi hoặc hình không mong muốn."
+        ],
+        [
+          "STEP có giữ toàn bộ lịch sử feature không?",
+          "Không. Cần giữ file native để sửa theo lịch sử thiết kế."
+        ]
+      ],
+      "assignment": {
+        "id": "s06",
+        "brief": "Tạo khối đặc chuyển từ hình tròn Ø30 sang chữ nhật 40×25 trên hai plane song song cách 50 mm, hai profile đồng tâm.",
+        "checks": [
+          [
+            "Đo hai đầu và khoảng plane",
+            "Ø30, 40×25, cách 50 mm, tâm thẳng hàng"
+          ],
+          [
+            "Section/preview",
+            "Khối nối liên tục, không tự giao hoặc xoắn bất thường"
+          ],
+          [
+            "Mở STEP",
+            "Một solid body với kích thước hai đầu giữ nguyên"
+          ]
+        ],
+        "criteria": [
+          "Profile và khoảng plane đúng đề. (25 điểm).",
+          "Connector/Loft tạo chuyển tiếp hợp lý. (25 điểm).",
+          "Một solid body, rebuild và xuất STEP đúng. (25 điểm).",
+          "Nộp nguồn/STEP và ảnh profile, section, kiểm tra mở lại. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Assembly top-down, cấu hình và tham chiếu ngoài",
+      "module": 5,
+      "videos": [],
+      "concepts": [
+        [
+          "Dòng ý đồ từ cụm tới chi tiết",
+          "Top-down tạo kích thước/feature chi tiết từ layout hoặc geometry trong assembly. Nó giúp cập nhật các part liên quan nhưng tạo external references. Cần xác định tài liệu chủ sở hữu, chiều phụ thuộc và revision để tránh vòng tham chiếu hoặc cập nhật ngoài ý muốn."
+        ],
+        [
+          "Giữ biến thể có thể kiểm",
+          "Configuration có thể thay tham số, suppression hoặc component state. Kích hoạt từng configuration, rebuild và kiểm mate/interference. Display state chủ yếu phục vụ hiển thị, không thay configuration hình học. Chốt cách quản lý trước khi lập BOM."
+        ]
+      ],
+      "steps": [
+        "Tạo layout cụm với khoảng cách hai gối đỡ và dẫn part từ layout.",
+        "Kiểm external references và ghi những tham chiếu cần giữ/khóa theo quy trình.",
+        "Tạo hai configuration, rebuild và kiểm từng cụm."
+      ],
+      "quiz": {
+        "question": "Display state có thay thế đầy đủ configuration hình học không?",
+        "options": [
+          "Có nếu hide component",
+          "Có",
+          "Không",
+          "Có nếu đổi màu"
+        ],
+        "answer": 2,
+        "explanation": "Hiển thị và cấu hình tham số/suppression là hai vai trò khác nhau."
+      },
+      "deliverable": "Assembly hai biến thể và sơ đồ tham chiếu ngoài.",
+      "id": "sb07",
+      "summary": "Top-down tạo kích thước/feature chi tiết từ layout hoặc geometry trong assembly.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Dòng ý đồ từ cụm tới chi tiết",
+        "Giữ biến thể có thể kiểm"
+      ],
+      "mistakes": [
+        "Cần xác định tài liệu chủ sở hữu, chiều phụ thuộc và revision để tránh vòng tham chiếu hoặc cập nhật ngoài ý muốn..",
+        "Display state chủ yếu phục vụ hiển thị, không thay configuration hình học."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_Top-Down_Design_Overview.htm"
+      ],
+      "rubric": [
+        "Assembly hai biến thể và sơ đồ tham chiếu ngoài.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Assembly top-down, cấu hình và tham chiếu ngoài”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s07",
+      "module": 5,
+      "title": "Assembly và bậc tự do",
+      "summary": "Lắp trục Ø10×40 vào bạc Ø20 ngoài, Ø10 trong, dài 20 mm. Cố định bạc; trục đồng tâm và một đầu ngang mặt đầu bạc; để trục còn quay quanh trục tâm.",
+      "level": "intermediate",
+      "minutes": 100,
+      "preview": false,
+      "prerequisites": [
+        "S02-S03."
+      ],
+      "objectives": [
+        "Dùng mate để giữ đúng một bậc quay.",
+        "Bàn giao đủ Part được Assembly tham chiếu."
+      ],
+      "concepts": [
+        [
+          "Chi tiết tự do có sáu bậc chuyển động",
+          "Một vật rắn trong không gian có ba tịnh tiến và ba quay. Mate loại dần các chuyển động tương đối. Chọn một chi tiết chuẩn Fixed, rồi ràng buộc chi tiết còn lại theo yêu cầu. Fix tất cả khiến cụm đứng yên nhưng không chứng minh bạn đã mô tả đúng cách lắp."
+        ],
+        [
+          "Đồng tâm và đồng phẳng có tác dụng khác nhau",
+          "Concentric giữa trục và lỗ bạc khống chế lệch ngang và hướng trục, còn khả năng trượt/quay dọc quanh trục cần xét tiếp. Coincident hai mặt đầu loại trượt dọc; giữ tùy chọn quay tự do nếu mục tiêu là một bậc quay. Không thêm Lock rotation khi đề yêu cầu còn quay."
+        ],
+        [
+          "Tiếp xúc danh nghĩa chưa phải lắp ghép sản xuất",
+          "Bài dùng trục Ø10 và lỗ Ø10 như mô hình danh nghĩa. Interference Detection không được có thể tích giao thoa dương, nhưng kết quả đó không quy định dung sai, bôi trơn hoặc khả năng lắp thật. Assembly tham chiếu Part ngoài nên phải giữ đủ các file khi bàn giao."
+        ]
+      ],
+      "steps": [
+        "Tạo Part trục Ø10×40 và bạc Ø20/Ø10 dài 20.",
+        "Insert vào Assembly, chọn bạc Fixed.",
+        "Thêm Concentric và Coincident mặt đầu; kiểm hướng và trạng thái quay.",
+        "Lưu tất cả Part, dùng Pack and Go hoặc bộ thư mục đầy đủ rồi mở lại."
+      ],
+      "mistakes": [
+        "Trục khóa cả quay → Kiểm Lock rotation và mate dư.",
+        "Assembly mở máy khác thiếu chi tiết → Chưa bàn giao file Part hoặc đường dẫn tham chiếu bị lệ thuộc máy cũ."
+      ],
+      "quiz": {
+        "question": "Mate phải khống chế mọi chuyển động trong mọi cơ cấu không?",
+        "options": [
+          "Có",
+          "Không, giữ đúng bậc tự do chức năng",
+          "Có nếu có bolt",
+          "Có nếu có drawing"
+        ],
+        "answer": 1,
+        "explanation": "Cơ cấu chuyển động cần giữ bậc tự do được thiết kế."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Mates_Overview_Assemblies.htm",
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Best_Practices_for_Mates_SWassy.htm",
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Hai Part đúng kích thước danh nghĩa. (25 điểm).",
+        "Mates giữ vị trí, còn bậc quay theo đề. (25 điểm).",
+        "Không giao thoa dương hoặc mate lỗi; mở lại đủ tham chiếu. (25 điểm).",
+        "Nộp SLDASM, hai SLDPRT và ảnh mates/kết quả kiểm tra. (25 điểm)."
+      ],
+      "discussion": "Một cụm đứng yên luôn là Fully Defined đúng yêu cầu không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Kiểm cụm bằng hai thao tác riêng",
+        "body": "Kéo trục dọc tâm: nó không được trượt. Sau đó thử quay quanh tâm: nó vẫn được quay. Nếu không thể thao tác rõ bằng chuột, xem cây mate và dùng công cụ Move/Rotate Component theo trục. Kiểm thêm giao thoa và mở lại cụm từ thư mục bàn giao.",
+        "rows": [
+          [
+            "Kiểm",
+            "Mong đợi"
+          ],
+          [
+            "Bạc",
+            "Fixed làm chuẩn"
+          ],
+          [
+            "Dịch chuyển trục",
+            "Bị khóa"
+          ],
+          [
+            "Quay quanh tâm",
+            "Còn tự do"
+          ],
+          [
+            "File tham chiếu",
+            "Đủ trục, bạc và Assembly"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Một cụm đứng yên luôn là Fully Defined đúng yêu cầu không?",
+          "Không. Nếu cần chuyển động, khóa hết là sai chức năng."
+        ],
+        [
+          "Không có interference đã đủ chứng minh lắp ghép vừa chưa?",
+          "Chưa. Dung sai và công nghệ chế tạo phải được thiết kế riêng."
+        ]
+      ],
+      "assignment": {
+        "id": "s07",
+        "brief": "Lắp trục Ø10×40 vào bạc Ø20 ngoài, Ø10 trong, dài 20 mm. Cố định bạc; trục đồng tâm và một đầu ngang mặt đầu bạc; để trục còn quay quanh trục tâm.",
+        "checks": [
+          [
+            "Kéo trục dọc tâm",
+            "Không tịnh tiến"
+          ],
+          [
+            "Quay trục quanh tâm",
+            "Còn đúng bậc quay mong muốn"
+          ],
+          [
+            "Kiểm tra giao thoa",
+            "Không có thể tích giao thoa dương; hai mặt danh nghĩa tiếp xúc"
+          ],
+          [
+            "Mở lại từ thư mục nộp",
+            "Không thiếu Part, không mate lỗi"
+          ]
+        ],
+        "criteria": [
+          "Hai Part đúng kích thước danh nghĩa. (25 điểm).",
+          "Mates giữ vị trí, còn bậc quay theo đề. (25 điểm).",
+          "Không giao thoa dương hoặc mate lỗi; mở lại đủ tham chiếu. (25 điểm).",
+          "Nộp SLDASM, hai SLDPRT và ảnh mates/kết quả kiểm tra. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "module": 5,
+      "title": "Tham số và cấu hình họ chi tiết",
+      "summary": "Tạo họ tấm đế ba cấu hình L=60/80/100 mm, W=40, T=6; hai lỗ Ø6 cách mỗi đầu 10 mm và nằm trên trục giữa. Dùng biến toàn cục/equations và configurations.",
+      "level": "advanced",
+      "minutes": 140,
+      "preview": false,
+      "prerequisites": [
+        "S01-S02 và S08."
+      ],
+      "objectives": [
+        "Tạo một nguồn tham số cho nhiều kích thước phụ thuộc.",
+        "Kiểm từng configuration sau thay đổi."
+      ],
+      "concepts": [
+        [
+          "Thiết kế tham số mô tả quy luật",
+          "Với tấm dài L, hai lỗ luôn cách mỗi đầu 10 mm nên tọa độ tâm là ±(L/2-10). Khoảng hai tâm là L-20. Quy luật này khác S01, nơi tâm lỗ giữ ở ±25. Chọn ý đồ trước khi đặt dimension; không sửa tay cả ba cấu hình mỗi lần đổi L."
+        ],
+        [
+          "Equations cần tránh vòng phụ thuộc",
+          "Dùng Global Variables như L, W, T rồi để dimension phụ thuộc chúng. Một kích thước không nên đồng thời là đầu vào độc lập và kết quả của một phương trình khác. Khi mô hình báo lỗi equation, kiểm nguồn của từng tham số thay vì thay giá trị nhiều nơi."
+        ],
+        [
+          "Configuration cần được kích hoạt và rebuild",
+          "Mỗi configuration có thể có giá trị/suppression riêng. Kiểm L=60, 80, 100 lần lượt; đo khoảng tâm và xem feature lỗi. File lưu được chưa bảo đảm mọi configuration đều đã rebuild. Nếu Drawing tham chiếu configuration cụ thể, kiểm lại tên được chọn."
+        ]
+      ],
+      "steps": [
+        "Tạo các biến L, W, T và đặt tên dimension có nghĩa.",
+        "Dùng biểu thức cho vị trí lỗ thay vì ba Sketch độc lập.",
+        "Tạo ba configuration, kích hoạt/rebuild/đo từng bản.",
+        "Thử một L khác để kiểm quy luật, rồi trả về ba cấu hình yêu cầu."
+      ],
+      "mistakes": [
+        "Chỉ một configuration thay đổi → Kiểm phạm vi áp dụng dimension/equation.",
+        "Hole spacing đúng một bản nhưng sai bản khác → Tìm kích thước hard-code hoặc configuration override không chủ đích."
+      ],
+      "quiz": {
+        "question": "Hai configuration đều cần kích hoạt và rebuild để kiểm không?",
+        "options": [
+          "Chỉ nếu đổi màu",
+          "Chỉ nếu có STEP",
+          "Có",
+          "Không, chỉ cấu hình đang mở"
+        ],
+        "answer": 2,
+        "explanation": "Mỗi biến thể có thể có lỗi hoặc geometry khác."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2025/English/SolidWorks/acadhelp/t_Sketching_Concepts_Overview.htm",
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "SLDPRT ba cấu hình, SLDDRW/PDF và tối đa ba STEP; chọn tối đa 6 tệp theo yêu cầu chủ trì.; Ảnh bảng cấu hình/equations và bảng kiểm kích thước từng cấu hình.",
+      "rubric": [
+        "Quan hệ tham số đúng và không nhập tọa độ độc lập gây lệch. (25 điểm).",
+        "Ba cấu hình rebuild đúng, feature và lỗ ổn định. (25 điểm).",
+        "Bản vẽ/thông số xuất đúng cấu hình được ghi rõ. (25 điểm).",
+        "Bảng đối chiếu đủ kích thước và bằng chứng sửa tham số. (25 điểm)."
+      ],
+      "discussion": "Có thể dùng cùng vị trí lỗ của S01 cho mọi L không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Tính bảng trước khi dựng",
+        "body": "Với W=40, T=6 và lỗ Ø6, ba giá trị L cho tọa độ tâm lần lượt ±20, ±30, ±40. Khoảng hai tâm tương ứng 40, 60, 80. Việc tính trước tạo một bộ expected độc lập để phát hiện dimension nào còn bị nhập tay.",
+        "rows": [
+          [
+            "L",
+            "Tọa độ tâm theo X",
+            "Khoảng hai tâm"
+          ],
+          [
+            "60",
+            "-20 và +20",
+            "40"
+          ],
+          [
+            "80",
+            "-30 và +30",
+            "60"
+          ],
+          [
+            "100",
+            "-40 và +40",
+            "80"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Có thể dùng cùng vị trí lỗ của S01 cho mọi L không?",
+          "Không, vì yêu cầu của S09 là giữ khoảng tới mép."
+        ],
+        [
+          "Mô hình thay được mọi kích thước có luôn tốt không?",
+          "Không. Cần miền tham số hợp lệ và kiểm các trường hợp làm hình học mất ý nghĩa."
+        ]
+      ],
+      "assignment": {
+        "id": "s09",
+        "brief": "Tạo họ tấm đế ba cấu hình L=60/80/100 mm, W=40, T=6; hai lỗ Ø6 cách mỗi đầu 10 mm và nằm trên trục giữa. Dùng biến toàn cục/equations và configurations.",
+        "checks": [
+          [
+            "L=60/80/100",
+            "Khoảng hai tâm lỗ lần lượt 40/60/80 mm"
+          ],
+          [
+            "Đổi L trong cấu hình",
+            "Vị trí lỗ theo biểu thức, luôn cách đầu 10 mm"
+          ],
+          [
+            "Rebuild ba cấu hình",
+            "Một solid body, không dangling dimensions/feature lỗi"
+          ]
+        ],
+        "criteria": [
+          "Quan hệ tham số đúng và không nhập tọa độ độc lập gây lệch. (25 điểm).",
+          "Ba cấu hình rebuild đúng, feature và lỗ ổn định. (25 điểm).",
+          "Bản vẽ/thông số xuất đúng cấu hình được ghi rõ. (25 điểm).",
+          "Bảng đối chiếu đủ kích thước và bằng chứng sửa tham số. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "module": 5,
+      "title": "Cơ cấu trượt và kiểm hành trình",
+      "summary": "Tạo một ray, con trượt và chốt dẫn hướng; con trượt chỉ được tịnh tiến theo một trục trong khoảng 0–40 mm. Thiết kế kích thước phù hợp, nêu khe hở danh nghĩa và không dùng mô phỏng lực.",
+      "level": "advanced",
+      "minutes": 180,
+      "preview": false,
+      "prerequisites": [
+        "S07."
+      ],
+      "objectives": [
+        "Giữ một bậc tịnh tiến và giới hạn hành trình 0..40 mm.",
+        "Kiểm giao thoa tại nhiều vị trí được ghi lại."
+      ],
+      "concepts": [
+        [
+          "Chuyển động cần một chuẩn rõ",
+          "Chọn ray làm chuẩn, định nghĩa trục trượt và thiết kế con trượt/chốt theo một bộ kích thước tự chọn. Ghi khe hở danh nghĩa và mặt dẫn hướng. Mate phải loại quay và trượt ngang nhưng còn chuyển động dọc trục; Fix con trượt làm mất mục tiêu của bài."
+        ],
+        [
+          "Limit mate chỉ kiểm giới hạn hình học",
+          "Đặt giới hạn 0 và 40 mm theo một cặp chuẩn đo ổn định. Chiều dấu và mốc 0 phải được mô tả. Kéo mô hình đến hai đầu và giữa để kiểm. Mate không tự mô tả lực, ma sát, tải hoặc độ bền, nên không gọi thao tác kéo là mô phỏng lực."
+        ],
+        [
+          "Kiểm vài vị trí chưa là chứng minh liên tục",
+          "Năm vị trí 0, 10, 20, 30, 40 mm là bộ kiểm tối thiểu của bài. Có thể tồn tại va chạm giữa các vị trí, nhất là với hình học phức tạp. Bổ sung kiểm collision trong khi kéo hoặc tăng mẫu ở vùng nghi ngờ; ghi phạm vi đã thử thay vì kết luận tuyệt đối."
+        ]
+      ],
+      "steps": [
+        "Vẽ sơ đồ bậc tự do rồi tạo ray, con trượt và chốt.",
+        "Lắp theo chuẩn, thử bỏ từng mate để hiểu tác dụng.",
+        "Đặt limit distance và đo đủ năm vị trí.",
+        "Mở lại bộ Assembly/Part trong thư mục bàn giao và kiểm mate."
+      ],
+      "mistakes": [
+        "Con trượt còn quay → Thiếu ràng buộc định hướng hoặc mặt dẫn hướng chưa đủ.",
+        "Cụm khóa cứng khi thêm limit → Tìm mate khóa trục trượt đã tồn tại hoặc chuẩn đo bị chọn sai."
+      ],
+      "quiz": {
+        "question": "Năm vị trí không giao thoa đã chứng minh mọi vị trí đều không va chạm?",
+        "options": [
+          "Rồi nếu có Limit Mate",
+          "Rồi nếu đã lưu",
+          "Rồi",
+          "Chưa, đó mới là kiểm lấy mẫu"
+        ],
+        "answer": 3,
+        "explanation": "Cần đánh giá toàn hành trình hoặc các vùng nghi ngờ thêm."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Mates_Overview_Assemblies.htm",
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Best_Practices_for_Mates_SWassy.htm",
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "SLDASM và tối đa ba SLDPRT; PDF/bảng .txt ghi kích thước và kết quả kiểm tra.; 1–2 ảnh thể hiện mates, hai đầu hành trình hoặc bảng interference.",
+      "rubric": [
+        "Thiết kế hình học/khe hở có kích thước và cơ sở rõ. (25 điểm).",
+        "Mates giữ đúng một bậc tịnh tiến với giới hạn 0–40. (25 điểm).",
+        "Có bảng kiểm giao thoa cả hành trình và giải thích tiếp xúc. (25 điểm).",
+        "Bộ file mở lại đủ tham chiếu; không tuyên bố đã kiểm định tải. (25 điểm)."
+      ],
+      "discussion": "Năm vị trí không có giao thoa có bảo đảm mọi vị trí đều đạt không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Lập bảng đo hành trình",
+        "body": "Ghi khoảng cách giữa hai chuẩn ở 0, 10, 20, 30, 40 mm. Tại mỗi vị trí, lưu kết quả interference và giải thích tiếp xúc chủ đích. Một mặt trùng nhau không đồng nghĩa có thể tích giao thoa dương; đọc loại kết quả công cụ trước khi sửa hình.",
+        "rows": [
+          [
+            "Vị trí mm",
+            "Khoảng đo",
+            "Giao thoa",
+            "Ghi chú"
+          ],
+          [
+            "0 và 40",
+            "Mốc giới hạn",
+            "Ghi kết quả",
+            "Điều kiện chặn"
+          ],
+          [
+            "10 20 30",
+            "Mốc trung gian",
+            "Ghi kết quả",
+            "Vùng cần kiểm thêm"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Năm vị trí không có giao thoa có bảo đảm mọi vị trí đều đạt không?",
+          "Không. Đó là lấy mẫu; cần kiểm thêm khi hình học có khả năng va chạm giữa mẫu."
+        ],
+        [
+          "Có suy ra cơ cấu chịu tải tốt từ việc kéo trơn không?",
+          "Không. Cần phân tích và thử cơ học phù hợp ngoài phạm vi bài."
+        ]
+      ],
+      "assignment": {
+        "id": "s11",
+        "brief": "Tạo một ray, con trượt và chốt dẫn hướng; con trượt chỉ được tịnh tiến theo một trục trong khoảng 0–40 mm. Thiết kế kích thước phù hợp, nêu khe hở danh nghĩa và không dùng mô phỏng lực.",
+        "checks": [
+          [
+            "Kéo con trượt",
+            "Chỉ tịnh tiến theo trục chọn, không quay hoặc lệch ngang"
+          ],
+          [
+            "Hai đầu hành trình",
+            "Dừng tại 0 và 40 mm"
+          ],
+          [
+            "Năm vị trí kiểm tra",
+            "Không có thể tích giao thoa dương; vùng tiếp xúc được giải thích"
+          ],
+          [
+            "Mở lại Assembly cùng các Part",
+            "Không mất tham chiếu/mate"
+          ]
+        ],
+        "criteria": [
+          "Thiết kế hình học/khe hở có kích thước và cơ sở rõ. (25 điểm).",
+          "Mates giữ đúng một bậc tịnh tiến với giới hạn 0–40. (25 điểm).",
+          "Có bảng kiểm giao thoa cả hành trình và giải thích tiếp xúc. (25 điểm).",
+          "Bộ file mở lại đủ tham chiếu; không tuyên bố đã kiểm định tải. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Bản vẽ chế tạo: chuẩn đo, dung sai và BOM",
+      "module": 6,
+      "videos": [],
+      "concepts": [
+        [
+          "Drawing truyền đạt yêu cầu sản xuất",
+          "Chọn hình chiếu, mặt cắt và detail để thể hiện đầy đủ chức năng. Kích thước cần liên hệ với chuẩn đo có ý nghĩa, tránh chuỗi làm tích lũy sai số ngoài kiểm soát. Không tự chọn dung sai chặt cho mọi kích thước vì làm tăng chi phí và có thể thiếu khả năng đo."
+        ],
+        [
+          "Dung sai phải có căn cứ",
+          "Phân biệt kích thước danh nghĩa, dung sai kích thước và yêu cầu hình học. Các ký hiệu GD&T cần đúng hệ tiêu chuẩn đang áp dụng và năng lực người kiểm. Chương này giới thiệu cách tổ chức yêu cầu, không thay tài liệu tiêu chuẩn. BOM, balloon, mã part và revision phải nhất quán với configuration được thể hiện."
+        ]
+      ],
+      "steps": [
+        "Tạo Drawing của plate, chọn chuẩn đo và ghi kích thước chức năng.",
+        "Thêm section/detail cần thiết, tránh ghi lặp kích thước gây mâu thuẫn.",
+        "Lập BOM/balloon cho assembly và kiểm đúng configuration/revision."
+      ],
+      "quiz": {
+        "question": "Dung sai chặt hơn có luôn là thiết kế tốt hơn không?",
+        "options": [
+          "Luôn",
+          "Không, phải theo chức năng và khả năng chế tạo/đo",
+          "Có nếu máy CNC",
+          "Có nếu model Fully Defined"
+        ],
+        "answer": 1,
+        "explanation": "Dung sai cần đáp ứng chức năng với chi phí và khả năng kiểm phù hợp."
+      },
+      "deliverable": "Drawing có title block, revision, chuẩn và BOM đã kiểm.",
+      "id": "sb08",
+      "summary": "Chọn hình chiếu, mặt cắt và detail để thể hiện đầy đủ chức năng.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Drawing truyền đạt yêu cầu sản xuất",
+        "Dung sai phải có căn cứ"
+      ],
+      "mistakes": [
+        "Kích thước cần liên hệ với chuẩn đo có ý nghĩa, tránh chuỗi làm tích lũy sai số ngoài kiểm soát.",
+        "Không tự chọn dung sai chặt cho mọi kích thước vì làm tăng chi phí và có thể thiếu khả năng đo.."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_drawings_overview.htm"
+      ],
+      "rubric": [
+        "Drawing có title block, revision, chuẩn và BOM đã kiểm.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Bản vẽ chế tạo: chuẩn đo, dung sai và BOM”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s08",
+      "module": 6,
+      "title": "Drawing và thông tin chế tạo",
+      "summary": "Từ tấm đế ở bài S02, lập Drawing A4 có ba hình chiếu và isometric, kích thước cần chế tạo, xuất PDF và STEP để giảng viên kiểm tra.",
+      "level": "intermediate",
+      "minutes": 100,
+      "preview": false,
+      "prerequisites": [
+        "S02."
+      ],
+      "objectives": [
+        "Chọn hình chiếu để diễn đạt đủ hình học.",
+        "Đối chiếu Drawing, Part, STEP và PDF cùng revision."
+      ],
+      "concepts": [
+        [
+          "Bản vẽ là tài liệu truyền đạt",
+          "Người đọc cần xác định hình dạng, kích thước, chuẩn và thông tin chế tạo đã được duyệt. Hình isometric giúp nhận dạng nhưng không thay các hình chiếu hoặc mặt cắt cần đo. Chọn quy ước chiếu và ghi rõ; vị trí hình chiếu phải nhất quán với quy ước đó."
+        ],
+        [
+          "Kích thước phải đủ và không mâu thuẫn",
+          "Tấm đế cần dài/rộng/dày, đường kính/số lỗ và vị trí tâm lỗ theo chuẩn. Tránh ghi lặp cùng một quan hệ thành nhiều kích thước chế tạo có thể mâu thuẫn khi sửa. Center mark, centerline và ghi chú lỗ giúp đọc nhanh hơn một ảnh chỉ có hình khối."
+        ],
+        [
+          "Tệp xuất là một phần của bộ hồ sơ",
+          "Drawing phụ thuộc Part; PDF không giữ khả năng sửa kích thước như file native. STEP trao đổi hình học nhưng không chứa đầy đủ ý đồ feature. Kiểm từng tệp sau xuất, cùng revision. Khi chưa có vật liệu/dung sai được giao, ghi kích thước danh nghĩa học tập, không tự tạo yêu cầu sản xuất."
+        ]
+      ],
+      "steps": [
+        "Tạo Drawing A4 từ đúng Part của S02.",
+        "Đặt ba hình chiếu và isometric; chọn tỷ lệ đọc được.",
+        "Thêm center mark, kích thước và khung tên; kiểm không chồng chữ.",
+        "Xuất PDF và STEP, mở lại từng tệp rồi so với Part."
+      ],
+      "mistakes": [
+        "PDF bị cắt hoặc chữ quá nhỏ → Kiểm sheet size, scale và cách bố trí trước khi giảm cỡ chữ.",
+        "Drawing hiện hình cũ → Rebuild, kiểm model reference và revision của Part."
+      ],
+      "quiz": {
+        "question": "Sau sửa Part, trước bàn giao Drawing cần làm gì?",
+        "options": [
+          "Giữ PDF cũ",
+          "Rebuild/cập nhật và kiểm hình chiếu, kích thước, revision",
+          "Chỉ đổi tên",
+          "Chỉ đổi ngày"
+        ],
+        "answer": 1,
+        "explanation": "Drawing phải phản ánh mô hình và revision được bàn giao."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Tệp thiết kế theo đề: SLDPRT/SLDASM/SLDDRW, STEP hoặc PDF; tối đa 6 tệp, giữ đúng tên và đủ Part tham chiếu.; 1–2 ảnh Sketch/feature tree/kích thước/kết quả kiểm tra; ghi phiên bản SOLIDWORKS và phần cần giảng viên góp ý.",
+      "rubric": [
+        "Bố cục hình chiếu và quy ước/tỉ lệ rõ ràng. (25 điểm).",
+        "Kích thước xác định đầy đủ phôi, lỗ và vị trí. (25 điểm).",
+        "Drawing/Part nhất quán, liên kết không bị mất. (25 điểm).",
+        "Nộp SLDPRT, SLDDRW, PDF, STEP và ảnh bản vẽ dễ đọc. (25 điểm)."
+      ],
+      "discussion": "Có nên lấy kích thước bằng thước đo trên PDF khi thiếu ghi số không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Lập danh sách thông tin trước khi đặt kích thước",
+        "body": "Viết ra các thông tin người chế tạo cần: bao ngoài 80×50×8, hai lỗ Ø8, khoảng tâm 50 và tâm lỗ trên trục giữa. Chọn chuẩn để xác định vị trí, rồi đặt các kích thước một lần. Xem PDF ở khổ A4 và tỷ lệ in dự kiến để kiểm chữ có đọc được không.",
+        "rows": [
+          [
+            "Nhóm",
+            "Thông tin"
+          ],
+          [
+            "Khung tên",
+            "Tên chi tiết, revision, đơn vị, tỉ lệ, quy ước chiếu"
+          ],
+          [
+            "Bao ngoài",
+            "Dài, rộng, dày"
+          ],
+          [
+            "Lỗ",
+            "2×Ø8 xuyên và vị trí tâm"
+          ],
+          [
+            "Tình trạng hồ sơ",
+            "Danh nghĩa học tập; các giả định/vật liệu nếu được giao"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Có nên lấy kích thước bằng thước đo trên PDF khi thiếu ghi số không?",
+          "Không. Tỉ lệ hiển thị/in có thể khác; kích thước chức năng phải được ghi rõ."
+        ],
+        [
+          "Tại sao vẫn nộp SLDDRW nếu đã có PDF?",
+          "Để người chủ trì kiểm liên kết và khả năng cập nhật bản vẽ."
+        ]
+      ],
+      "assignment": {
+        "id": "s08",
+        "brief": "Từ tấm đế ở bài S02, lập Drawing A4 có ba hình chiếu và isometric, kích thước cần chế tạo, xuất PDF và STEP để giảng viên kiểm tra.",
+        "checks": [
+          [
+            "Đọc PDF",
+            "Chữ/kích thước không chồng hoặc bị cắt; đủ chiều dài/rộng/dày"
+          ],
+          [
+            "Thông số lỗ",
+            "2×Ø8; vị trí xác định được từ kích thước trên bản vẽ"
+          ],
+          [
+            "Đối chiếu Drawing và Part",
+            "Hình chiếu nhất quán, cùng phiên bản mô hình"
+          ],
+          [
+            "Mở lại bộ nộp",
+            "SLDDRW tìm được Part, STEP giữ hình dạng, PDF đọc được"
+          ]
+        ],
+        "criteria": [
+          "Bố cục hình chiếu và quy ước/tỉ lệ rõ ràng. (25 điểm).",
+          "Kích thước xác định đầy đủ phôi, lỗ và vị trí. (25 điểm).",
+          "Drawing/Part nhất quán, liên kết không bị mất. (25 điểm).",
+          "Nộp SLDPRT, SLDDRW, PDF, STEP và ảnh bản vẽ dễ đọc. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Weldments và cut list",
+      "module": 7,
+      "videos": [],
+      "concepts": [
+        [
+          "Khung bắt đầu từ skeleton",
+          "Sketch 2D/3D định nghĩa đường trục, sau đó structural member tạo profile. Nhóm segment và hướng profile quyết định corner treatment. Kiểm trim/extend ở giao điểm để tránh vật liệu chồng hoặc khe không mong muốn."
+        ],
+        [
+          "Cut list là dữ liệu sản xuất",
+          "Profile, vật liệu, chiều dài cắt và góc đầu cần kiểm đúng. Cập nhật cut list và đối chiếu model/drawing sau thay đổi skeleton. Các configuration as-welded/as-machined biểu diễn ngữ cảnh khác nhau; không trộn kích thước hoặc khối lượng giữa chúng."
+        ]
+      ],
+      "steps": [
+        "Tạo khung giả định 400×300×250 mm bằng skeleton.",
+        "Chọn profile, kiểm hướng và trim các đầu.",
+        "Xuất cut list và Drawing, thay một kích thước rồi xác nhận dữ liệu cập nhật."
+      ],
+      "quiz": {
+        "question": "Sau đổi skeleton, chỉ model cập nhật là đủ chưa?",
+        "options": [
+          "Đủ nếu cùng profile",
+          "Đủ",
+          "Chưa, kiểm cả cut list và Drawing",
+          "Đủ nếu không lỗi rebuild"
+        ],
+        "answer": 2,
+        "explanation": "Đầu ra sản xuất phải được đối chiếu theo revision mới."
+      },
+      "deliverable": "Khung weldment, cut list và Drawing có vật liệu/chiều dài.",
+      "id": "sb09",
+      "summary": "Sketch 2D/3D định nghĩa đường trục, sau đó structural member tạo profile.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Khung bắt đầu từ skeleton",
+        "Cut list là dữ liệu sản xuất"
+      ],
+      "mistakes": [
+        "Kiểm trim/extend ở giao điểm để tránh vật liệu chồng hoặc khe không mong muốn..",
+        "Các configuration as-welded/as-machined biểu diễn ngữ cảnh khác nhau; không trộn kích thước hoặc khối lượng giữa chúng.."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/English/SolidWorks/Sldworks/c_Weldments_Overview.htm"
+      ],
+      "rubric": [
+        "Khung weldment, cut list và Drawing có vật liệu/chiều dài.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Weldments và cut list”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "title": "Simulation: giả định, mesh và giới hạn kết luận",
+      "module": 7,
+      "videos": [],
+      "concepts": [
+        [
+          "Đặt bài toán trước khi bấm Run",
+          "Một study cần vật liệu, tải, fixture, contact và loại phân tích phù hợp. Cố định sai mặt có thể làm mô hình cứng giả tạo. Linear static chỉ phù hợp giả định tương ứng; không suy sang tác động động, biến dạng lớn hoặc phi tuyến khi chưa có mô hình đó."
+        ],
+        [
+          "Mesh đẹp không phải kiểm chứng",
+          "So kết quả với ước lượng tay, kiểm phản lực và xu hướng khi tinh chỉnh mesh. Stress singularity có thể tăng mãi khi mesh mịn tại góc/fixture lý tưởng hóa; không lấy giá trị max đơn lẻ làm kết luận bền. Khả năng study tùy add-in/giấy phép; bài không chứng nhận an toàn sản phẩm."
+        ]
+      ],
+      "steps": [
+        "Vẽ free-body diagram của một thanh console đơn giản.",
+        "Nêu vật liệu, tải, fixture và công thức ước lượng độ võng.",
+        "Nếu có Simulation, so ba mức mesh và phản lực; nếu chưa có, nộp kế hoạch kiểm chứng."
+      ],
+      "quiz": {
+        "question": "Một ảnh stress màu sau Run đã đủ chứng minh thiết kế đạt không?",
+        "options": [
+          "Đủ nếu màu xanh",
+          "Đủ nếu mesh nhiều phần tử",
+          "Đủ",
+          "Chưa, cần giả định, hội tụ và đối chiếu"
+        ],
+        "answer": 3,
+        "explanation": "Kết luận cần kiểm mô hình và dữ liệu, không chỉ hiển thị màu."
+      },
+      "deliverable": "Báo cáo giả định và kiểm chứng; tách kết quả tính khỏi xác nhận sản phẩm.",
+      "id": "sb10",
+      "summary": "Một study cần vật liệu, tải, fixture, contact và loại phân tích phù hợp.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Đặt bài toán trước khi bấm Run",
+        "Mesh đẹp không phải kiểm chứng"
+      ],
+      "mistakes": [
+        "Linear static chỉ phù hợp giả định tương ứng; không suy sang tác động động, biến dạng lớn hoặc phi tuyến khi chưa có mô hình đó..",
+        "Stress singularity có thể tăng mãi khi mesh mịn tại góc/fixture lý tưởng hóa; không lấy giá trị max đơn lẻ làm kết luận bền."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/cworks/c_Simulation_Studies.htm"
+      ],
+      "rubric": [
+        "Báo cáo giả định và kiểm chứng; tách kết quả tính khỏi xác nhận sản phẩm.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Simulation: giả định, mesh và giới hạn kết luận”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s10",
+      "module": 7,
+      "title": "Sheet Metal và bản trải",
+      "summary": "Thiết kế giá U bằng Sheet Metal: phần đáy phẳng giữa hai đường tiếp tuyến dài 60 mm, rộng 30 mm; hai vách 20 mm, tấm dày 1,5 mm, bán kính uốn trong 1,5 mm, giả định K=0,40.",
+      "level": "advanced",
+      "minutes": 160,
+      "preview": false,
+      "prerequisites": [
+        "S02, S08 và đọc quy ước kích thước."
+      ],
+      "objectives": [
+        "Phân biệt chiều dài phần thẳng với kích thước bao ngoài.",
+        "Tính bend allowance theo giả định của bài và so bản trải."
+      ],
+      "concepts": [
+        [
+          "Tấm kim loại giữ chiều dày",
+          "Dùng feature Sheet Metal để mô tả tấm có độ dày nhất quán và khả năng trải. S10 cho T=1,5 mm, bán kính uốn trong R=1,5 mm. Mô hình solid thường dựng bằng Extrude rồi cắt không tự có thông tin cần thiết để tạo flat pattern đúng."
+        ],
+        [
+          "K factor xác định lớp trung hòa theo mô hình",
+          "Trong bài, K=0,40 là tỷ số vị trí lớp trung hòa so với chiều dày tính từ mặt trong. Chiều dài cung trung hòa BA=θ×(R+K×T), với θ tính bằng radian. Đây là giả định học tập; K thực tế phụ thuộc vật liệu và quá trình, cần dữ liệu xưởng khi chế tạo."
+        ],
+        [
+          "Quy ước đo quyết định phép cộng",
+          "Đáy 60 mm là phần thẳng giữa hai tiếp tuyến; mỗi vách 20 mm là phần thẳng từ tiếp tuyến tới mép tự do. Vì vậy chiều dài phôi là 60+20+20+2BA. Nếu số 20 được nhập theo quy ước overall ngoài, phép cộng này không còn đúng; phải chọn đúng flange length hoặc hiệu chỉnh theo quy ước công cụ."
+        ]
+      ],
+      "steps": [
+        "Tạo Base Flange/Tab và đặt T, R, K theo đề.",
+        "Tạo hai vách, kiểm cách đo flange bằng mặt cắt và tiếp tuyến.",
+        "Flatten, đo kích thước và so với phép tính trước.",
+        "Tạo Drawing bản trải, ghi đường/hướng uốn và các giả định T/R/K."
+      ],
+      "mistakes": [
+        "Phôi khác khoảng vài mm → Kiểm đang dùng kích thước ngoài hay đoạn thẳng tới tiếp tuyến.",
+        "Flatten lỗi → Kiểm feature Sheet Metal, độ dày, bán kính và tự giao ở góc."
+      ],
+      "quiz": {
+        "question": "K-factor bài luyện có được áp dụng chắc chắn cho mọi nhà xưởng?",
+        "options": [
+          "Có nếu flat pattern xuất được",
+          "Có",
+          "Không, cần dữ liệu vật liệu/quy trình thực",
+          "Có nếu cùng mm"
+        ],
+        "answer": 2,
+        "explanation": "K-factor và bend data phải theo điều kiện chế tạo."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2024/english/SolidWorks/sldworks/c_Bend_Allowance_and_Bend_Deduction.htm",
+        "https://help.solidworks.com/2024/english/SolidWorks/sldworks/c_k_factor.htm",
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "SLDPRT, SLDDRW/PDF, STEP và bảng tính bend allowance .txt.; Ảnh Sheet Metal parameters, Flat-Pattern và trạng thái gập.",
+      "rubric": [
+        "Mô hình Sheet Metal và quy ước kích thước đúng. (25 điểm).",
+        "T/R/K, bend allowance và kích thước trải được đối chiếu. (25 điểm).",
+        "Gập/trải ổn định, không tự giao hoặc sai chiều dày. (25 điểm).",
+        "Hồ sơ có hướng uốn và ghi giả định để chủ trì kiểm tra. (25 điểm)."
+      ],
+      "discussion": "K=0,40 có dùng để đặt gia công mọi vật liệu không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Tính phôi với hai góc uốn 90 độ",
+        "body": "Mỗi góc có θ=π/2. BA=(π/2)×(1,5+0,40×1,5)≈3,29867 mm. Tổng phôi theo chiều dài là 106,59734 mm, rộng 30 mm. So với Flat Pattern và kiểm cách định nghĩa chiều dài flange trước khi cho rằng công cụ tính sai.",
+        "rows": [
+          [
+            "Đại lượng",
+            "Giá trị"
+          ],
+          [
+            "T và R",
+            "1,5 mm và 1,5 mm"
+          ],
+          [
+            "K giả định",
+            "0,40"
+          ],
+          [
+            "BA mỗi góc 90°",
+            "3,299 mm"
+          ],
+          [
+            "Tổng phôi theo quy ước đề",
+            "106,597×30 mm"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "K=0,40 có dùng để đặt gia công mọi vật liệu không?",
+          "Không. Cần dữ liệu quá trình và hiệu chuẩn của xưởng."
+        ],
+        [
+          "Đổi cách ghi kích thước mà không đổi công thức có được không?",
+          "Không. Công thức cộng phải theo cùng quy ước hình học."
+        ]
+      ],
+      "assignment": {
+        "id": "s10",
+        "brief": "Thiết kế giá U bằng Sheet Metal: phần đáy phẳng giữa hai đường tiếp tuyến dài 60 mm, rộng 30 mm; hai vách 20 mm, tấm dày 1,5 mm, bán kính uốn trong 1,5 mm, giả định K=0,40.",
+        "checks": [
+          [
+            "Một góc uốn 90° với R=1,5; K=0,4; T=1,5",
+            "BA≈3,299 mm"
+          ],
+          [
+            "Phôi theo các đoạn thẳng 60+20+20",
+            "Chiều dài≈106,597 mm, rộng 30 mm theo quy ước đề"
+          ],
+          [
+            "Gập/trải và rebuild",
+            "Không tự giao, chiều dày nhất quán 1,5 mm"
+          ],
+          [
+            "Bản vẽ trải",
+            "Có hướng/đường uốn và ghi T/R/K giả định"
+          ]
+        ],
+        "criteria": [
+          "Mô hình Sheet Metal và quy ước kích thước đúng. (25 điểm).",
+          "T/R/K, bend allowance và kích thước trải được đối chiếu. (25 điểm).",
+          "Gập/trải ổn định, không tự giao hoặc sai chiều dày. (25 điểm).",
+          "Hồ sơ có hướng uốn và ghi giả định để chủ trì kiểm tra. (25 điểm)."
+        ]
+      }
+    },
+    {
+      "title": "Bàn giao bằng Pack and Go, STEP và kiểm file",
+      "module": 8,
+      "videos": [],
+      "concepts": [
+        [
+          "Nguồn thiết kế và định dạng trao đổi",
+          "SLDPRT/SLDASM/SLDDRW giữ cấu trúc native và tham chiếu; STEP dùng trao đổi hình học với hệ khác nhưng không đảm bảo giữ feature history hay mọi dữ liệu tùy chọn. Gửi đúng loại file theo nhu cầu chỉnh sửa, review hoặc gia công."
+        ],
+        [
+          "Kiểm gói trên thư mục sạch",
+          "Pack and Go thu thập tham chiếu theo tùy chọn; cần kiểm cả Drawing, thư viện hoặc file ngoài phạm vi được chọn. Mở từ thư mục mới và xác nhận không resolve về bản gốc. Đổi tên/revision có quy trình để tránh hai part khác nhau chung tên trong assembly."
+        ]
+      ],
+      "steps": [
+        "Tạo gói Pack and Go có Part/Assembly/Drawing và tài liệu liên quan.",
+        "Mở từ thư mục riêng, xác nhận không thiếu tham chiếu.",
+        "Xuất STEP/PDF và so kích thước, units, số body, configuration."
+      ],
+      "quiz": {
+        "question": "STEP luôn giữ toàn bộ cây feature native của SOLIDWORKS không?",
+        "options": [
+          "Có nếu đổi đuôi thành SLDPRT",
+          "Có nếu có màu",
+          "Luôn",
+          "Không"
+        ],
+        "answer": 3,
+        "explanation": "Định dạng trao đổi hình học không thay nguồn thiết kế native."
+      },
+      "deliverable": "Gói bàn giao có manifest, source native và output đã mở kiểm.",
+      "id": "sb11",
+      "summary": "SLDPRT/SLDASM/SLDDRW giữ cấu trúc native và tham chiếu; STEP dùng trao đổi hình học với hệ khác nhưng không đảm bảo giữ feature history hay mọi dữ liệu tùy chọn.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Nguồn thiết kế và định dạng trao đổi",
+        "Kiểm gói trên thư mục sạch"
+      ],
+      "mistakes": [
+        "SLDPRT/SLDASM/SLDDRW giữ cấu trúc native và tham chiếu; STEP dùng trao đổi hình học với hệ khác nhưng không đảm bảo giữ feature history hay mọi dữ liệu tùy chọn.",
+        "Mở từ thư mục mới và xác nhận không resolve về bản gốc."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_Pack_Go_Overview.htm"
+      ],
+      "rubric": [
+        "Gói bàn giao có manifest, source native và output đã mở kiểm.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Bàn giao bằng Pack and Go, STEP và kiểm file”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "title": "Đồ án liên môn: vỏ cho board KiCad và firmware C",
+      "module": 8,
+      "videos": [],
+      "concepts": [
+        [
+          "Chốt giao diện trước khi dựng vỏ",
+          "Dùng revision board cụ thể gồm outline, mounting holes, connectors và envelope linh kiện. Xác định nguồn nhiệt, thao tác nạp, đường cáp và cách tháo lắp. Firmware có LED/nút/reset cần vị trí tương ứng; không chỉ kiểm bo nằm lọt trong hộp."
+        ],
+        [
+          "Nghiệm thu theo bằng chứng liên môn",
+          "KiCad cung cấp board và STEP, SOLIDWORKS cung cấp cụm vỏ/drawing, C cung cấp firmware demo cùng log. Kiểm một tình huống đổi vị trí connector để thấy tài liệu nào cần cập nhật. Kết luận thiết kế đã kiểm hình học phải tách khỏi thử lắp thật và kiểm nhiệt thực tế."
+        ]
+      ],
+      "steps": [
+        "Lập bảng giao diện cơ điện cho board 40×30 mm và vùng linh kiện cao 10 mm theo bài luyện.",
+        "Dựng thân/nắp/gối và kiểm trình tự lắp, cáp, nút, LED, SWD.",
+        "Bàn giao bộ đồng revision với báo cáo clearance, Drawing và video demo của học viên nếu có."
+      ],
+      "quiz": {
+        "question": "Khi connector trên PCB đổi vị trí, phần nào cần xem xét cập nhật?",
+        "options": [
+          "Chỉ schematic",
+          "Layout, STEP, vỏ và tài liệu liên quan theo ảnh hưởng",
+          "Chỉ màu vỏ",
+          "Không cần nếu board cùng kích thước"
+        ],
+        "answer": 1,
+        "explanation": "Giao diện cơ điện và toàn bộ tài liệu liên quan phải cùng revision."
+      },
+      "deliverable": "Gói đồ án ba môn và ma trận yêu cầu→file→bằng chứng.",
+      "id": "sb12",
+      "summary": "Dùng revision board cụ thể gồm outline, mounting holes, connectors và envelope linh kiện.",
+      "preview": false,
+      "level": "advanced",
+      "minutes": 60,
+      "prerequisites": [
+        "Hoàn thành các bài trước trong lộ trình hoặc tự đối chiếu kiến thức cần có."
+      ],
+      "objectives": [
+        "Chốt giao diện trước khi dựng vỏ",
+        "Nghiệm thu theo bằng chứng liên môn"
+      ],
+      "mistakes": [
+        "Firmware có LED/nút/reset cần vị trí tương ứng; không chỉ kiểm bo nằm lọt trong hộp.."
+      ],
+      "sources": [
+        "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_Top-Down_Design_Overview.htm"
+      ],
+      "rubric": [
+        "Gói đồ án ba môn và ma trận yêu cầu→file→bằng chứng.",
+        "Giải thích được các quyết định và điều kiện áp dụng trong bài.",
+        "Có bằng chứng trước/sau thay đổi hoặc ca thử biên phù hợp."
+      ],
+      "discussion": "Với bài “Đồ án liên môn: vỏ cho board KiCad và firmware C”, hãy giải thích một quyết định của bạn và cách kiểm chứng nó.",
+      "codeLanguage": null
+    },
+    {
+      "id": "s12",
+      "module": 8,
+      "title": "Vỏ thiết bị và phối hợp cơ điện",
+      "summary": "Thiết kế thân, nắp và mô hình bo tham chiếu 40×30×1,6 mm; chiều cao linh kiện tối đa 10 mm. Đề xuất gối đỡ, chỗ bắt vít và cửa cổng kết nối; khoảng hở danh nghĩa tới linh kiện tối thiểu 1 mm.",
+      "level": "advanced",
+      "minutes": 240,
+      "preview": false,
+      "prerequisites": [
+        "S02, S07-S11."
+      ],
+      "objectives": [
+        "Dùng bo tham chiếu và vùng linh kiện để định nghĩa không gian vỏ.",
+        "Kiểm khoảng hở, đường lắp và bộ hồ sơ bàn giao."
+      ],
+      "concepts": [
+        [
+          "Bao linh kiện là đầu vào của thiết kế vỏ",
+          "Bo danh nghĩa 40×30×1,6 mm có linh kiện cao tối đa 10 mm. Tạo mô hình bo và một vùng bao linh kiện rõ ràng; không chỉ dùng tấm phẳng rồi quên chiều cao. Khoảng hở tối thiểu 1 mm tới linh kiện là yêu cầu hình học danh nghĩa, không tự là dung sai sản xuất."
+        ],
+        [
+          "Lắp được cần xét trình tự",
+          "Đề xuất vị trí gối đỡ, vít, cửa connector và đường đưa bo vào. Kiểm không gian thao tác đầu vít và cáp, không chỉ trạng thái cuối đã đóng nắp. Vị trí lỗ bắt vít và connector chưa được cho phải đưa vào bảng giả định để người chủ trì duyệt; tránh đặt gối vào vùng copper/linh kiện chưa xác nhận."
+        ],
+        [
+          "Tách kết luận thiết kế khỏi kiểm chứng sản phẩm",
+          "Rebuild, section, interference và đo clearance là bằng chứng hình học. Vật liệu, độ dày vách, khả năng in/gia công, tản nhiệt và dung sai cần quyết định riêng. Giữ cùng revision giữa bo, vỏ, Drawing và STEP để người khác không ghép các bản không tương thích."
+        ]
+      ],
+      "steps": [
+        "Tạo bo tham chiếu, bao linh kiện, thân và nắp trong các Part có tên rõ.",
+        "Lập bảng giả định cơ điện trước khi cắt cửa và đặt gối.",
+        "Lắp Assembly, đo clearance và kiểm đường lắp/tháo.",
+        "Xuất hồ sơ, mở lại từ thư mục sạch và chuẩn bị thuyết minh các giới hạn."
+      ],
+      "mistakes": [
+        "Đóng nắp được nhưng không lắp bo vào được → Chưa xét trình tự lắp, cửa cáp hoặc không gian dụng cụ.",
+        "Khoảng hở mất sau đổi bo → Kiểm revision và tham chiếu hình học giữa các Part."
+      ],
+      "quiz": {
+        "question": "Cao trong vỏ tối thiểu 15,6 mm có tự bằng cao ngoài không?",
+        "options": [
+          "Có nếu model solid",
+          "Có",
+          "Không, còn đáy/nắp và cấu trúc",
+          "Có nếu không đổi màu"
+        ],
+        "answer": 2,
+        "explanation": "Kích thước trong và ngoài có chuẩn và thành phần khác nhau."
+      },
+      "videos": [],
+      "sources": [
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Mates_Overview_Assemblies.htm",
+        "https://help.solidworks.com/2025/english/solidworks/sldworks/c_Best_Practices_for_Mates_SWassy.htm",
+        "https://help.solidworks.com"
+      ],
+      "deliverable": "Một Assembly, ba Part, PDF Drawing và checklist .txt; giữ đúng tên tham chiếu.; 1–2 ảnh section/Measure và bảng kết quả; liệt kê việc cần người chủ trì xác nhận.",
+      "rubric": [
+        "Bảng yêu cầu/giả định và mô hình bo đúng đề. (25 điểm).",
+        "Vỏ/gối/cổng và khoảng hở có bằng chứng đo. (25 điểm).",
+        "Assembly, khả năng lắp tháo và kiểm tra giao thoa rõ. (25 điểm).",
+        "Hồ sơ đầy đủ, mở lại được và nêu giới hạn trước chế tạo. (25 điểm)."
+      ],
+      "discussion": "Khoảng hở danh nghĩa 1 mm có bảo đảm sản phẩm thật không chạm không?",
+      "code": null,
+      "codeLanguage": null,
+      "example": {
+        "title": "Tính chiều cao trong tối thiểu theo một giả định",
+        "body": "Nếu mặt dưới bo nằm cao 3 mm so với đáy trong, đỉnh linh kiện ở cao 3+1,6+10=14,6 mm. Muốn hở 1 mm phía trên, mặt dưới nắp cần cao ít nhất 15,6 mm theo giả định đó. Chưa tính chiều dày đáy/nắp, đầu vít hoặc vùng cáp; không dùng 15,6 làm chiều cao ngoài của vỏ.",
+        "rows": [
+          [
+            "Đầu vào",
+            "Giá trị hoặc việc cần chốt"
+          ],
+          [
+            "Bo và vùng linh kiện",
+            "40×30×1,6; cao linh kiện 10 mm"
+          ],
+          [
+            "Khoảng hở",
+            "≥1 mm tại vị trí đã đo"
+          ],
+          [
+            "Gối/vít/connector",
+            "Kích thước và vị trí phải ghi giả định"
+          ],
+          [
+            "Công nghệ/vật liệu",
+            "Đề xuất riêng, chờ người chủ trì duyệt"
+          ]
+        ]
+      },
+      "questions": [
+        [
+          "Khoảng hở danh nghĩa 1 mm có bảo đảm sản phẩm thật không chạm không?",
+          "Chưa. Cần chuỗi dung sai, công nghệ và thử lắp thật."
+        ],
+        [
+          "Chiều cao trong có bằng chiều cao ngoài không?",
+          "Không. Phải cộng chiều dày và cấu trúc đáy/nắp theo thiết kế."
+        ]
+      ],
+      "assignment": {
+        "id": "s12",
+        "brief": "Thiết kế thân, nắp và mô hình bo tham chiếu 40×30×1,6 mm; chiều cao linh kiện tối đa 10 mm. Đề xuất gối đỡ, chỗ bắt vít và cửa cổng kết nối; khoảng hở danh nghĩa tới linh kiện tối thiểu 1 mm.",
+        "checks": [
+          [
+            "Bo tham chiếu",
+            "40×30×1,6 mm, vùng linh kiện cao 10 mm"
+          ],
+          [
+            "Khoảng hở tới linh kiện",
+            "Tối thiểu 1 mm theo mô hình danh nghĩa; có vị trí đo"
+          ],
+          [
+            "Assembly/đóng nắp",
+            "Không giao thoa dương ở phần không chủ đích, có đường lắp tháo"
+          ],
+          [
+            "Bộ hồ sơ",
+            "Mở lại đủ file, kích thước cửa/cố định thống nhất với bảng giả định"
+          ]
+        ],
+        "criteria": [
+          "Bảng yêu cầu/giả định và mô hình bo đúng đề. (25 điểm).",
+          "Vỏ/gối/cổng và khoảng hở có bằng chứng đo. (25 điểm).",
+          "Assembly, khả năng lắp tháo và kiểm tra giao thoa rõ. (25 điểm).",
+          "Hồ sơ đầy đủ, mở lại được và nêu giới hạn trước chế tạo. (25 điểm)."
+        ]
+      }
+    }
+  ]
+}

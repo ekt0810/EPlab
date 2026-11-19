@@ -1,0 +1,1849 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bắt đầu với KiCad",
+      "subtitle": "Từ ý tưởng đến quy trình thiết kế",
+      "icon": "compass",
+      "level": "Nhập môn",
+      "color": "sage"
+    },
+    {
+      "id": 2,
+      "title": "Đọc và vẽ schematic",
+      "subtitle": "Kết nối đúng trước khi vẽ đẹp",
+      "icon": "circuit",
+      "level": "Cơ bản",
+      "color": "blue"
+    },
+    {
+      "id": 3,
+      "title": "Linh kiện & footprint",
+      "subtitle": "Nối bản vẽ với linh kiện thực tế",
+      "icon": "chip",
+      "level": "Cơ bản",
+      "color": "violet"
+    },
+    {
+      "id": 4,
+      "title": "Bố trí PCB",
+      "subtitle": "Một layout tốt bắt đầu từ placement",
+      "icon": "layers",
+      "level": "Thực hành",
+      "color": "sand"
+    },
+    {
+      "id": 5,
+      "title": "Routing & đường hồi dòng",
+      "subtitle": "Dẫn tín hiệu, kiểm soát vòng dòng",
+      "icon": "route",
+      "level": "Thực hành",
+      "color": "sage"
+    },
+    {
+      "id": 6,
+      "title": "Nguồn & tín hiệu",
+      "subtitle": "Decoupling, USB, I²C và bảo vệ",
+      "icon": "zap",
+      "level": "Nâng cao",
+      "color": "blue"
+    },
+    {
+      "id": 7,
+      "title": "Kiểm tra & sản xuất",
+      "subtitle": "Từ DRC đến bộ hồ sơ chế tạo",
+      "icon": "check",
+      "level": "Thực hành",
+      "color": "violet"
+    },
+    {
+      "id": 8,
+      "title": "Đồ án bo STM32",
+      "subtitle": "Tự thiết kế, tự review, tự hoàn thiện",
+      "icon": "flag",
+      "level": "Đồ án",
+      "color": "sand"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "module": 1,
+      "title": "Một bo mạch được tạo ra như thế nào?",
+      "minutes": 20,
+      "summary": "Hiểu toàn bộ hành trình: yêu cầu → schematic → footprint → PCB → kiểm tra → sản xuất.",
+      "preview": false,
+      "concepts": [
+        [
+          "Bản vẽ logic và bản vẽ vật lý",
+          "Schematic trả lời chân nào nối với chân nào. PCB trả lời linh kiện đặt ở đâu và đồng đi như thế nào. Hai bản vẽ phải thống nhất, nhưng một schematic đúng chưa đủ bảo đảm PCB hoạt động. Vị trí linh kiện, vòng dòng và đường hồi cũng quan trọng."
+        ],
+        [
+          "Bốn đầu ra bạn cần giữ",
+          "Project (.kicad_pro) giữ cấu hình; schematic (.kicad_sch) giữ mạch nguyên lý; PCB (.kicad_pcb) giữ layout; thư viện riêng giữ symbol và footprint tự tạo. Gerber là dữ liệu chế tạo, không thay thế các tệp thiết kế gốc."
+        ],
+        [
+          "Bắt đầu bằng yêu cầu có thể đo",
+          "Ví dụ đầu tiên là bo LED dùng nguồn DC 5 V, một LED đỏ và điện trở hạn dòng 1 kΩ. Nếu điện áp thuận LED khoảng 2 V, dòng ước tính là (5−2)/1000 = 3 mA. Đây là giá trị minh họa; hãy kiểm tra datasheet của LED thật. Chỉ dùng nguồn thấp áp có giới hạn dòng khi thực hành."
+        ]
+      ],
+      "steps": [
+        "Viết đầu vào, đầu ra, điện áp, kích thước và cách cấp nguồn của bo.",
+        "Tạo project mới trong thư mục riêng; đặt tên không dấu và lưu cả schematic lẫn PCB.",
+        "Vẽ một sơ đồ khối: nguồn 5 V → điện trở → LED → GND.",
+        "Đặt tên phiên bản v0.1 và tạo thư mục fabrication để lưu đầu ra đã kiểm tra."
+      ],
+      "mistakes": [
+        "Không bắt đầu routing khi chưa xác định yêu cầu.",
+        "Không xem hình 3D đẹp là bằng chứng mạch đã nối đúng."
+      ],
+      "quiz": {
+        "question": "Tệp nào lưu cách đi dây đồng và vị trí linh kiện?",
+        "options": [
+          ".kicad_sch",
+          ".kicad_pcb",
+          "Ảnh chụp màn hình",
+          "BOM"
+        ],
+        "answer": 1,
+        "explanation": "PCB lưu layout vật lý; schematic lưu kết nối logic."
+      },
+      "videoIds": [
+        "aVUqaB0IMh4",
+        "O-zNn5k5Bn4"
+      ],
+      "exerciseId": "e01",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l02",
+      "module": 1,
+      "title": "Thiết lập project và thói quen làm việc",
+      "minutes": 25,
+      "summary": "Tạo cấu trúc tệp có thể mở lại và bàn giao trên máy khác.",
+      "preview": false,
+      "concepts": [
+        [
+          "Một project, một nơi lưu",
+          "Dùng thư mục riêng cho từng bo. Khi sửa thiết kế đã đặt hàng, tạo phiên bản mới và giữ nguyên bản đã sản xuất để đối chiếu. Chép cả thư mục project khi sao lưu; không chỉ chép một ảnh hay một Gerber."
+        ],
+        [
+          "Thư viện mặc định và thư viện project",
+          "Thư viện global dùng trên máy hiện tại, còn thư viện project giúp người khác mở thiết kế. Nếu tự tạo linh kiện, ưu tiên đường dẫn tương đối ${KIPRJMOD} để thư viện theo cùng project."
+        ],
+        [
+          "Chọn phiên bản nhất quán",
+          "Các video tham chiếu dùng KiCad 6, 7 hoặc 9. Giáo trình lấy thao tác KiCad 9 làm mốc; tên menu có thể khác ở bản khác. Sao lưu trước khi mở project cũ trong bản mới vì định dạng sau khi lưu có thể không mở ngược được."
+        ]
+      ],
+      "steps": [
+        "Tải KiCad từ kicad.org và cài cả thư viện đi kèm.",
+        "Tạo project led-practice và mở hai editor từ Project Manager.",
+        "Tạo thư mục libraries, references, fabrication và ghi phiên bản KiCad vào README.",
+        "Đóng rồi mở lại project để kiểm tra không mất liên kết thư viện."
+      ],
+      "mistakes": [
+        "Tránh đường dẫn thư viện trỏ tới thư mục Downloads của một máy.",
+        "Không sửa trực tiếp thư viện mặc định rồi kỳ vọng thay đổi đi theo project."
+      ],
+      "quiz": {
+        "question": "Cách nào giúp thư viện riêng đi cùng project?",
+        "options": [
+          "Chỉ chụp hình footprint",
+          "Dùng đường dẫn tuyệt đối của máy mình",
+          "Lưu thư viện trong project và dùng đường dẫn tương đối",
+          "Chỉ gửi Gerber"
+        ],
+        "answer": 2,
+        "explanation": "Đường dẫn tương đối tới thư viện project giúp thiết kế có tính di động."
+      },
+      "videoIds": [
+        "O-zNn5k5Bn4"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l03",
+      "module": 1,
+      "title": "Đọc datasheet và chọn linh kiện",
+      "minutes": 35,
+      "summary": "Phân biệt thông số làm việc, giới hạn tuyệt đối và package.",
+      "preview": false,
+      "concepts": [
+        [
+          "Không thiết kế tại giới hạn tuyệt đối",
+          "Absolute maximum là giới hạn tránh hư hỏng, không phải điểm vận hành khuyến nghị. Đọc operating conditions để chọn nguồn, nhiệt độ và dòng làm việc. Với LDO, kiểm tra dropout tại dòng dự kiến thay vì chỉ nhìn điện áp đầu ra."
+        ],
+        [
+          "Tên gần giống chưa chắc thay thế được",
+          "Hậu tố mã hàng có thể thay đổi package, dải nhiệt độ hoặc pinout. Ghi mã linh kiện đầy đủ trong BOM; đối chiếu số chân, chức năng chân, pin 1 và kích thước. Hai linh kiện cùng tên họ không mặc nhiên cùng footprint."
+        ],
+        [
+          "Tính trước khi vẽ",
+          "Với LED: R=(Vnguồn−Vf)/I và P=I²R. Với LDO: tổn hao gần bằng (Vin−Vout)×I. Bài toán 5 V xuống 3,3 V ở 100 mA cho khoảng 0,17 W; còn nhiệt độ thực tế phụ thuộc package và đồng tản nhiệt."
+        ]
+      ],
+      "steps": [
+        "Lập bảng cho từng linh kiện: mã hàng, nguồn cho phép, dòng, package và link datasheet.",
+        "Đánh dấu các chân nguồn, GND, chân chức năng bắt buộc và chân không nối.",
+        "So sánh footprint dự kiến với bản vẽ cơ khí trong datasheet.",
+        "Viết ít nhất một phép tính kiểm tra điện trở LED hoặc công suất LDO."
+      ],
+      "mistakes": [
+        "Không chọn footprint chỉ dựa vào số chân.",
+        "Không lấy absolute maximum làm điện áp dùng hàng ngày."
+      ],
+      "quiz": {
+        "question": "LDO 5 V → 3,3 V cấp 100 mA có tổn hao xấp xỉ bao nhiêu?",
+        "options": [
+          "0,017 W",
+          "0,17 W",
+          "1,7 W",
+          "5 W"
+        ],
+        "answer": 1,
+        "explanation": "P≈(5−3,3)×0,1=0,17 W; cần kiểm tra thêm điều kiện nhiệt."
+      },
+      "videoIds": [
+        "O-zNn5k5Bn4"
+      ],
+      "exerciseId": "e02",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l04",
+      "module": 2,
+      "title": "Vẽ mạch LED đầu tiên",
+      "minutes": 40,
+      "summary": "Đặt symbol, nối dây và xác định đúng cực tính.",
+      "preview": false,
+      "concepts": [
+        [
+          "Một vòng dòng hoàn chỉnh",
+          "Nguồn dương đi qua điện trở rồi LED và trở về GND. Điện trở có thể nằm trước hoặc sau LED trong cùng một nhánh nối tiếp. Đảo LED có thể làm LED không sáng; thiếu điện trở có thể làm quá dòng."
+        ],
+        [
+          "Dây phải chạm chân trên lưới",
+          "Hai nét trông có vẻ chạm nhau chưa chắc là cùng net. Dùng wire, không dùng đường đồ họa, và kiểm tra bằng highlight net. Giữ chân symbol và dây trên cùng lưới để tránh hở rất nhỏ."
+        ],
+        [
+          "Thông tin đủ để người khác đọc",
+          "Đặt reference J1, R1, D1 và value rõ. Ghi đầu nối pin 1 là +5 V, pin 2 là GND. Với LED đỏ giả định Vf≈2 V, R1=1 kΩ tạo dòng gần 3 mA. Không suy ra pin anode/cathode chỉ từ hình footprint; đối chiếu số pad."
+        ]
+      ],
+      "steps": [
+        "Đặt connector 1×02, resistor và LED trong Schematic Editor.",
+        "Nối J1.1 → R1 → anode D1; cathode D1 → J1.2 (GND).",
+        "Điền value và đặt nhãn +5V, GND.",
+        "Highlight từng net và chạy ERC; xử lý cảnh báo nguồn theo mô hình cấp nguồn thật."
+      ],
+      "mistakes": [
+        "Đừng dùng đường vẽ đồ họa thay wire.",
+        "Đừng bỏ qua chân LED bị đảo vì hình schematic có vẻ đẹp."
+      ],
+      "quiz": {
+        "question": "Trong nhánh LED nối tiếp, điện trở hạn dòng có thể ở đâu?",
+        "options": [
+          "Chỉ trước anode",
+          "Chỉ sau cathode",
+          "Trước hoặc sau LED nếu vẫn nối tiếp",
+          "Nối song song LED"
+        ],
+        "answer": 2,
+        "explanation": "Dòng qua các phần tử nối tiếp bằng nhau."
+      },
+      "videoIds": [
+        "aVUqaB0IMh4"
+      ],
+      "exerciseId": "e03",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l05",
+      "module": 2,
+      "title": "Net label, bus và sơ đồ phân cấp",
+      "minutes": 35,
+      "summary": "Đặt tên kết nối để schematic dễ đọc và không nối nhầm.",
+      "preview": false,
+      "concepts": [
+        [
+          "Tên net là một phần của thiết kế",
+          "Dùng tên thể hiện chức năng như SENSOR_SCL, USB_DP, +3V3. Không dùng cùng tên cho hai tín hiệu khác nhau. Trên sơ đồ nhiều trang, cần hiểu phạm vi của local, global và hierarchical labels."
+        ],
+        [
+          "Bus không tự nối mọi đường",
+          "Bus giúp nhóm tín hiệu và biểu diễn gọn; mỗi tín hiệu vẫn cần kết nối và nhãn đúng. Đừng dùng bus để che một sơ đồ chưa được kiểm tra. Net highlight là cách kiểm tra trực tiếp tốt hơn nhìn nét vẽ."
+        ],
+        [
+          "Phân trang theo khối chức năng",
+          "Một trang nguồn, một trang MCU và một trang giao tiếp giúp review theo trình tự. Hierarchical sheet pins làm rõ giao diện giữa khối. Với bo nhỏ, một trang rõ ràng thường hiệu quả hơn chia quá nhiều trang."
+        ]
+      ],
+      "steps": [
+        "Đặt tên riêng cho nguồn, tín hiệu clock, data và reset.",
+        "Tạo một sheet sensor và đưa SCL/SDA ra qua hierarchical pins.",
+        "Highlight từng kết nối từ sheet cha xuống sheet con.",
+        "Đổi một nhãn thử nghiệm để quan sát kết nối thay đổi, rồi phục hồi."
+      ],
+      "mistakes": [
+        "Hai label giống nhau có thể nối các vị trí xa nhau ngoài ý muốn.",
+        "Một dòng chữ thường không thay thế net label."
+      ],
+      "quiz": {
+        "question": "Cách chắc hơn để xác nhận hai điểm thuộc cùng net là gì?",
+        "options": [
+          "Nhìn màu nền",
+          "Dùng net highlight/navigator",
+          "Đo khoảng cách trên giấy",
+          "Xem thứ tự BOM"
+        ],
+        "answer": 1,
+        "explanation": "Highlight kiểm tra net mà KiCad hiểu, thay vì chỉ kiểm tra hình vẽ."
+      },
+      "videoIds": [
+        "nkHFoxe0mrU"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l06",
+      "module": 2,
+      "title": "ERC: hiểu lỗi trước khi xóa lỗi",
+      "minutes": 35,
+      "summary": "Kiểm tra loại chân, nguồn cấp và kết nối hở có chủ đích.",
+      "preview": false,
+      "concepts": [
+        [
+          "ERC kiểm tra mô hình kết nối",
+          "ERC phát hiện những tình huống như output nối output hoặc power input không được drive. Nó không biết toàn bộ ý đồ mạch và không bảo đảm một giá trị điện trở hay IC được chọn đúng."
+        ],
+        [
+          "PWR_FLAG không tạo ra nguồn điện",
+          "Cờ này thông báo với bộ kiểm tra rằng net được cấp nguồn từ ngoài. Chỉ đặt khi mạch thật có nguồn cấp; thêm PWR_FLAG để xóa cảnh báo trên một net vô tình hở sẽ che lỗi."
+        ],
+        [
+          "No-connect là lời xác nhận có chủ đích",
+          "Đánh dấu no-connect cho chân được phép để trống theo datasheet. Không gắn hàng loạt trước khi đọc chức năng chân, đặc biệt chân nguồn, boot hoặc tham chiếu analog. Lưu giải thích cho cảnh báo chấp nhận."
+        ]
+      ],
+      "steps": [
+        "Chạy ERC trước khi chuyển sang PCB.",
+        "Mở từng lỗi và đối chiếu pin type, kết nối, nguồn ngoài.",
+        "Sửa hở hoặc pin type sai trong thư viện riêng; đánh dấu no-connect khi hợp lý.",
+        "Lưu báo cáo ERC và ghi lý do cho mọi cảnh báo còn lại."
+      ],
+      "mistakes": [
+        "Không vô hiệu hóa nhóm lỗi chỉ để đạt số 0.",
+        "Không xem ERC 0 lỗi là chứng nhận mạch hoạt động."
+      ],
+      "quiz": {
+        "question": "PWR_FLAG dùng để làm gì?",
+        "options": [
+          "Tạo nguồn 3,3 V",
+          "Thông báo net được cấp nguồn cho ERC",
+          "Tăng độ rộng track",
+          "Bảo vệ ngược cực"
+        ],
+        "answer": 1,
+        "explanation": "PWR_FLAG là thông tin cho bộ kiểm tra, không phải linh kiện cấp nguồn."
+      },
+      "videoIds": [
+        "O-zNn5k5Bn4"
+      ],
+      "exerciseId": "e04",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l07",
+      "module": 3,
+      "title": "Symbol, footprint và pin mapping",
+      "minutes": 40,
+      "summary": "Kiểm tra cầu nối quan trọng nhất giữa schematic và linh kiện thật.",
+      "preview": false,
+      "concepts": [
+        [
+          "Ba cách nhìn một linh kiện",
+          "Symbol mô tả chức năng điện; footprint mô tả pad trên PCB; mô hình 3D mô tả hình dạng. Một mô hình 3D vừa khít không chứng minh pad đã nối đúng chức năng."
+        ],
+        [
+          "Số chân phải khớp",
+          "KiCad nối pin number trong symbol với pad number trong footprint. Với transistor hoặc diode, pinout có thể khác dù package giống nhau. Ghi bảng pin 1 → pad 1 → chức năng để kiểm tra có hệ thống."
+        ],
+        [
+          "Đọc kích thước bằng đơn vị đúng",
+          "SOIC, TSSOP, QFN hay 0603 chưa đủ thông tin nếu bỏ qua bề rộng thân, pitch và tiêu chuẩn kích thước. Kiểm tra cả mm/inch, courtyard, solder mask và dấu pin 1."
+        ]
+      ],
+      "steps": [
+        "Mở bảng Assign Footprints và lọc theo package đã chọn.",
+        "So datasheet với pad count, pitch, body size và pin 1.",
+        "Tạo bảng đối chiếu pin/pad cho connector, LED và IC.",
+        "Mở footprint trong editor để đo lại kích thước quan trọng."
+      ],
+      "mistakes": [
+        "Không dùng tên gần giống thay cho đo kích thước.",
+        "Không đổi pad number chỉ để routing thuận tiện."
+      ],
+      "quiz": {
+        "question": "KiCad liên kết chân schematic với pad PCB bằng gì?",
+        "options": [
+          "Màu symbol",
+          "Số pin và số pad",
+          "Tên file 3D",
+          "Vị trí trên màn hình"
+        ],
+        "answer": 1,
+        "explanation": "Pin number phải ánh xạ đúng pad number."
+      },
+      "videoIds": [
+        "aVUqaB0IMh4"
+      ],
+      "exerciseId": "e05",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l08",
+      "module": 3,
+      "title": "Tạo thư viện riêng có thể kiểm chứng",
+      "minutes": 45,
+      "summary": "Tự tạo symbol và footprint theo bản vẽ cơ khí.",
+      "preview": false,
+      "concepts": [
+        [
+          "Bắt đầu từ dữ liệu có nguồn",
+          "Tạo một connector 1×03 pitch 2,54 mm để luyện tập. Bài học này dùng kích thước giả định của bài tập, không phải footprint dùng ngay cho mọi connector thực tế. Trước khi sản xuất, thay bằng land pattern đúng linh kiện đã mua."
+        ],
+        [
+          "Pad, silkscreen và courtyard phục vụ việc khác nhau",
+          "Pad tạo kết nối hàn; silkscreen hỗ trợ lắp ráp; courtyard giúp giữ khoảng trống cơ khí. Đường silkscreen đi lên pad có thể bị nhà sản xuất cắt bỏ. Không dùng courtyard thay đường biên bo."
+        ],
+        [
+          "Review độc lập",
+          "Sau khi tạo, đóng editor rồi mở lại footprint từ thư viện project. Đo khoảng cách tâm pad và kiểm tra số pad từ góc nhìn mặt trên. Lật PCB ở mặt dưới dễ gây nhầm nếu chỉ nhìn ảnh."
+        ]
+      ],
+      "steps": [
+        "Tạo thư viện project, đặt tên riêng và mô tả nguồn kích thước.",
+        "Thêm 3 pad đúng pitch; dùng hình pad 1 khác biệt để dễ nhận biết.",
+        "Vẽ outline thân, courtyard và ký hiệu pin 1 trên lớp phù hợp.",
+        "Đo lại bằng công cụ đo, in 1:1 nếu cần đối chiếu vật lý."
+      ],
+      "mistakes": [
+        "Không vẽ chân theo mắt.",
+        "Không sửa thư viện hệ thống vì bản cập nhật có thể ghi đè."
+      ],
+      "quiz": {
+        "question": "Lớp nào chủ yếu biểu diễn vùng chiếm chỗ phục vụ kiểm tra placement?",
+        "options": [
+          "Edge.Cuts",
+          "F.Courtyard",
+          "B.Cu",
+          "F.Mask"
+        ],
+        "answer": 1,
+        "explanation": "Courtyard giúp kiểm tra khoảng chiếm chỗ của linh kiện."
+      },
+      "videoIds": [
+        "O-zNn5k5Bn4"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l09",
+      "module": 3,
+      "title": "BOM và linh kiện thay thế",
+      "minutes": 30,
+      "summary": "Chuyển danh sách symbol thành danh mục mua và lắp ráp.",
+      "preview": false,
+      "concepts": [
+        [
+          "Mỗi dòng BOM cần đủ nhận diện",
+          "Reference, quantity, value, footprint và manufacturer part number giúp người mua phân biệt linh kiện. Một dòng chỉ ghi “10 µF” thiếu điện áp, dung sai, kích thước và đặc tính điện môi."
+        ],
+        [
+          "Thay thế phải xét cả điện và cơ",
+          "Hai tụ cùng giá trị nhưng khác điện áp định mức, ESR hoặc suy giảm điện dung theo điện áp DC có thể cho kết quả khác. Với IC, kiểm tra pinout và yêu cầu linh kiện ngoài; cùng chức năng không có nghĩa drop-in."
+        ],
+        [
+          "DNP cần được thể hiện rõ",
+          "Một footprint dự phòng không lắp phải được đánh dấu do-not-populate nhất quán trong schematic, BOM và hướng dẫn lắp. Tránh người lắp suy đoán từ một ghi chú riêng rẽ."
+        ]
+      ],
+      "steps": [
+        "Điền mã hàng đầy đủ cho linh kiện quan trọng.",
+        "Xuất BOM và kiểm tra quantity bằng reference thực tế.",
+        "Lập bảng linh kiện thay thế với tiêu chí chấp nhận.",
+        "Đánh dấu DNP và kiểm tra lại bản BOM xuất cuối cùng."
+      ],
+      "mistakes": [
+        "Không mua linh kiện chỉ dựa vào value.",
+        "Không để BOM và PCB ở hai revision khác nhau."
+      ],
+      "quiz": {
+        "question": "Thông tin nào đặc biệt cần để mua đúng linh kiện?",
+        "options": [
+          "Màu track",
+          "Mã nhà sản xuất đầy đủ và package",
+          "Tên máy tính",
+          "Ảnh 3D"
+        ],
+        "answer": 1,
+        "explanation": "Mã hàng và package giúp chọn đúng biến thể."
+      },
+      "videoIds": [
+        "igQWdVGZGpI"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l10",
+      "module": 4,
+      "title": "Board setup và đường biên bo",
+      "minutes": 40,
+      "summary": "Thiết lập ràng buộc sản xuất trước khi đặt linh kiện.",
+      "preview": false,
+      "concepts": [
+        [
+          "Quy tắc đến từ nhà sản xuất",
+          "Minimum clearance, track width và drill phụ thuộc quy trình chế tạo. Bài tập có thể dùng 0,25 mm để thực hành, nhưng đó không phải chuẩn chung cho mọi dòng điện, điện áp hay nhà máy."
+        ],
+        [
+          "Edge.Cuts phải mô tả đúng hình bo",
+          "Một đường biên khép kín xác định hình dạng PCB. Các đoạn trùng nhau hoặc khe hở nhỏ có thể gây lỗi khi xuất chế tạo hoặc dựng 3D. Lỗ bắt vít cần footprint phù hợp và khoảng hở cơ khí."
+        ],
+        [
+          "Đồng bộ schematic trước khi bố trí",
+          "Update PCB from Schematic đưa linh kiện và net sang PCB. Đọc danh sách thay đổi, nhất là khi thay footprint hoặc xóa linh kiện. Không bỏ qua cảnh báo mất liên kết để chạy tiếp."
+        ]
+      ],
+      "steps": [
+        "Chọn bo 2 lớp cho bài LED và khai báo quy tắc bài tập.",
+        "Update PCB from Schematic; kiểm tra số linh kiện.",
+        "Vẽ bo 40×30 mm trên Edge.Cuts bằng outline kín.",
+        "Thêm lỗ bắt vít nếu đề yêu cầu; chạy DRC kiểm tra outline."
+      ],
+      "mistakes": [
+        "Không vẽ biên bo trên silkscreen.",
+        "Không chọn quy tắc nhỏ nhất chỉ vì nhà máy làm được."
+      ],
+      "quiz": {
+        "question": "Đường biên vật lý PCB nên nằm ở lớp nào?",
+        "options": [
+          "F.SilkS",
+          "Edge.Cuts",
+          "F.Paste",
+          "Dwgs.User"
+        ],
+        "answer": 1,
+        "explanation": "Edge.Cuts mô tả đường cắt bo."
+      },
+      "videoIds": [
+        "igQWdVGZGpI"
+      ],
+      "exerciseId": "e06",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l11",
+      "module": 4,
+      "title": "Placement theo luồng tín hiệu và vòng dòng",
+      "minutes": 45,
+      "summary": "Đặt linh kiện để đường điện có cơ hội hoạt động tốt.",
+      "preview": false,
+      "concepts": [
+        [
+          "Cố định các ràng buộc cơ khí trước",
+          "Connector, nút bấm, LED và lỗ bắt vít thường phụ thuộc vỏ máy. Đặt chúng trước, kiểm tra hướng cắm và không gian dây. Sau đó đặt các khối điện theo quan hệ chức năng."
+        ],
+        [
+          "Ratsnest là bản đồ, không phải mục tiêu duy nhất",
+          "Giảm độ dài ratsnest giúp routing nhưng không được lấn át yêu cầu decoupling, đường hồi và tản nhiệt. Tụ gần chân nguồn phải tạo vòng dòng ngắn cả phía nguồn lẫn GND."
+        ],
+        [
+          "Đặt rồi review trước khi đi dây",
+          "Bật courtyard, nhìn khoảng thao tác hàn và khoảng đầu nối. Hãy hỏi: linh kiện nóng nằm ở đâu, tín hiệu nhạy cảm đi qua vùng nào, dòng xung sẽ trở về bằng đường nào?"
+        ]
+      ],
+      "steps": [
+        "Đặt connector và lỗ bắt vít, sau đó khóa vị trí.",
+        "Nhóm linh kiện theo khối: nguồn, MCU, giao tiếp.",
+        "Đặt tụ decoupling theo từng chân nguồn; dự trù đường nối GND ngắn.",
+        "Chụp placement khi còn ratsnest và giải thích hai quyết định vị trí."
+      ],
+      "mistakes": [
+        "Không đặt tụ chỉ để schematic/PCB nhìn cân đối.",
+        "Không route hết rồi mới phát hiện connector quay vào trong bo."
+      ],
+      "quiz": {
+        "question": "Nên đặt nhóm nào trước?",
+        "options": [
+          "Mọi điện trở theo thứ tự R1–R20",
+          "Linh kiện bị ràng buộc cơ khí và connector",
+          "Linh kiện nhỏ nhất",
+          "Bất kỳ nhóm nào cho cân đối"
+        ],
+        "answer": 1,
+        "explanation": "Ràng buộc cơ khí quyết định những vị trí ít linh hoạt nhất."
+      },
+      "videoIds": [
+        "M6_an34wQJk",
+        "PlXd3lLZ4vc"
+      ],
+      "exerciseId": "e07",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l12",
+      "module": 4,
+      "title": "Stackup và chọn số lớp",
+      "minutes": 35,
+      "summary": "Hiểu mối quan hệ giữa lớp tín hiệu, mặt phẳng tham chiếu và giá thành.",
+      "preview": false,
+      "concepts": [
+        [
+          "Hai lớp phù hợp khi giữ được đường hồi",
+          "Bo chậm và đơn giản có thể dùng hai lớp. Khi một lớp bị cắt vụn bởi track, mặt đồng GND không còn là mặt tham chiếu liên tục. Đừng mặc định copper fill luôn đồng nghĩa với GND tốt."
+        ],
+        [
+          "Bốn lớp tạo thêm lựa chọn",
+          "Một stackup thường gặp có tín hiệu ngoài và các mặt phẳng bên trong, nhưng cách sắp lớp phải được nhà sản xuất xác nhận. Khoảng cách tới lớp tham chiếu và độ dày điện môi ảnh hưởng trở kháng, không chỉ tổng độ dày bo."
+        ],
+        [
+          "Chọn theo yêu cầu",
+          "Đối với USB, RF hoặc cạnh tín hiệu nhanh, cần đọc yêu cầu giao diện và stackup thật. Không sao chép bề rộng track từ một bo khác rồi coi trở kháng là giống nhau."
+        ]
+      ],
+      "steps": [
+        "Vẽ bảng lớp dự kiến và mặt tham chiếu của từng nhóm tín hiệu.",
+        "Xác định tín hiệu quan trọng, nguồn xung và khối nhạy cảm.",
+        "So sánh bo 2 lớp và 4 lớp theo đường hồi, cơ khí và chi phí.",
+        "Ghi rõ stackup đang là giả định hay đã được nhà sản xuất xác nhận."
+      ],
+      "mistakes": [
+        "Không tính trở kháng bằng tổng độ dày bo khi khoảng cách tới plane khác.",
+        "Không cắt plane dưới tín hiệu nhanh mà không đánh giá đường hồi."
+      ],
+      "quiz": {
+        "question": "Yếu tố nào ảnh hưởng trở kháng track?",
+        "options": [
+          "Chỉ chiều dài",
+          "Bề rộng, điện môi và khoảng cách tới mặt tham chiếu",
+          "Màu solder mask thôi",
+          "Số chữ trên silkscreen"
+        ],
+        "answer": 1,
+        "explanation": "Trở kháng phụ thuộc cấu trúc tiết diện và điện môi, không chỉ chiều dài."
+      },
+      "videoIds": [
+        "QAOEtfvCaMw",
+        "aNYmOIMt7CY"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l13",
+      "module": 5,
+      "title": "Đi dây: từ net class đến via",
+      "minutes": 45,
+      "summary": "Route có chủ đích và kiểm tra cả đường đi lẫn đường về.",
+      "preview": false,
+      "concepts": [
+        [
+          "Net class thể hiện yêu cầu khác nhau",
+          "Đường nguồn và tín hiệu không nhất thiết có cùng bề rộng. Khai báo width và clearance theo điện áp, dòng và quy trình. Các giá trị trong bài chỉ là giả định để học thao tác, chưa phải thiết kế nhiệt đã được xác nhận."
+        ],
+        [
+          "Via không phải kết nối miễn phí",
+          "Via đổi lớp nhưng thêm điện cảm, điện trở và ràng buộc chế tạo. Với tín hiệu nhạy cảm, cần xem mặt tham chiếu trước và sau khi đổi lớp. Đặt via GND gần chỗ đổi lớp khi phù hợp với stackup."
+        ],
+        [
+          "Đừng đẩy lỗi sang bước cuối",
+          "Đi từng khối rồi kiểm tra ratsnest và DRC. Dùng interactive router, chọn width phù hợp và kiểm tra track thực sự chạm pad. Các góc 45° thường dễ quản lý; góc đẹp không thay thế kiểm tra điện."
+        ]
+      ],
+      "steps": [
+        "Tạo net class cho nguồn và tín hiệu trong Board Setup.",
+        "Route mạch LED: nguồn → R → LED → GND.",
+        "Đặt via chỉ khi cần và xem lại lớp đang hoạt động.",
+        "Kiểm tra unrouted, chạy DRC và zoom từng pad."
+      ],
+      "mistakes": [
+        "Không cho rằng track nằm trên pad là đã nối đúng net.",
+        "Không để cổ chai mỏng trên đường nguồn chỉ vì đoạn chính rộng."
+      ],
+      "quiz": {
+        "question": "Ratsnest còn một đường chưa nối có nghĩa gì?",
+        "options": [
+          "Chắc chắn chỉ là trang trí",
+          "Còn kết nối cần kiểm tra hoặc route",
+          "Bo đã đủ điều kiện sản xuất",
+          "Chỉ thiếu mô hình 3D"
+        ],
+        "answer": 1,
+        "explanation": "Phải xử lý kết nối chưa route trước khi bàn giao."
+      },
+      "videoIds": [
+        "igQWdVGZGpI"
+      ],
+      "exerciseId": "e08",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l14",
+      "module": 5,
+      "title": "GND zone và đường hồi dòng",
+      "minutes": 40,
+      "summary": "Đánh giá tính liên tục của mặt tham chiếu, không chỉ diện tích đồng.",
+      "preview": false,
+      "concepts": [
+        [
+          "Dòng điện luôn đi theo một vòng kín",
+          "Đường hồi phụ thuộc tần số. Với thành phần nhanh, dòng hồi có xu hướng đi gần đường tín hiệu trên mặt tham chiếu liên tục để giảm điện cảm vòng. Một khe cắt plane có thể buộc dòng vòng xa."
+        ],
+        [
+          "Zone phải đúng net và được refill",
+          "Chọn GND cho zone rồi refill trước khi DRC và xuất Gerber. Zone rời không nối GND không thực hiện chức năng bạn mong đợi. Xem cách nối pad: thermal relief hỗ trợ hàn nhưng cần phù hợp dòng và nhiệt."
+        ],
+        [
+          "Via stitching cần mục đích",
+          "Via có thể nối các vùng GND giữa lớp. Đặt theo đường hồi và cấu trúc bo, không rải dày ngẫu nhiên. Không dùng stitching để che việc plane bị cắt đứt ngay dưới đường tín hiệu quan trọng."
+        ]
+      ],
+      "steps": [
+        "Thêm GND zone và refill.",
+        "Ẩn/bật lớp để xem zone có bị track chia cắt hay không.",
+        "Highlight GND và kiểm tra các đảo đồng.",
+        "So sánh đường hồi trước và sau khi thay đổi vị trí một track."
+      ],
+      "mistakes": [
+        "Không cho rằng mọi vùng đồng đều tự nối GND.",
+        "Không xuất Gerber từ zone chưa refill sau khi sửa."
+      ],
+      "quiz": {
+        "question": "Sau khi di chuyển track qua một copper zone, nên làm gì trước DRC/xuất?",
+        "options": [
+          "Đổi màu nền",
+          "Refill zone rồi kiểm tra lại",
+          "Xóa net name",
+          "Chỉ mở 3D"
+        ],
+        "answer": 1,
+        "explanation": "Refill cập nhật hình đồng theo cấu trúc và clearance mới."
+      },
+      "videoIds": [
+        "M6_an34wQJk"
+      ],
+      "exerciseId": "e09",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l15",
+      "module": 5,
+      "title": "Cặp vi sai và trở kháng",
+      "minutes": 45,
+      "summary": "Phân biệt cân bằng độ dài, ghép cặp và điều khiển trở kháng.",
+      "preview": false,
+      "concepts": [
+        [
+          "Hai dây đi gần nhau chưa đủ",
+          "Cặp vi sai cần hình học, khoảng cách và mặt tham chiếu nhất quán theo yêu cầu giao diện. Độ dài bằng nhau không chứng minh đúng trở kháng. Đường tín hiệu đi qua split plane vẫn cần đánh giá lại."
+        ],
+        [
+          "Bề rộng phụ thuộc stackup",
+          "Dùng công cụ tính với độ dày điện môi, hằng số điện môi và đồng thực tế từ nhà máy. Mục tiêu 90 Ω vi sai thường gặp ở USB 2.0 nhưng phải kiểm tra yêu cầu cụ thể; 50 Ω đơn đầu không dùng thay trực tiếp cho cặp vi sai."
+        ],
+        [
+          "Matching có dung sai",
+          "Chỉ thêm meander khi cần đáp ứng dung sai thiết kế. Vẽ ziczac quá nhiều có thể làm routing chật và tăng tương tác giữa các đoạn. Ưu tiên tuyến đường đơn giản, ít đổi lớp và kiểm tra continuity."
+        ]
+      ],
+      "steps": [
+        "Đặt tên cặp theo quy ước P/N phù hợp với KiCad.",
+        "Ghi mục tiêu trở kháng và giả định stackup.",
+        "Route một cặp thử, giữ gap và width nhất quán.",
+        "Đo skew và chỉ tune phần cần thiết theo yêu cầu đề bài."
+      ],
+      "mistakes": [
+        "Không sao chép width từ video khi stackup khác.",
+        "Không coi chiều dài bằng nhau là chứng nhận USB hoạt động."
+      ],
+      "quiz": {
+        "question": "Hai track có độ dài bằng nhau đã bảo đảm đúng trở kháng chưa?",
+        "options": [
+          "Có",
+          "Chưa, còn phụ thuộc hình học và stackup",
+          "Có nếu dùng màu giống nhau",
+          "Chỉ cần bo 4 lớp"
+        ],
+        "answer": 1,
+        "explanation": "Length matching và impedance control là hai yêu cầu khác nhau."
+      },
+      "videoIds": [
+        "0fteCxn5XXA",
+        "xwrdvhm4vgw"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l16",
+      "module": 6,
+      "title": "Nguồn tuyến tính và decoupling",
+      "minutes": 45,
+      "summary": "Chọn linh kiện nguồn và giảm vòng dòng cấp cho IC.",
+      "preview": false,
+      "concepts": [
+        [
+          "LDO cần đủ điện áp và điều kiện ổn định",
+          "Kiểm tra Vin, Vout, dropout, dòng tối đa và yêu cầu tụ đầu ra/ESR của đúng mã IC. Không phải mọi LDO đều ổn định với mọi loại tụ. Công suất mất thành nhiệt phải được tính trước khi dùng dòng lớn."
+        ],
+        [
+          "Tụ decoupling phục vụ dòng biến thiên",
+          "Tụ gần chân nguồn cung cấp dòng tức thời, trong khi đường cấp nguồn có điện cảm. Vòng chân nguồn → tụ → GND → IC cần ngắn. Nói “gần” chỉ bằng khoảng cách hình học là chưa đủ nếu đường GND phải vòng xa."
+        ],
+        [
+          "Đọc khuyến nghị từng MCU",
+          "Số tụ, giá trị, tụ bulk và chân nguồn analog phụ thuộc thiết bị. Giá trị 100 nF thường gặp không phải công thức duy nhất. Kiểm tra VCAP hoặc nguồn nội bộ theo datasheet của chính MCU."
+        ]
+      ],
+      "steps": [
+        "Lập ngân sách dòng cho từng khối.",
+        "Tính tổn hao LDO ở Vin cao nhất và dòng dự kiến.",
+        "Đặt tụ vào từng chân nguồn theo datasheet.",
+        "Vẽ đường vòng dòng trên ảnh layout và giải thích vị trí GND via."
+      ],
+      "mistakes": [
+        "Không bỏ qua dropout lúc điện áp đầu vào thấp.",
+        "Không dùng giá trị tụ từ một MCU khác mà không kiểm tra."
+      ],
+      "quiz": {
+        "question": "Tụ decoupling nên tối ưu điều gì?",
+        "options": [
+          "Chỉ khoảng cách thẳng tới IC",
+          "Cả vòng nối nguồn và GND ngắn",
+          "Thứ tự C1, C2",
+          "Vị trí ở giữa bo"
+        ],
+        "answer": 1,
+        "explanation": "Vòng dòng ngắn giúp giảm điện cảm ký sinh."
+      },
+      "videoIds": [
+        "O-zNn5k5Bn4",
+        "PlXd3lLZ4vc"
+      ],
+      "exerciseId": "e10",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l17",
+      "module": 6,
+      "title": "Buck converter và vùng nhiễu",
+      "minutes": 45,
+      "summary": "Nhận diện hot loop, switching node và đường feedback.",
+      "preview": false,
+      "concepts": [
+        [
+          "Dòng xung quyết định placement",
+          "Buck chuyển năng lượng bằng đóng ngắt. Những vòng dòng có biến thiên nhanh cần nhỏ và linh kiện phải đặt theo datasheet/reference layout. Chỉ làm track rộng chưa giải quyết hết điện cảm của vòng."
+        ],
+        [
+          "SW node và feedback cần xử lý khác nhau",
+          "SW là vùng điện áp thay đổi nhanh; hạn chế diện tích không cần thiết và tránh để gần tín hiệu nhạy cảm. Feedback cần lấy tín hiệu ở vị trí quy định và tránh bị nhiễu từ cuộn cảm/SW node."
+        ],
+        [
+          "Reference layout là điểm khởi đầu",
+          "Một thiết kế mẫu áp dụng cho điều kiện cụ thể. Khi đổi IC, tần số, cuộn cảm hoặc số lớp, cần đánh giá lại. Bài này tập trung review bố trí; không yêu cầu cấp nguồn cho bo chưa được kiểm tra."
+        ]
+      ],
+      "steps": [
+        "Đọc datasheet và đánh dấu loop dòng xung.",
+        "Đặt tụ input, IC, diode (nếu có) và cuộn cảm theo khối nguồn.",
+        "Tách đường feedback khỏi SW node và cuộn cảm.",
+        "Ghi rõ phần nào đã theo reference layout và phần nào đã thay đổi."
+      ],
+      "mistakes": [
+        "Không kéo feedback xuyên qua vùng SW.",
+        "Không nhầm vùng đồng SW lớn với tản nhiệt luôn tốt hơn."
+      ],
+      "quiz": {
+        "question": "Đường nào cần tránh nhiễu từ SW node?",
+        "options": [
+          "Feedback",
+          "Silkscreen",
+          "Đường biên bo",
+          "Reference text"
+        ],
+        "answer": 0,
+        "explanation": "Feedback bị nhiễu có thể ảnh hưởng điều khiển nguồn."
+      },
+      "videoIds": [
+        "AmfLhT5SntE",
+        "1g-D8T65SJU"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l18",
+      "module": 6,
+      "title": "USB, I²C và bảo vệ đầu nối",
+      "minutes": 45,
+      "summary": "Đọc yêu cầu giao tiếp và bảo vệ tại nơi tín hiệu đi vào bo.",
+      "preview": false,
+      "concepts": [
+        [
+          "I²C cần pull-up hợp lý",
+          "SCL và SDA thường cần điện trở kéo lên vì ngõ ra kiểu open-drain. Giá trị phụ thuộc điện dung bus, tốc độ, khả năng sink và mức điện áp. 4,7 kΩ là một ví dụ hay gặp, không phải giá trị đúng cho mọi bus."
+        ],
+        [
+          "USB cần đúng vai trò và mức điện áp",
+          "USB-C là loại connector và hệ sinh thái vai trò/nguồn; không thể chỉ nối VBUS, D+ và D− rồi coi mọi cấu hình đều hợp lệ. Với device/sink cần kiểm tra cấu hình chân CC và bảo vệ đúng tiêu chuẩn, đúng controller."
+        ],
+        [
+          "Bảo vệ phải nằm trên đường sự cố",
+          "TVS gần connector giúp dòng ESD được chuyển về đường phù hợp trước khi đi sâu vào mạch. Chọn điện dung và điện áp kẹp theo giao diện; linh kiện bảo vệ sai có thể ảnh hưởng chất lượng tín hiệu."
+        ]
+      ],
+      "steps": [
+        "Lập bảng chân connector và vai trò thiết bị.",
+        "Vẽ pull-up I²C tới đúng mức logic; ghi giả định tốc độ/bus capacitance.",
+        "Đặt TVS gần đầu nối theo hướng dẫn linh kiện.",
+        "Review routing từ connector → bảo vệ → IC và đường hồi tương ứng."
+      ],
+      "mistakes": [
+        "Không kéo bus 3,3 V lên 5 V nếu chân không chịu được.",
+        "Không đặt ESD rất xa connector chỉ vì còn chỗ."
+      ],
+      "quiz": {
+        "question": "Điện trở pull-up I²C cần được chọn theo gì?",
+        "options": [
+          "Chỉ màu điện trở",
+          "Điện áp, tốc độ, điện dung bus và dòng sink",
+          "Số lượng LED",
+          "Độ dài tên net"
+        ],
+        "answer": 1,
+        "explanation": "Pull-up là bài toán thời gian lên và mức dòng, cần dữ liệu bus."
+      },
+      "videoIds": [
+        "sCHK3P5tn7s",
+        "MmG_m4xVNfQ"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l19",
+      "module": 7,
+      "title": "DRC và review trước khi xuất",
+      "minutes": 40,
+      "summary": "Kết hợp kiểm tra tự động với danh sách review thủ công.",
+      "preview": false,
+      "concepts": [
+        [
+          "DRC kiểm tra những luật đã được cấu hình",
+          "DRC có thể kiểm tra clearance, bề rộng, hở net, outline và nhiều điều kiện khác. Nếu quy tắc nhập sai hoặc thiếu, kết quả 0 lỗi không có nghĩa đáp ứng nhà sản xuất hay yêu cầu điện."
+        ],
+        [
+          "Ba vòng review",
+          "Vòng một so schematic và datasheet; vòng hai kiểm tra layout, đường hồi và nhiệt; vòng ba kiểm tra lắp ráp, chữ, đầu nối và đầu ra chế tạo. Đọc từng cảnh báo và lưu lý do chấp nhận."
+        ],
+        [
+          "Ảnh chỉ là một lớp bằng chứng",
+          "Ảnh layout giúp thấy placement hoặc silkscreen. Nó có thể không cho thấy lớp ẩn, net connectivity hay clearance chính xác. Vì vậy giảng viên phản hồi ảnh theo tiêu chí quan sát, còn báo cáo và file thiết kế cần review riêng khi có nghi vấn."
+        ]
+      ],
+      "steps": [
+        "Refill zone và chạy DRC với quy tắc đã khai báo.",
+        "Kiểm tra unrouted và sự nhất quán schematic–PCB.",
+        "Review pin 1, cực tính, connector, mép bo và chữ.",
+        "Lưu báo cáo, ảnh các lớp quan trọng và danh sách ngoại lệ."
+      ],
+      "mistakes": [
+        "Không ẩn lỗi mà không ghi lý do.",
+        "Không dùng mỗi ảnh 3D làm hồ sơ kiểm tra điện."
+      ],
+      "quiz": {
+        "question": "DRC 0 lỗi chứng minh điều gì?",
+        "options": [
+          "Mạch chắc chắn chạy",
+          "Không phát hiện vi phạm trong bộ luật đang cấu hình",
+          "Không cần kiểm tra datasheet",
+          "Không cần xem Gerber"
+        ],
+        "answer": 1,
+        "explanation": "DRC chỉ mạnh bằng các quy tắc và dữ liệu thiết kế đã cung cấp."
+      },
+      "videoIds": [
+        "zeH3WbMWvdg",
+        "g4m91gv-4oQ"
+      ],
+      "exerciseId": "e11",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l20",
+      "module": 7,
+      "title": "Gerber, drill và hồ sơ lắp ráp",
+      "minutes": 40,
+      "summary": "Xuất một bộ tệp cùng revision và kiểm tra bằng công cụ độc lập.",
+      "preview": false,
+      "concepts": [
+        [
+          "Gerber không phải toàn bộ hồ sơ",
+          "Lớp đồng, mask, silkscreen và outline là một phần; lỗ khoan cần drill file. Nếu đặt lắp ráp, còn cần BOM và pick-and-place theo định dạng nhà máy. Đừng gửi chung các file từ nhiều lần xuất."
+        ],
+        [
+          "Xem lại đầu ra đã xuất",
+          "Mở chính Gerber/drill vừa tạo trong viewer. Kiểm tra outline, vị trí lỗ, lớp mặt trên/dưới, solder mask và tên revision. Việc editor hiển thị đúng không thay thế kiểm tra gói sản xuất."
+        ],
+        [
+          "Đóng gói có kiểm soát",
+          "Dùng thư mục trống cho mỗi revision, ghi thông số bo và ngày xuất. Nếu sửa thiết kế sau khi xuất, tạo lại toàn bộ gói và chạy review lại. Đây là điểm dừng cần rõ ràng trước khi đặt hàng."
+        ]
+      ],
+      "steps": [
+        "Tạo thư mục fabrication/rev-a mới.",
+        "Xuất Gerber và drill đúng lớp cần thiết.",
+        "Mở trong Gerber Viewer và kiểm tra từng lớp cùng lỗ khoan.",
+        "Xuất BOM/pick-and-place nếu cần, thêm README với revision và thông số."
+      ],
+      "mistakes": [
+        "Không quên drill file.",
+        "Không trộn Gerber cũ với PCB mới."
+      ],
+      "quiz": {
+        "question": "Sau khi sửa PCB đã xuất Gerber, cần làm gì?",
+        "options": [
+          "Chỉ sửa tên ZIP",
+          "Xuất lại và kiểm tra toàn bộ gói cùng revision",
+          "Giữ nguyên drill dù lỗ đã đổi",
+          "Chỉ gửi ảnh"
+        ],
+        "answer": 1,
+        "explanation": "Bộ chế tạo phải nhất quán với revision thiết kế cuối."
+      },
+      "videoIds": [
+        "T922aFyN6bw",
+        "igQWdVGZGpI"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l21",
+      "module": 7,
+      "title": "Bring-up: kiểm tra bo đầu tiên",
+      "minutes": 35,
+      "summary": "Tách kiểm tra khi chưa cấp nguồn và kiểm tra có giới hạn dòng.",
+      "preview": false,
+      "concepts": [
+        [
+          "Quan sát trước khi cấp nguồn",
+          "Kiểm tra hàn, cầu thiếc, đúng chiều linh kiện và connector. Đo xem nguồn có ngắn xuống GND hay không, nhưng hiểu rằng tụ nạp hoặc cấu trúc IC có thể làm số đo thay đổi. Không dùng một giá trị điện trở duy nhất làm kết luận cho mọi bo."
+        ],
+        [
+          "Cấp nguồn có kiểm soát",
+          "Dùng nguồn thấp áp có giới hạn dòng, bắt đầu theo yêu cầu thiết kế và theo dõi dòng/điện áp. Nếu dòng tăng bất thường, ngắt nguồn và chẩn đoán; không tăng giới hạn dòng để ép bo chạy. Không thực hành với điện lưới trong khóa này."
+        ],
+        [
+          "Kiểm tra từ nền tảng lên chức năng",
+          "Xác nhận các rail nguồn, reset, clock, rồi kết nối debugger và chạy firmware tối thiểu. Kiểm tra giao tiếp từng khối. Ghi kết quả để phân biệt lỗi hardware, assembly và firmware."
+        ]
+      ],
+      "steps": [
+        "Lập checklist kiểm tra ngoại quan và continuity.",
+        "Đo rail khi chưa cấp nguồn và ghi số đo.",
+        "Cấp nguồn giới hạn dòng theo kế hoạch đã review.",
+        "Kiểm tra điện áp, reset, debugger và từng chức năng nhỏ."
+      ],
+      "mistakes": [
+        "Không chạm/chập probe giữa các chân nhỏ khi đang cấp nguồn.",
+        "Không kết nối đồng thời nhiều nguồn nếu chưa kiểm tra mạch OR/protection."
+      ],
+      "quiz": {
+        "question": "Nếu dòng nguồn tăng bất thường ngay khi bật bo, nên làm gì?",
+        "options": [
+          "Tăng dòng tối đa",
+          "Ngắt nguồn và tìm nguyên nhân",
+          "Đợi đến khi nóng",
+          "Nạp firmware liên tục"
+        ],
+        "answer": 1,
+        "explanation": "Dừng cấp nguồn giúp tránh làm hỏng thêm linh kiện."
+      },
+      "videoIds": [
+        "dRKSs3wms4U",
+        "qMUzLU636s8"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l22",
+      "module": 8,
+      "title": "Đồ án: yêu cầu và schematic STM32",
+      "minutes": 60,
+      "summary": "Lập thiết kế bo MCU có nguồn 3,3 V, SWD, LED và đầu nối cảm biến.",
+      "preview": false,
+      "concepts": [
+        [
+          "Phạm vi đồ án",
+          "Chọn một STM32 có datasheet và package rõ, nguồn đầu vào DC 5 V, LDO 3,3 V, header SWD, LED trạng thái và I²C sensor header. USB là phần mở rộng sau khi thiết kế cơ bản đã review; không bắt buộc để đạt bài cơ sở."
+        ],
+        [
+          "Các chân bắt buộc phải được xử lý",
+          "Kiểm tra tất cả chân VDD/VSS, VDDA/VSSA, reset, boot và VCAP nếu có. Dùng hướng dẫn hardware của đúng dòng MCU. Không sao chép sơ đồ nguồn từ một STM32 khác chỉ vì cùng hãng."
+        ],
+        [
+          "Thiết kế để debug",
+          "Đưa SWDIO, SWCLK, GND, điện áp tham chiếu và reset nếu cần ra header có pinout rõ. Thêm test point ở các rail và tín hiệu cần đo. Chừa chỗ thao tác probe trong layout."
+        ]
+      ],
+      "steps": [
+        "Chốt mã MCU và lập bảng yêu cầu đầu vào/đầu ra.",
+        "Vẽ schematic theo khối nguồn, MCU và giao tiếp.",
+        "Gán footprint, kiểm pin mapping và chạy ERC.",
+        "Lập BOM cùng bảng giải thích các chân boot/reset/nguồn."
+      ],
+      "mistakes": [
+        "Không bỏ chân nguồn ẩn hoặc chân analog.",
+        "Không cấp nguồn ngược từ debugger nếu thiết kế không cho phép."
+      ],
+      "quiz": {
+        "question": "Vì sao cần ghi đúng mã MCU trước khi vẽ?",
+        "options": [
+          "Để tên file đẹp",
+          "Pinout và yêu cầu nguồn/boot có thể khác giữa các biến thể",
+          "Để giảm số net",
+          "Không cần thiết"
+        ],
+        "answer": 1,
+        "explanation": "Đồ án phải dựa trên đúng linh kiện và datasheet tương ứng."
+      },
+      "videoIds": [
+        "aVUqaB0IMh4",
+        "nkHFoxe0mrU"
+      ],
+      "exerciseId": "e12",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l23",
+      "module": 8,
+      "title": "Đồ án: layout và tự review",
+      "minutes": 75,
+      "summary": "Hoàn thiện PCB từ một schematic đã được kiểm tra.",
+      "preview": false,
+      "concepts": [
+        [
+          "Review theo luồng năng lượng",
+          "Bắt đầu từ đầu nguồn, bảo vệ, LDO và tụ; sau đó tới MCU và giao tiếp. Trên mỗi phần, xem đường dòng đi và đường hồi. Tụ đúng giá trị nhưng đặt sai có thể không thực hiện tốt vai trò mong muốn."
+        ],
+        [
+          "Review theo thao tác sử dụng",
+          "Xem hướng cắm SWD và sensor, chữ pinout, LED và lỗ bắt vít. Đảm bảo connector không đụng nhau và debugger có thể cắm khi bo nằm trong vỏ. 3D hữu ích cho hình học, nhưng không kết luận được kết nối điện."
+        ],
+        [
+          "Gói bằng chứng",
+          "Ảnh schematic toàn trang cần đọc được chữ; ảnh layout cần thể hiện các lớp liên quan và không bị cửa sổ che. Gửi ảnh cận cảnh vùng MCU/nguồn khi cần. Ghi rõ các giả định, ERC/DRC và giới hạn chưa kiểm chứng."
+        ]
+      ],
+      "steps": [
+        "Đặt các ràng buộc cơ khí và khối nguồn trước.",
+        "Place MCU, tụ, SWD và sensor header rồi review.",
+        "Route, refill zone và chạy DRC sau mỗi nhóm thay đổi.",
+        "Nộp hai ảnh cùng báo cáo review, sau đó sửa theo phản hồi."
+      ],
+      "mistakes": [
+        "Không nén ảnh đến mức mất tên chân.",
+        "Không coi kết quả giảng viên là chứng nhận được phép sản xuất."
+      ],
+      "quiz": {
+        "question": "Bằng chứng nào phù hợp để giảng viên review vị trí tụ nguồn?",
+        "options": [
+          "Ảnh bìa project",
+          "Ảnh layout đủ rõ thấy MCU, tụ, track và GND",
+          "Ảnh bàn làm việc",
+          "Chỉ BOM"
+        ],
+        "answer": 1,
+        "explanation": "Cần ảnh cho thấy quan hệ không gian và đường nối liên quan."
+      },
+      "videoIds": [
+        "PlXd3lLZ4vc",
+        "igQWdVGZGpI"
+      ],
+      "exerciseId": "e12",
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    },
+    {
+      "id": "l24",
+      "module": 8,
+      "title": "Bàn giao đồ án và kế hoạch cải tiến",
+      "minutes": 45,
+      "summary": "Tổ chức hồ sơ để người khác kiểm tra và tiếp tục thiết kế.",
+      "preview": false,
+      "concepts": [
+        [
+          "Định nghĩa hoàn thành",
+          "Đồ án hoàn thành khi có project mở được, thư viện đi kèm, schematic và PCB cùng revision, BOM và đầu ra chế tạo đã xem lại, cùng danh sách lỗi/giới hạn. Một ảnh đẹp không thay thế hồ sơ này."
+        ],
+        [
+          "Giữ bằng chứng của quyết định",
+          "Ghi vì sao chọn nguồn, MCU, footprint, số lớp và quy tắc. Nếu một thông số chưa được xác minh, đánh dấu rõ thay vì bỏ trống. Người review cần biết giả định để đánh giá rủi ro kỹ thuật."
+        ],
+        [
+          "Cải tiến bằng kết quả đo",
+          "Sau khi chế tạo, ghi kết quả bring-up, lỗi phát hiện và thay đổi cho revision tiếp theo. Mỗi thay đổi cần nối với một vấn đề có thật: sửa pinout, giảm nhiễu, cải thiện hàn hoặc thuận tiện debug."
+        ]
+      ],
+      "steps": [
+        "Mở project trên một thư mục sao chép mới để kiểm tra dependency.",
+        "Đối chiếu revision giữa project, BOM và Gerber.",
+        "Viết README về nguồn cấp, pinout, kiểm tra và giới hạn.",
+        "Lập bảng ít nhất ba kiểm thử phần cứng cho bo khi được chế tạo."
+      ],
+      "mistakes": [
+        "Không ghi “đã kiểm chứng phần cứng” khi mới xem ảnh.",
+        "Không xóa bản revision đã sản xuất sau khi sửa."
+      ],
+      "quiz": {
+        "question": "Một giả định chưa được kiểm chứng nên được xử lý thế nào?",
+        "options": [
+          "Bỏ khỏi tài liệu",
+          "Ghi rõ và bổ sung kế hoạch kiểm thử",
+          "Đánh dấu đã đạt",
+          "Nhờ giảng viên tự suy ra chắc chắn"
+        ],
+        "answer": 1,
+        "explanation": "Minh bạch giới hạn giúp người review và người dùng ra quyết định đúng."
+      },
+      "videoIds": [
+        "g4m91gv-4oQ",
+        "dRKSs3wms4U"
+      ],
+      "exerciseId": null,
+      "sources": [
+        "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+        "https://docs.kicad.org/9.0/en/eeschema/eeschema.html",
+        "https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e01",
+      "module": 1,
+      "title": "Từ ý tưởng đến sơ đồ khối",
+      "difficulty": "Khởi động",
+      "minutes": 25,
+      "brief": "Thiết kế ý tưởng bo LED dùng nguồn DC 5 V. Hãy mô tả đường dòng và cấu trúc project trước khi vẽ schematic.",
+      "deliverables": [
+        "Ảnh Project Manager thấy project và các tệp thiết kế.",
+        "Ảnh sơ đồ khối có nguồn, điện trở, LED và GND."
+      ],
+      "steps": [
+        "Tạo project led-practice.",
+        "Vẽ khối nguồn 5 V → R → LED → GND.",
+        "Ghi giả định LED đỏ Vf≈2 V, R=1 kΩ và dòng ước tính 3 mA.",
+        "Chụp rõ nội dung, không chụp toàn bộ desktop thu nhỏ."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Project có schematic và PCB cùng tên gốc.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Sơ đồ có nguồn 5 V và đường trở về GND.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Điện trở nằm nối tiếp với LED.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Ghi đúng phép tính dòng gần 3 mA theo giả định.",
+          "points": 25
+        }
+      ],
+      "reference": "led",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e02",
+      "module": 1,
+      "title": "Phiếu chọn linh kiện và tính toán",
+      "difficulty": "Cơ bản",
+      "minutes": 35,
+      "brief": "Lập phiếu kỹ thuật cho bo LED: đầu nối 2 chân, LED đỏ, điện trở 1 kΩ. Chọn mã thực tế và ghi nguồn datasheet.",
+      "deliverables": [
+        "Ảnh bảng mã hàng, package, pinout và link datasheet.",
+        "Ảnh phép tính dòng/công suất cùng giả định."
+      ],
+      "steps": [
+        "Chọn mã linh kiện đầy đủ từ một nhà sản xuất.",
+        "Ghi package và cực tính LED.",
+        "Tính I=(5−2)/1000=0,003 A; P_R=0,009 W theo giả định.",
+        "Đối chiếu dòng/áp định mức thực của các mã đã chọn."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Bảng có mã hàng cụ thể cho LED và điện trở.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Package và pinout/cực tính được ghi rõ.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Dòng và công suất tính đúng theo giả định của đề.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Có nguồn datasheet và phân biệt giả định với thông số thật.",
+          "points": 25
+        }
+      ],
+      "reference": "worksheet",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e03",
+      "module": 2,
+      "title": "Mạch LED có điện trở hạn dòng",
+      "difficulty": "Cơ bản",
+      "minutes": 45,
+      "brief": "Vẽ J1 hai chân cấp DC 5 V, R1=1 kΩ và D1 LED đỏ. Nối J1.1 → R1 → anode D1; cathode D1 → J1.2/GND.",
+      "deliverables": [
+        "Ảnh schematic rõ reference, value, pin và dây.",
+        "Ảnh ERC; giải thích cảnh báo còn lại trong ghi chú."
+      ],
+      "steps": [
+        "Đặt symbol và chú thích J1.1=+5V, J1.2=GND.",
+        "Nối mạch đúng chuỗi; kiểm tra highlight net.",
+        "Gán reference/value.",
+        "Chạy ERC và lưu ảnh; PWR_FLAG chỉ dùng đúng mô hình nguồn ngoài."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Có J1 hai chân, R1=1 kΩ và D1.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Đường nối thấy rõ từ nguồn qua R1 tới anode LED.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Cathode nối về GND, không có dây bắc cầu qua R1/LED.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Reference, value và kết quả ERC đọc được, ngoại lệ có giải thích.",
+          "points": 25
+        }
+      ],
+      "reference": "led",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e04",
+      "module": 2,
+      "title": "Sửa lỗi schematic bằng ERC",
+      "difficulty": "Cơ bản",
+      "minutes": 35,
+      "brief": "Từ mạch LED, thử tạo một lỗi hở rồi tìm và sửa. Nộp kết quả sau sửa cùng mô tả lỗi ban đầu.",
+      "deliverables": [
+        "Ảnh schematic sau sửa.",
+        "Ảnh ERC cuối cùng và ghi chú nguyên nhân lỗi."
+      ],
+      "steps": [
+        "Tạo bản sao project trước khi thử.",
+        "Ngắt một dây, chạy ERC và tìm vị trí lỗi.",
+        "Sửa kết nối, highlight net và chạy lại.",
+        "Ghi tại sao lỗi xuất hiện, không chỉ ghi “đã fix”."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Ảnh schematic có đầy đủ vòng nguồn–R–LED–GND.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "ERC cuối cùng được hiển thị rõ.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Ghi chú chỉ ra lỗi ban đầu và nguyên nhân.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Các cảnh báo còn lại được giải thích thay vì tắt toàn bộ kiểm tra.",
+          "points": 25
+        }
+      ],
+      "reference": "led",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e05",
+      "module": 3,
+      "title": "Đối chiếu pin và pad",
+      "difficulty": "Thực hành",
+      "minutes": 45,
+      "brief": "Gán footprint cho mạch LED. Lập bảng chứng minh pin symbol khớp pad và cực tính linh kiện.",
+      "deliverables": [
+        "Ảnh bảng pin/pad/chức năng cho J1 và D1.",
+        "Ảnh footprint thể hiện số pad và dấu pin 1/cực tính."
+      ],
+      "steps": [
+        "Đọc package thực của linh kiện.",
+        "Chọn footprint đúng pitch và kích thước.",
+        "Ghi mapping pin 1/2 tới pad 1/2 và chức năng.",
+        "Kiểm tra riêng LED anode/cathode theo symbol và datasheet."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Có tên footprint đầy đủ và package đã chọn.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Bảng đối chiếu số pin/pad cho J1 và D1 rõ ràng.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Cực tính LED được nêu và nhất quán với bảng.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Ảnh footprint đọc được số pad, pin 1 và kích thước/pitch.",
+          "points": 25
+        }
+      ],
+      "reference": "footprint",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e06",
+      "module": 4,
+      "title": "Bo LED 40 × 30 mm",
+      "difficulty": "Thực hành",
+      "minutes": 45,
+      "brief": "Tạo layout bo hai lớp, outline kín 40×30 mm trên Edge.Cuts. Đặt J1 ở cạnh bo, R1 và D1 trong vùng bo.",
+      "deliverables": [
+        "Ảnh PCB hiện kích thước/đường biên.",
+        "Ảnh Board Setup hoặc DRC thể hiện quy tắc bài tập."
+      ],
+      "steps": [
+        "Update PCB from Schematic.",
+        "Vẽ outline kín 40×30 mm.",
+        "Dùng clearance/width minh họa 0,25 mm và ghi đây là quy tắc bài tập.",
+        "Đặt linh kiện không vượt biên; kiểm tra outline bằng DRC."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Có đường biên kín ở Edge.Cuts và kích thước 40×30 mm hiển thị.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "J1, R1, D1 đều nằm trong bo.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "J1 ở vị trí có thể cắm từ cạnh bo.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Quy tắc bài tập và kết quả kiểm tra outline được cung cấp.",
+          "points": 25
+        }
+      ],
+      "reference": "board",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e07",
+      "module": 4,
+      "title": "Placement bo vi điều khiển",
+      "difficulty": "Thực hành",
+      "minutes": 60,
+      "brief": "Dùng project MCU tự chọn hoặc project đồ án để đặt connector, MCU, tụ decoupling và SWD. Chưa cần route hoàn chỉnh.",
+      "deliverables": [
+        "Ảnh placement toàn bo có ratsnest.",
+        "Ảnh cận MCU và tụ nguồn."
+      ],
+      "steps": [
+        "Đặt connector theo cơ khí trước.",
+        "Đặt MCU cùng tụ theo chân nguồn của datasheet.",
+        "Đưa SWD ra vị trí dễ cắm.",
+        "Ghi hai quyết định placement và đường hồi dự kiến."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Connector/lỗ cơ khí có vị trí và khoảng thao tác rõ.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "MCU và các tụ nguồn có reference đọc được.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Tụ bố trí gần vùng chân nguồn, đường hồi được giải thích.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "SWD có pinout và vị trí tiếp cận hợp lý.",
+          "points": 25
+        }
+      ],
+      "reference": "mcu",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e08",
+      "module": 5,
+      "title": "Route mạch LED hoàn chỉnh",
+      "difficulty": "Thực hành",
+      "minutes": 60,
+      "brief": "Route bo LED với đúng net, không còn kết nối chưa đi dây. Giữ outline và quy tắc đã tạo ở bài trước.",
+      "deliverables": [
+        "Ảnh layout đọc rõ track và pad.",
+        "Ảnh DRC có số kết nối chưa route."
+      ],
+      "steps": [
+        "Route nguồn → R1 → D1 → GND.",
+        "Kiểm tra mỗi track đúng net và chạm pad.",
+        "Nếu dùng via, kiểm tra kết nối hai lớp.",
+        "Chạy DRC và xử lý lỗi; ghi ngoại lệ nếu có."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Layout có đầy đủ J1, R1 và D1.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Các đường nối quan sát được nhất quán với mạch LED.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Không có đường đồng bắc cầu rõ ràng giữa hai net khác nhau.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Ảnh DRC hiển thị 0 kết nối chưa route và ngoại lệ được giải thích.",
+          "points": 25
+        }
+      ],
+      "reference": "board",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e09",
+      "module": 5,
+      "title": "Review GND zone",
+      "difficulty": "Thực hành",
+      "minutes": 45,
+      "brief": "Tạo GND zone trên bo LED hoặc bo MCU. Kiểm tra các đảo đồng và đường hồi sau khi refill.",
+      "deliverables": [
+        "Ảnh layout đã refill, hiện tên net/lớp.",
+        "Ảnh cận vùng dễ bị cắt hoặc ghi chú đánh dấu đường hồi."
+      ],
+      "steps": [
+        "Gán zone cho GND, refill.",
+        "Highlight GND để kiểm tra tính liên tục.",
+        "Tìm vùng bị track chia cắt và thử cải thiện.",
+        "Ghi kết quả review cùng giới hạn ảnh không thể chứng minh."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Zone được thể hiện đã refill và thuộc GND.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Ảnh cho thấy kết nối tới pad hoặc via GND.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Đường hồi dự kiến được giải thích bằng ghi chú cụ thể.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Có nhận xét về đảo đồng/khe cắt, không chỉ ghi “đạt”.",
+          "points": 25
+        }
+      ],
+      "reference": "board",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e10",
+      "module": 6,
+      "title": "Review nguồn 3,3 V và decoupling",
+      "difficulty": "Nâng cao",
+      "minutes": 60,
+      "brief": "Thiết kế/review khối LDO 5 V → 3,3 V, dòng giả định 100 mA và tụ gần MCU. Dùng đúng datasheet LDO/MCU bạn chọn.",
+      "deliverables": [
+        "Ảnh schematic khối nguồn và mã IC.",
+        "Ảnh layout khối nguồn/MCU với tụ và GND."
+      ],
+      "steps": [
+        "Ghi yêu cầu tụ/ESR và dropout từ datasheet.",
+        "Tính tổn hao xấp xỉ 0,17 W.",
+        "Đánh dấu vòng dòng qua tụ input/output và decoupling.",
+        "Ghi phần nhiệt chưa được xác minh bằng đo hoặc mô phỏng."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Schematic có mã LDO và tụ input/output theo ghi chú datasheet.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Phép tính công suất và giả định dòng được nêu đúng.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Layout cho thấy vị trí tụ liên quan tới chân nguồn.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Đường GND/vòng dòng và giới hạn kiểm tra nhiệt được giải thích.",
+          "points": 25
+        }
+      ],
+      "reference": "mcu",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e11",
+      "module": 7,
+      "title": "Bộ hồ sơ kiểm tra trước sản xuất",
+      "difficulty": "Thực hành",
+      "minutes": 60,
+      "brief": "Tạo bộ hồ sơ cho bo LED: ERC, DRC, Gerber/drill và checklist. Ảnh chỉ giúp review hồ sơ, không chứng nhận bo được phép sản xuất.",
+      "deliverables": [
+        "Ảnh báo cáo ERC/DRC hoặc bảng tổng hợp có giá trị cụ thể.",
+        "Ảnh Gerber Viewer thể hiện outline, đồng và lỗ."
+      ],
+      "steps": [
+        "Refill zone và chạy ERC/DRC.",
+        "Xuất Gerber/drill vào thư mục revision riêng.",
+        "Mở đúng đầu ra vừa xuất trong viewer.",
+        "Ghi danh sách tệp, revision và mọi ngoại lệ chưa xử lý."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Có kết quả ERC và DRC đọc được, cùng revision.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "Gerber Viewer cho thấy outline và lớp đồng.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "Drill/lỗ được thể hiện hoặc đối chiếu trong hồ sơ.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Checklist nêu revision, tệp xuất và ngoại lệ/giới hạn.",
+          "points": 25
+        }
+      ],
+      "reference": "board",
+      "version": "1.0",
+      "passScore": 75
+    },
+    {
+      "id": "e12",
+      "module": 8,
+      "title": "Đồ án tốt nghiệp: bo STM32",
+      "difficulty": "Đồ án",
+      "minutes": 180,
+      "brief": "Thiết kế bo STM32 nguồn 5 V → 3,3 V, SWD, LED và I²C header. Nộp hai ảnh rõ cùng ghi chú mã MCU, datasheet, ERC/DRC và các quyết định kỹ thuật.",
+      "deliverables": [
+        "Ảnh schematic đủ rõ thấy nguồn, MCU, SWD và giao tiếp.",
+        "Ảnh PCB thể hiện placement, routing và mặt tham chiếu."
+      ],
+      "steps": [
+        "Chốt mã MCU/package và lập yêu cầu.",
+        "Hoàn thành schematic, pin mapping, ERC.",
+        "Layout theo cơ khí, đường dòng và decoupling; chạy DRC.",
+        "Nộp ghi chú review; giữ project gốc để kiểm tra thủ công khi ảnh chưa đủ."
+      ],
+      "criteria": [
+        {
+          "id": "c1",
+          "text": "Schematic thể hiện khối nguồn, đúng mã MCU và xử lý các chân nguồn/boot/reset theo ghi chú.",
+          "points": 25
+        },
+        {
+          "id": "c2",
+          "text": "SWD, LED và I²C header có kết nối/pinout đọc được.",
+          "points": 25
+        },
+        {
+          "id": "c3",
+          "text": "PCB cho thấy placement tụ, nguồn và connector có giải thích hợp lý.",
+          "points": 25
+        },
+        {
+          "id": "c4",
+          "text": "Có kết quả ERC/DRC, revision và kế hoạch kiểm thử phần cứng, không tuyên bố ảnh chứng minh mạch chạy.",
+          "points": 25
+        }
+      ],
+      "reference": "mcu",
+      "version": "1.0",
+      "passScore": 75
+    }
+  ]
+}

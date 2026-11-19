@@ -1,0 +1,1543 @@
+{
+  "checkedAt": "2026-11-17",
+  "lessons": {
+    "sb01": {
+      "videos": [
+        {
+          "id": "-M554HSVRe4",
+          "start": 0,
+          "focus": "Làm quen giao diện SOLIDWORKS và các vùng công cụ; dùng cùng phần chuẩn bị project của bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Nhận diện vùng đồ họa, FeatureManager và CommandManager.",
+          "Theo dõi cách mở tài liệu và chọn công cụ theo môi trường.",
+          "Tạm dừng để tìm lại đúng công cụ trên phiên bản của bạn."
+        ],
+        "tryIt": "Tạo một Part, đặt đơn vị mm và lưu vào thư mục bài học; mở lại để kiểm tra."
+      }
+    },
+    "sb02": {
+      "videos": [
+        {
+          "id": "sN7viAOGWtY",
+          "start": 0,
+          "focus": "Ví dụ design intent trong SOLIDWORKS 2017; chú ý hành vi khi sửa kích thước hơn vị trí nút lệnh."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát chuẩn mà Sketch và feature tham chiếu đến.",
+          "Chú ý cách thay kích thước làm mô hình thay đổi.",
+          "Phân biệt hình đúng ban đầu với hình vẫn đúng sau thay đổi."
+        ],
+        "tryIt": "Đổi một kích thước của tấm đối xứng và kiểm tra tâm lỗ có giữ đúng ý đồ không."
+      }
+    },
+    "sb03": {
+      "videos": [
+        {
+          "id": "8xTwqSKv-GU",
+          "start": 0,
+          "focus": "Hướng dẫn tiếng Việt về ràng buộc Sketch; liên hệ với bậc tự do và chẩn đoán lỗi trong bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Theo dõi thao tác chọn hình học trước khi thêm relation.",
+          "Quan sát thay đổi màu/trạng thái Sketch sau ràng buộc.",
+          "Dừng sau mỗi relation và thử kéo phần hình học còn tự do."
+        ],
+        "tryIt": "Tạo Sketch nhỏ, thêm từng relation rồi kiểm tra trạng thái Fully Defined."
+      }
+    },
+    "s01": {
+      "videos": [
+        {
+          "id": "8xTwqSKv-GU",
+          "start": 0,
+          "focus": "Áp dụng cách ràng buộc trong video cho tấm và hai lỗ đối xứng của bài EP LAB."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Xác định gốc tọa độ và đường tâm trước khi đặt kích thước.",
+          "Theo dõi quan hệ hình học thay vì dùng Fix cho mọi đối tượng.",
+          "Thử sửa kích thước để kiểm chứng quan hệ vẫn còn hiệu lực."
+        ],
+        "tryIt": "Tự dựng tấm hai lỗ của đề; đổi chiều dài và kiểm tra tính đối xứng."
+      }
+    },
+    "sb04": {
+      "videos": [
+        {
+          "id": "DKwnvsM8-xI",
+          "start": 0,
+          "focus": "Quan sát cách định nghĩa loại lỗ bằng Hole Wizard."
+        },
+        {
+          "id": "Nrtdu1M5Bb0",
+          "start": 93,
+          "focus": "Pattern theo tham chiếu và khoảng cách mép; ví dụ không phải toàn bộ đề bài EP LAB."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Tách lựa chọn loại lỗ và vị trí lỗ trong Hole Wizard.",
+          "Theo dõi feature gốc và tham chiếu của Linear Pattern.",
+          "Kiểm số lượng và khoảng cách khi sửa kích thước Part."
+        ],
+        "tryIt": "Tạo một lỗ chuẩn, nhân thành dãy và đổi chiều dài tấm để kiểm tra vị trí."
+      }
+    },
+    "sb05": {
+      "videos": [
+        {
+          "id": "injNiuyv5C8",
+          "start": 0,
+          "focus": "Minh họa Shell: chọn mặt mở và chiều dày."
+        },
+        {
+          "id": "rn86kptKgj0",
+          "start": 74,
+          "focus": "Minh họa Draft và Draft Analysis trong giao diện cũ; đối chiếu hướng kéo và các mặt được chọn."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát mặt bị bỏ đi khi tạo Shell.",
+          "Theo dõi hướng kéo và mặt chuẩn khi tạo Draft.",
+          "Dùng section view để kiểm tra chiều dày sau sửa feature."
+        ],
+        "tryIt": "Tạo hộp rỗng đơn giản, thử hai chiều dày và ghi lại trường hợp Shell không tạo được."
+      }
+    },
+    "s02": {
+      "videos": [
+        {
+          "id": "m1W9s1kNnRE",
+          "start": 0,
+          "focus": "Hướng dẫn tiếng Việt về Extruded Boss/Base và Extruded Cut; áp dụng cho tấm có lỗ xuyên của bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Phân biệt thao tác thêm vật liệu và cắt vật liệu.",
+          "Quan sát hướng tạo khối và end condition của Cut.",
+          "Tạm dừng trước khi xác nhận feature để kiểm bản xem trước."
+        ],
+        "tryIt": "Dựng tấm 80×50×8 mm với hai lỗ Ø8; đổi dày thành 12 mm và kiểm lỗ vẫn xuyên."
+      }
+    },
+    "s03": {
+      "videos": [
+        {
+          "id": "-bVpPh7UADg",
+          "start": 0,
+          "focus": "Hướng dẫn tiếng Việt về Revolve; dùng cho hình cơ sở trước khi thêm Fillet/Chamfer trong bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Xác định nửa tiết diện và đường tâm quay.",
+          "Quan sát vùng kín được chọn trước khi Revolve.",
+          "Kiểm lại hình cơ sở trước khi xử lý cạnh."
+        ],
+        "tryIt": "Dựng trục bậc của đề bằng Revolve; thêm Fillet/Chamfer bằng các feature riêng."
+      }
+    },
+    "sb06": {
+      "videos": [
+        {
+          "id": "k0jXIca_arI",
+          "start": 0,
+          "focus": "Phân biệt các phép Combine trên nhiều solid body."
+        },
+        {
+          "id": "BF-_HR8p5zE",
+          "start": 0,
+          "focus": "Quan sát Knit trong mô hình surface; kiểm tra điều kiện tạo solid thay vì chỉ nhìn hình bên ngoài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Theo dõi số body trong cây mô hình trước và sau Combine.",
+          "Phân biệt cộng, trừ và lấy phần giao của solid.",
+          "Kiểm surface đã kín và đã thành solid hay chưa."
+        ],
+        "tryIt": "Tạo hai body giao nhau, thử các phép Combine và ghi lại số body sau mỗi phép."
+      }
+    },
+    "s04": {
+      "videos": [
+        {
+          "id": "PVx5VkUOiLo",
+          "start": 222,
+          "focus": "Mốc tạo plane từ mặt/plane và cạnh; liên hệ với plane nghiêng và hướng cắt của bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Theo dõi thứ tự chọn tham chiếu trong Plane PropertyManager.",
+          "Quan sát góc và hướng của plane mới.",
+          "Đặt Sketch trên plane mới rồi kiểm hướng pháp tuyến."
+        ],
+        "tryIt": "Tạo plane nghiêng theo đề; cắt lỗ và dùng section view để kiểm hướng lỗ."
+      }
+    },
+    "s05": {
+      "videos": [
+        {
+          "id": "IJawoVsJnF4",
+          "start": 0,
+          "focus": "Hướng dẫn tiếng Việt về Sweep Boss/Base và Sweep Cut; tập trung quan hệ profile–path."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Nhận diện Sketch tiết diện và Sketch đường dẫn riêng.",
+          "Theo dõi điểm nối giữa profile và đầu path.",
+          "Kiểm đường dẫn tiếp tuyến và bản xem trước khi tạo khối."
+        ],
+        "tryIt": "Tạo Sweep theo hai đoạn nối tiếp tuyến của đề; sửa bán kính bo và kiểm kết quả."
+      }
+    },
+    "s06": {
+      "videos": [
+        {
+          "id": "pK6ru0IXSNQ",
+          "start": 0,
+          "focus": "Hướng dẫn tiếng Việt về Loft Boss/Base và Loft Cut; chú ý thứ tự các tiết diện."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát cách chọn các profile theo thứ tự.",
+          "Theo dõi connector và dấu hiệu hình bị xoắn.",
+          "Phân biệt khối đặc, bề mặt và tùy chọn thành mỏng."
+        ],
+        "tryIt": "Tạo Loft chuyển tiếp của đề; đảo cách chọn profile để nhận biết và sửa hiện tượng xoắn."
+      }
+    },
+    "sb07": {
+      "videos": [
+        {
+          "id": "yUXZDITnnMA",
+          "start": 0,
+          "focus": "Minh họa top-down assembly và chi tiết phụ thuộc ngữ cảnh lắp ráp."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát chi tiết được tạo/chỉnh ngay trong Assembly.",
+          "Nhận diện hình học được lấy từ component khác.",
+          "Theo dõi tham chiếu ngoài và thay đổi truyền giữa các chi tiết."
+        ],
+        "tryIt": "Tạo một quan hệ trong ngữ cảnh cụm, thay chi tiết gốc và ghi lại chi tiết bị ảnh hưởng."
+      }
+    },
+    "s07": {
+      "videos": [
+        {
+          "id": "yGvZ3Jly1mI",
+          "start": 18,
+          "focus": "Minh họa chèn component và mate cơ bản; bài EP LAB yêu cầu giữ đúng một bậc quay."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Theo dõi component cố định và component còn di chuyển.",
+          "Quan sát từng mate làm mất bậc tự do nào.",
+          "Thử kéo/nhấn quay component sau mỗi mate."
+        ],
+        "tryIt": "Lắp trục và bạc của đề, để trục quay được nhưng không trượt dọc."
+      }
+    },
+    "s09": {
+      "videos": [
+        {
+          "id": "6biwIeGUvUA",
+          "start": 0,
+          "focus": "Làm quen ConfigurationManager và chuyển biến thể."
+        },
+        {
+          "id": "qqnilDbzoWE",
+          "start": 0,
+          "focus": "Quan sát global variables và kích thước liên kết; áp dụng vào họ chi tiết của bài."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Phân biệt cấu hình hình học với trạng thái hiển thị.",
+          "Theo dõi một biến chung điều khiển nhiều kích thước.",
+          "Kích hoạt và rebuild lần lượt từng configuration."
+        ],
+        "tryIt": "Tạo hai biến thể của chi tiết; đổi biến chung và kiểm cả hai đều rebuild đúng."
+      }
+    },
+    "s11": {
+      "videos": [
+        {
+          "id": "CBM3YwRPAO4",
+          "start": 0,
+          "focus": "Minh họa Limit Distance Mate để giữ chuyển động trong khoảng cho phép."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát các mặt được dùng để đo khoảng cách.",
+          "Theo dõi giá trị nhỏ nhất và lớn nhất của mate.",
+          "Kéo cơ cấu đến hai đầu hành trình để kiểm hướng chuyển động."
+        ],
+        "tryIt": "Đặt hành trình 0–40 mm cho cơ cấu của đề; kiểm giao thoa ở hai đầu và một vị trí giữa."
+      }
+    },
+    "sb08": {
+      "videos": [
+        {
+          "id": "l1c0BcSATIA",
+          "start": 0,
+          "focus": "Minh họa tạo và dùng BOM trong Drawing; dung sai và chuẩn đo vẫn cần đối chiếu phần lý thuyết của bài."
+        },
+        {
+          "id": "hstgbZxfUXs",
+          "start": 0,
+          "focus": "Quan sát bố cục Drawing, hình chiếu và kích thước trong tutorial gốc."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Theo dõi cách lấy dữ liệu từ Assembly vào BOM.",
+          "Đối chiếu các component trong cụm với từng dòng của bảng.",
+          "Xem cách hình chiếu và kích thước bổ sung thông tin cho mô hình."
+        ],
+        "tryIt": "Tạo bảng BOM của cụm, kiểm tên/số lượng và ghi rõ các yêu cầu dung sai cần xác nhận."
+      }
+    },
+    "s08": {
+      "videos": [
+        {
+          "id": "hstgbZxfUXs",
+          "start": 0,
+          "focus": "Tutorial Drawing có thao tác trực tiếp: hình chiếu, kích thước và trình bày bản vẽ."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát liên hệ giữa Part và các hình chiếu.",
+          "Theo dõi cách đặt kích thước dễ đọc, không lặp.",
+          "Kiểm lại bản vẽ sau khi thay đổi mô hình."
+        ],
+        "tryIt": "Xuất Drawing và PDF của tấm; sửa Part, rebuild rồi kiểm PDF mới đúng revision."
+      }
+    },
+    "sb09": {
+      "videos": [
+        {
+          "id": "GSzV3DEYGVQ",
+          "start": 53,
+          "focus": "Bắt đầu tại Structural Members; video tiếp tục với trim, end caps và weldment."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát skeleton định vị các structural member.",
+          "Theo dõi cách cắt/ghép ở góc để tránh chồng vật liệu.",
+          "Đối chiếu body và Cut List sau cập nhật."
+        ],
+        "tryIt": "Dựng khung nhỏ theo skeleton, cập nhật Cut List và kiểm chiều dài từng thanh."
+      }
+    },
+    "sb10": {
+      "videos": [
+        {
+          "id": "0ByIsHQ-whc",
+          "start": 40,
+          "focus": "Ví dụ SimXpress cơ bản trong giao diện cũ: đặt ràng buộc và lực; không thay thế kiểm chứng giả định, mesh và kết quả của bài."
+        },
+        {
+          "id": "9FnIBFpCWls",
+          "start": 0,
+          "focus": "Giới thiệu mesh trong Simulation; dùng cùng yêu cầu kiểm hội tụ của giáo trình."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát vị trí cố định, phương lực và đơn vị trước khi chạy.",
+          "Liên hệ mật độ mesh với hình học cần khảo sát.",
+          "Đọc kết quả cùng giả định mô hình, không kết luận chỉ từ màu ứng suất."
+        ],
+        "tryIt": "Ghi vật liệu, tải và ràng buộc; thử hai mức mesh và so một đại lượng tại cùng vị trí."
+      }
+    },
+    "s10": {
+      "videos": [
+        {
+          "id": "oUNzsrWlRwI",
+          "start": 0,
+          "focus": "Tutorial Sheet Metal: base/edge flange, fold/unfold và Flat Pattern; có mốc bản trải để xem lại."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát thông số chiều dày, bán kính và cách tạo flange.",
+          "Theo dõi khác biệt giữa Fold/Unfold và Flat Pattern.",
+          "Đối chiếu kích thước bản trải với giả định uốn của bài."
+        ],
+        "tryIt": "Tạo giá đỡ theo đề, mở Flat Pattern và so chiều dài với phép tính bend allowance."
+      }
+    },
+    "sb11": {
+      "videos": [
+        {
+          "id": "nK4n2Y5PWT8",
+          "start": 0,
+          "focus": "Minh họa Pack and Go và cách giữ tham chiếu khi sao chép bộ hồ sơ."
+        },
+        {
+          "id": "mJ4HmW1ns2g",
+          "start": 2905,
+          "focus": "Mốc Preparing STEP files của ví dụ vỏ PCB; tham khảo bước xuất định dạng trao đổi."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát danh sách Part, Assembly và Drawing được gom.",
+          "Kiểm cách đặt thư mục đích và tên file.",
+          "Mở bộ hồ sơ ở thư mục sạch và kiểm file STEP sau xuất."
+        ],
+        "tryIt": "Pack and Go bài của bạn sang thư mục mới; mở thử khi thư mục gốc không được dùng làm tham chiếu."
+      }
+    },
+    "sb12": {
+      "videos": [
+        {
+          "id": "mJ4HmW1ns2g",
+          "start": 117,
+          "focus": "Ví dụ thiết kế vỏ kim loại cho PCB: master model, lỗ đầu nối và đỡ bo; kích thước khác đồ án EP LAB."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát cách dựng hình bao vỏ từ các chuẩn ban đầu.",
+          "Theo dõi lỗ đầu nối và các điểm đỡ PCB.",
+          "Đối chiếu khoảng hở, đường lắp và tài liệu bàn giao với bo của bạn."
+        ],
+        "tryIt": "Chốt kích thước bo, đầu nối và vùng cấm; phác một phương án vỏ theo chính bo của đề."
+      }
+    },
+    "s12": {
+      "videos": [
+        {
+          "id": "mJ4HmW1ns2g",
+          "start": 2086,
+          "focus": "Mốc Adding PCB support của ví dụ vỏ PCB; xem thêm các mốc Shell, lỗ đầu nối và bản vẽ trong cùng video."
+        }
+      ],
+      "visualGuide": {
+        "watchFor": [
+          "Quan sát điểm đỡ PCB và liên hệ với lỗ bắt vít của bo.",
+          "Theo dõi không gian cho đầu nối và thao tác lắp.",
+          "Kiểm vỏ và bo ở cùng hệ chuẩn trước khi xuất file."
+        ],
+        "tryIt": "Lắp bo tham chiếu vào vỏ của đề; kiểm khoảng hở, giao thoa và cách tháo/lắp nắp."
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "-M554HSVRe4",
+      "track": "solidworks",
+      "title": "Học Solidworks Bài 1  Tổng quan giao diện phần mềm Solidworks",
+      "duration": 2570,
+      "kind": "solidworks",
+      "reason": "Làm quen giao diện SOLIDWORKS và các vùng công cụ; dùng cùng phần chuẩn bị project của bài.",
+      "url": "https://www.youtube.com/watch?v=-M554HSVRe4",
+      "position": 1,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20210403",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb01"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "sN7viAOGWtY",
+      "track": "solidworks",
+      "title": "SOLIDWORKS 2017 201 - Basic Part Modeling That Captures Your Design Intent",
+      "duration": 1530,
+      "kind": "solidworks",
+      "reason": "Ví dụ design intent trong SOLIDWORKS 2017; chú ý hành vi khi sửa kích thước hơn vị trí nút lệnh.",
+      "url": "https://www.youtube.com/watch?v=sN7viAOGWtY",
+      "position": 2,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20170814",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb02"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 85
+        },
+        {
+          "start_time": 85,
+          "title": "Overview",
+          "end_time": 197
+        },
+        {
+          "start_time": 197,
+          "title": "Layer Cake Method",
+          "end_time": 594
+        },
+        {
+          "start_time": 594,
+          "title": "Manufacturing Approach",
+          "end_time": 920
+        },
+        {
+          "start_time": 920,
+          "title": "Potters Wheel Approach",
+          "end_time": 1118
+        },
+        {
+          "start_time": 1118,
+          "title": "Offset Feature",
+          "end_time": 1425
+        },
+        {
+          "start_time": 1425,
+          "title": "Best Practices",
+          "end_time": 1530
+        }
+      ],
+      "softwareVersion": "SOLIDWORKS 2017"
+    },
+    {
+      "id": "8xTwqSKv-GU",
+      "track": "solidworks",
+      "title": "Học Solidworks Bài 4. Hướng dẫn ràng buộc khi vẽ sketch trong Solidworks",
+      "duration": 1521,
+      "kind": "solidworks",
+      "reason": "Hướng dẫn tiếng Việt về ràng buộc Sketch; liên hệ với bậc tự do và chẩn đoán lỗi trong bài.",
+      "url": "https://www.youtube.com/watch?v=8xTwqSKv-GU",
+      "position": 3,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20210502",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb03",
+        "s01"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "DKwnvsM8-xI",
+      "track": "solidworks",
+      "title": "SOLIDWORKS - Hole Wizard",
+      "duration": 236,
+      "kind": "solidworks",
+      "reason": "Quan sát cách định nghĩa loại lỗ bằng Hole Wizard.",
+      "url": "https://www.youtube.com/watch?v=DKwnvsM8-xI",
+      "position": 4,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20101013",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb04"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "Nrtdu1M5Bb0",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Tutorial – Linear Pattern Offset Control",
+      "duration": 503,
+      "kind": "solidworks",
+      "reason": "Pattern theo tham chiếu và khoảng cách mép; ví dụ không phải toàn bộ đề bài EP LAB.",
+      "url": "https://www.youtube.com/watch?v=Nrtdu1M5Bb0",
+      "position": 5,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20210329",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb04"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction to patterns",
+          "end_time": 93
+        },
+        {
+          "start_time": 93,
+          "title": "Patterning with references",
+          "end_time": 260
+        },
+        {
+          "start_time": 260,
+          "title": "Using global variables",
+          "end_time": 406
+        },
+        {
+          "start_time": 406,
+          "title": "Dynamic model updates",
+          "end_time": 503
+        }
+      ]
+    },
+    {
+      "id": "injNiuyv5C8",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Beginner to Certification – Shell",
+      "duration": 167,
+      "kind": "solidworks",
+      "reason": "Minh họa Shell: chọn mặt mở và chiều dày.",
+      "url": "https://www.youtube.com/watch?v=injNiuyv5C8",
+      "position": 6,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "SolidProfessor",
+      "upload_date": "20230824",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb05"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "rn86kptKgj0",
+      "track": "solidworks",
+      "title": "SOLIDWORKS – Mold Tools Part 1 – Draft Analysis and Scale",
+      "duration": 298,
+      "kind": "solidworks",
+      "reason": "Minh họa Draft và Draft Analysis trong giao diện cũ; đối chiếu hướng kéo và các mặt được chọn.",
+      "url": "https://www.youtube.com/watch?v=rn86kptKgj0",
+      "position": 7,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20140117",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb05"
+      ],
+      "chapters": [
+        {
+          "start_time": 74,
+          "title": "Creating a Draft",
+          "end_time": 93
+        },
+        {
+          "start_time": 93,
+          "title": "Draft Analysis",
+          "end_time": 116
+        },
+        {
+          "start_time": 116,
+          "title": "Direction of Pull",
+          "end_time": 199
+        },
+        {
+          "start_time": 199,
+          "title": "Faces To Draft",
+          "end_time": 230
+        },
+        {
+          "start_time": 230,
+          "title": "Shrinkage",
+          "end_time": 298
+        }
+      ]
+    },
+    {
+      "id": "m1W9s1kNnRE",
+      "track": "solidworks",
+      "title": "Học Solidworks Bài 8 Lệnh Extrude boss base và extrude cut trong solidworks",
+      "duration": 2849,
+      "kind": "solidworks",
+      "reason": "Hướng dẫn tiếng Việt về Extruded Boss/Base và Extruded Cut; áp dụng cho tấm có lỗ xuyên của bài.",
+      "url": "https://www.youtube.com/watch?v=m1W9s1kNnRE",
+      "position": 8,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20210627",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s02"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "-bVpPh7UADg",
+      "track": "solidworks",
+      "title": "Học solidworks Bài 10  Lệnh revolved boss base và revolve cut trong solidworks",
+      "duration": 1749,
+      "kind": "solidworks",
+      "reason": "Hướng dẫn tiếng Việt về Revolve; dùng cho hình cơ sở trước khi thêm Fillet/Chamfer trong bài.",
+      "url": "https://www.youtube.com/watch?v=-bVpPh7UADg",
+      "position": 9,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20210731",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s03"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "k0jXIca_arI",
+      "track": "solidworks",
+      "title": "SOLIDWORKS – Combine Feature",
+      "duration": 270,
+      "kind": "solidworks",
+      "reason": "Phân biệt các phép Combine trên nhiều solid body.",
+      "url": "https://www.youtube.com/watch?v=k0jXIca_arI",
+      "position": 10,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20131209",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb06"
+      ],
+      "chapters": [
+        {
+          "start_time": 70,
+          "title": "Where is combine in Solidworks?",
+          "end_time": 270
+        }
+      ]
+    },
+    {
+      "id": "BF-_HR8p5zE",
+      "track": "solidworks",
+      "title": "SOLIDWORKS: Using Knit Feature for Surface Modeling",
+      "duration": 490,
+      "kind": "solidworks",
+      "reason": "Quan sát Knit trong mô hình surface; kiểm tra điều kiện tạo solid thay vì chỉ nhìn hình bên ngoài.",
+      "url": "https://www.youtube.com/watch?v=BF-_HR8p5zE",
+      "position": 11,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Hawk Ridge Systems",
+      "upload_date": "20210802",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb06"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 170
+        },
+        {
+          "start_time": 170,
+          "title": "Troubleshooting",
+          "end_time": 252
+        },
+        {
+          "start_time": 252,
+          "title": "Gap Control",
+          "end_time": 328
+        },
+        {
+          "start_time": 328,
+          "title": "Create Solid",
+          "end_time": 440
+        },
+        {
+          "start_time": 440,
+          "title": "Outro",
+          "end_time": 490
+        }
+      ]
+    },
+    {
+      "id": "PVx5VkUOiLo",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Quick Tip - How to Create Reference Planes",
+      "duration": 678,
+      "kind": "solidworks",
+      "reason": "Mốc tạo plane từ mặt/plane và cạnh; liên hệ với plane nghiêng và hướng cắt của bài.",
+      "url": "https://www.youtube.com/watch?v=PVx5VkUOiLo",
+      "position": 12,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20150323",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s04"
+      ],
+      "chapters": [
+        {
+          "start_time": 54,
+          "title": "The Plane Wizard",
+          "end_time": 113
+        },
+        {
+          "start_time": 113,
+          "title": "Create a Reference Plane",
+          "end_time": 173
+        },
+        {
+          "start_time": 173,
+          "title": "Creating a Offset Distance Reference Plane",
+          "end_time": 222
+        },
+        {
+          "start_time": 222,
+          "title": "Create a Reference Plane Using a Planar Face or Plane and an Edge",
+          "end_time": 369
+        },
+        {
+          "start_time": 369,
+          "title": "Parallel Reference",
+          "end_time": 413
+        },
+        {
+          "start_time": 413,
+          "title": "Tangent and Perpendicular",
+          "end_time": 458
+        },
+        {
+          "start_time": 458,
+          "title": "Tangent and Parallel",
+          "end_time": 583
+        },
+        {
+          "start_time": 583,
+          "title": "Create a Plane Parallel To Screen",
+          "end_time": 619
+        },
+        {
+          "start_time": 619,
+          "title": "Create a Plane Perpendicular at a Point",
+          "end_time": 678
+        }
+      ]
+    },
+    {
+      "id": "IJawoVsJnF4",
+      "track": "solidworks",
+      "title": "Học solidworks Bài 12 Lệnh sweep boss base và sweep cut trong solidworks",
+      "duration": 1807,
+      "kind": "solidworks",
+      "reason": "Hướng dẫn tiếng Việt về Sweep Boss/Base và Sweep Cut; tập trung quan hệ profile–path.",
+      "url": "https://www.youtube.com/watch?v=IJawoVsJnF4",
+      "position": 13,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20210904",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s05"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "pK6ru0IXSNQ",
+      "track": "solidworks",
+      "title": "Học Solidworks Bài 14  lệnh loft bose base và lệnh loft cut trong solidworks",
+      "duration": 1560,
+      "kind": "solidworks",
+      "reason": "Hướng dẫn tiếng Việt về Loft Boss/Base và Loft Cut; chú ý thứ tự các tiết diện.",
+      "url": "https://www.youtube.com/watch?v=pK6ru0IXSNQ",
+      "position": 14,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Procad Solidworks",
+      "upload_date": "20211023",
+      "language": "vi",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s06"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "yUXZDITnnMA",
+      "track": "solidworks",
+      "title": "SOLIDWORKS - Top Down Assembly Modeling",
+      "duration": 259,
+      "kind": "solidworks",
+      "reason": "Minh họa top-down assembly và chi tiết phụ thuộc ngữ cảnh lắp ráp.",
+      "url": "https://www.youtube.com/watch?v=yUXZDITnnMA",
+      "position": 15,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20140214",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb07"
+      ],
+      "chapters": []
+    },
+    {
+      "id": "yGvZ3Jly1mI",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Tutorial \"Lesson 2: Assemblies\" (05/10)",
+      "duration": 280,
+      "kind": "solidworks",
+      "reason": "Minh họa chèn component và mate cơ bản; bài EP LAB yêu cầu giữ đúng một bậc quay.",
+      "url": "https://www.youtube.com/watch?v=yGvZ3Jly1mI",
+      "position": 16,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "DASI Solutions now a part of GoEngineer",
+      "upload_date": "20170714",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s07"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Intro",
+          "end_time": 18
+        },
+        {
+          "start_time": 18,
+          "title": "Base part",
+          "end_time": 140
+        },
+        {
+          "start_time": 140,
+          "title": "Tutor part",
+          "end_time": 280
+        }
+      ]
+    },
+    {
+      "id": "6biwIeGUvUA",
+      "track": "solidworks",
+      "title": "SOLIDWORKS CONFIGURATIONS  — QUICK TIP",
+      "duration": 178,
+      "kind": "solidworks",
+      "reason": "Làm quen ConfigurationManager và chuyển biến thể.",
+      "url": "https://www.youtube.com/watch?v=6biwIeGUvUA",
+      "position": 17,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20190723",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s09"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction to configurations",
+          "end_time": 35
+        },
+        {
+          "start_time": 35,
+          "title": "Configuring dimensions",
+          "end_time": 83
+        },
+        {
+          "start_time": 83,
+          "title": "Creating new configurations",
+          "end_time": 118
+        },
+        {
+          "start_time": 118,
+          "title": "Switching configurations",
+          "end_time": 178
+        }
+      ]
+    },
+    {
+      "id": "qqnilDbzoWE",
+      "track": "solidworks",
+      "title": "How setup up and use SOLIDWORKS Global Variables and Link Dimensions to Parts",
+      "duration": 552,
+      "kind": "solidworks",
+      "reason": "Quan sát global variables và kích thước liên kết; áp dụng vào họ chi tiết của bài.",
+      "url": "https://www.youtube.com/watch?v=qqnilDbzoWE",
+      "position": 18,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Too Tall Toby",
+      "upload_date": "20241107",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s09"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Intro",
+          "end_time": 31
+        },
+        {
+          "start_time": 31,
+          "title": "THE PROBLEM - cannot pattern jogs!",
+          "end_time": 142
+        },
+        {
+          "start_time": 142,
+          "title": "Take your CSWP certification!",
+          "end_time": 195
+        },
+        {
+          "start_time": 195,
+          "title": "How to setup equations and global variables in SOLIDWORKS",
+          "end_time": 288
+        },
+        {
+          "start_time": 288,
+          "title": "How to link a GLOBAL VARIABLE to a DIMENSION",
+          "end_time": 431
+        },
+        {
+          "start_time": 431,
+          "title": "Using AUTOMATICALLY REBUILD in the EQUATIONS folder in SOLIDWORKS",
+          "end_time": 480
+        },
+        {
+          "start_time": 480,
+          "title": "Additional applications for GLOBAL VARIABLES",
+          "end_time": 552
+        }
+      ]
+    },
+    {
+      "id": "CBM3YwRPAO4",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Tutorial - Limiting Motion Using Limit Distance Mates",
+      "duration": 348,
+      "kind": "solidworks",
+      "reason": "Minh họa Limit Distance Mate để giữ chuyển động trong khoảng cho phép.",
+      "url": "https://www.youtube.com/watch?v=CBM3YwRPAO4",
+      "position": 19,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20200930",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s11"
+      ],
+      "chapters": [
+        {
+          "start_time": 18,
+          "title": "Pneumatic Cylinder",
+          "end_time": 47
+        },
+        {
+          "start_time": 47,
+          "title": "Create a Limit Distance Mate",
+          "end_time": 274
+        },
+        {
+          "start_time": 274,
+          "title": "Limit Distance Mate",
+          "end_time": 348
+        }
+      ]
+    },
+    {
+      "id": "l1c0BcSATIA",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Tutorial - Bill of Materials",
+      "duration": 621,
+      "kind": "solidworks",
+      "reason": "Minh họa tạo và dùng BOM trong Drawing; dung sai và chuẩn đo vẫn cần đối chiếu phần lý thuyết của bài.",
+      "url": "https://www.youtube.com/watch?v=l1c0BcSATIA",
+      "position": 20,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20200923",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb08"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 42
+        },
+        {
+          "start_time": 42,
+          "title": "Inserting a BOM",
+          "end_time": 176
+        },
+        {
+          "start_time": 176,
+          "title": "AutoBallooning",
+          "end_time": 294
+        },
+        {
+          "start_time": 294,
+          "title": "Blank Part",
+          "end_time": 434
+        },
+        {
+          "start_time": 434,
+          "title": "Auto Ballooning",
+          "end_time": 621
+        }
+      ]
+    },
+    {
+      "id": "hstgbZxfUXs",
+      "track": "solidworks",
+      "title": "Getting Started: Lesson 3, Drawings | SOLIDWORKS Built-In Tutorials",
+      "duration": 474,
+      "kind": "solidworks",
+      "reason": "Quan sát bố cục Drawing, hình chiếu và kích thước trong tutorial gốc.",
+      "url": "https://www.youtube.com/watch?v=hstgbZxfUXs",
+      "position": 21,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20200315",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb08",
+        "s08"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Drawing setup",
+          "end_time": 60
+        },
+        {
+          "start_time": 60,
+          "title": "Sheet format customization",
+          "end_time": 156
+        },
+        {
+          "start_time": 156,
+          "title": "Document properties",
+          "end_time": 198
+        },
+        {
+          "start_time": 198,
+          "title": "Part drawing creation",
+          "end_time": 341
+        },
+        {
+          "start_time": 341,
+          "title": "Assembly drawing update",
+          "end_time": 370
+        },
+        {
+          "start_time": 370,
+          "title": "Assembly sheet and printing",
+          "end_time": 446
+        },
+        {
+          "start_time": 446,
+          "title": "Conclusion",
+          "end_time": 474
+        }
+      ]
+    },
+    {
+      "id": "GSzV3DEYGVQ",
+      "track": "solidworks",
+      "title": "Basic Techniques: Weldment Parts | SOLIDWORKS Built-In Tutorials",
+      "duration": 875,
+      "kind": "solidworks",
+      "reason": "Bắt đầu tại Structural Members; video tiếp tục với trim, end caps và weldment.",
+      "url": "https://www.youtube.com/watch?v=GSzV3DEYGVQ",
+      "position": 22,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20200320",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb09"
+      ],
+      "chapters": [
+        {
+          "start_time": 53,
+          "title": "Structural Members",
+          "end_time": 376
+        },
+        {
+          "start_time": 376,
+          "title": "End Caps",
+          "end_time": 490
+        },
+        {
+          "start_time": 490,
+          "title": "Fill It Weld Beads",
+          "end_time": 501
+        },
+        {
+          "start_time": 501,
+          "title": "Philip Bead",
+          "end_time": 624
+        },
+        {
+          "start_time": 624,
+          "title": "Face Filter",
+          "end_time": 753
+        },
+        {
+          "start_time": 753,
+          "title": "Sub Weldment",
+          "end_time": 798
+        },
+        {
+          "start_time": 798,
+          "title": "Create Sub Weldment",
+          "end_time": 875
+        }
+      ]
+    },
+    {
+      "id": "0ByIsHQ-whc",
+      "track": "solidworks",
+      "title": "SolidWorks - How to Create a Basic Linear Static Simulation Study",
+      "duration": 317,
+      "kind": "solidworks",
+      "reason": "Ví dụ SimXpress cơ bản trong giao diện cũ: đặt ràng buộc và lực; không thay thế kiểm chứng giả định, mesh và kết quả của bài.",
+      "url": "https://www.youtube.com/watch?v=0ByIsHQ-whc",
+      "position": 23,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20131202",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb10"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 40
+        },
+        {
+          "start_time": 40,
+          "title": "Simulation Express Analysis Wizard",
+          "end_time": 145
+        },
+        {
+          "start_time": 145,
+          "title": "Adding a Force",
+          "end_time": 317
+        }
+      ]
+    },
+    {
+      "id": "9FnIBFpCWls",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Simulation: Mesh Fundamentals",
+      "duration": 100,
+      "kind": "solidworks",
+      "reason": "Giới thiệu mesh trong Simulation; dùng cùng yêu cầu kiểm hội tụ của giáo trình.",
+      "url": "https://www.youtube.com/watch?v=9FnIBFpCWls",
+      "position": 24,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "CATI: Computer Aided Technology is now GoEngineer",
+      "upload_date": "20190320",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb10"
+      ],
+      "chapters": [
+        {
+          "start_time": 41,
+          "title": "Multiple Elements",
+          "end_time": 55
+        },
+        {
+          "start_time": 55,
+          "title": "Element Quality",
+          "end_time": 75
+        },
+        {
+          "start_time": 75,
+          "title": "SOLIDWORKS SIMULATION Mesh",
+          "end_time": 89
+        },
+        {
+          "start_time": 89,
+          "title": "Next Video SOLIDWORKS SIMULATION",
+          "end_time": 100
+        }
+      ]
+    },
+    {
+      "id": "oUNzsrWlRwI",
+      "track": "solidworks",
+      "title": "Basic Techniques: Sheet Metal | SOLIDWORKS Built-In Tutorials",
+      "duration": 794,
+      "kind": "solidworks",
+      "reason": "Tutorial Sheet Metal: base/edge flange, fold/unfold và Flat Pattern; có mốc bản trải để xem lại.",
+      "url": "https://www.youtube.com/watch?v=oUNzsrWlRwI",
+      "position": 25,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20200319",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "s10"
+      ],
+      "chapters": [
+        {
+          "start_time": 123,
+          "title": "Add a Miter Flange",
+          "end_time": 157
+        },
+        {
+          "start_time": 157,
+          "title": "Miter Flange",
+          "end_time": 249
+        },
+        {
+          "start_time": 249,
+          "title": "Mirror the Sheet Metal Body",
+          "end_time": 410
+        },
+        {
+          "start_time": 410,
+          "title": "Bend",
+          "end_time": 532
+        },
+        {
+          "start_time": 532,
+          "title": "Add an Edge Flange",
+          "end_time": 584
+        },
+        {
+          "start_time": 584,
+          "title": "Flat Pattern",
+          "end_time": 685
+        },
+        {
+          "start_time": 685,
+          "title": "Adjust the Font on the Bend Notes",
+          "end_time": 724
+        },
+        {
+          "start_time": 724,
+          "title": "Add Leaders",
+          "end_time": 794
+        }
+      ]
+    },
+    {
+      "id": "nK4n2Y5PWT8",
+      "track": "solidworks",
+      "title": "SOLIDWORKS Tutorial-   Pack and Go",
+      "duration": 205,
+      "kind": "solidworks",
+      "reason": "Minh họa Pack and Go và cách giữ tham chiếu khi sao chép bộ hồ sơ.",
+      "url": "https://www.youtube.com/watch?v=nK4n2Y5PWT8",
+      "position": 26,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "GoEngineer",
+      "upload_date": "20230323",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb11"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Intro",
+          "end_time": 18
+        },
+        {
+          "start_time": 18,
+          "title": "Where is Pack and Go",
+          "end_time": 35
+        },
+        {
+          "start_time": 35,
+          "title": "What is it",
+          "end_time": 61
+        },
+        {
+          "start_time": 61,
+          "title": "Parts and Subassemblies",
+          "end_time": 98
+        },
+        {
+          "start_time": 98,
+          "title": "Organization",
+          "end_time": 111
+        },
+        {
+          "start_time": 111,
+          "title": "File Names",
+          "end_time": 122
+        },
+        {
+          "start_time": 122,
+          "title": "Select Replace",
+          "end_time": 159
+        },
+        {
+          "start_time": 159,
+          "title": "Copy Paste",
+          "end_time": 175
+        },
+        {
+          "start_time": 175,
+          "title": "Save",
+          "end_time": 185
+        },
+        {
+          "start_time": 185,
+          "title": "Outro",
+          "end_time": 205
+        }
+      ]
+    },
+    {
+      "id": "mJ4HmW1ns2g",
+      "track": "solidworks",
+      "title": "How To Design a PCB Metal Enclosure using SolidWorks CAD",
+      "duration": 3217,
+      "kind": "solidworks",
+      "reason": "Mốc Preparing STEP files của ví dụ vỏ PCB; tham khảo bước xuất định dạng trao đổi.",
+      "url": "https://www.youtube.com/watch?v=mJ4HmW1ns2g",
+      "position": 27,
+      "verification": "metadata-and-chapters",
+      "checkedAt": "2026-11-17",
+      "channel": "Full Stack Products",
+      "upload_date": "20250524",
+      "language": "en",
+      "playableInEmbed": true,
+      "lessonIds": [
+        "sb11",
+        "sb12",
+        "s12"
+      ],
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 22
+        },
+        {
+          "start_time": 22,
+          "title": "Reference planes and origin",
+          "end_time": 117
+        },
+        {
+          "start_time": 117,
+          "title": "Creating Enclosure Master Model",
+          "end_time": 320
+        },
+        {
+          "start_time": 320,
+          "title": "Shell feature",
+          "end_time": 378
+        },
+        {
+          "start_time": 378,
+          "title": "Holes for connectors",
+          "end_time": 1045
+        },
+        {
+          "start_time": 1045,
+          "title": "Adding material for screws",
+          "end_time": 1506
+        },
+        {
+          "start_time": 1506,
+          "title": "Splitting the part",
+          "end_time": 1760
+        },
+        {
+          "start_time": 1760,
+          "title": "Adding Holes for Screws",
+          "end_time": 2013
+        },
+        {
+          "start_time": 2013,
+          "title": "Adding Screws",
+          "end_time": 2086
+        },
+        {
+          "start_time": 2086,
+          "title": "Adding PCB support",
+          "end_time": 2710
+        },
+        {
+          "start_time": 2710,
+          "title": "Technical Drawing",
+          "end_time": 2905
+        },
+        {
+          "start_time": 2905,
+          "title": "Preparing STEP files",
+          "end_time": 2978
+        },
+        {
+          "start_time": 2978,
+          "title": "Quotation process JLCPCB",
+          "end_time": 3195
+        },
+        {
+          "start_time": 3195,
+          "title": "Wrapping up",
+          "end_time": 3217
+        }
+      ]
+    }
+  ]
+}

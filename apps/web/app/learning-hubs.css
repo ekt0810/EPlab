@@ -1,0 +1,219 @@
+/* Readable type and layouts shared by the three subject centers. */
+:root {
+  --text-body: 1.125rem;
+  --text-control: 1rem;
+  --text-meta: .875rem;
+  --hub-accent-bg: #eaf2f7;
+  --hub-accent-text: #163f5b;
+  --hub-border: #cad6df;
+}
+html[data-theme="dark"] {
+  --hub-accent-bg: var(--selected-bg);
+  --hub-accent-text: var(--selected-text);
+  --hub-border: var(--selected-border);
+}
+body {font-size: var(--text-control); line-height: 1.65;}
+body .btn, body .btn.small, body .nav-link, body .track-nav a,
+body .practice-nav a, body .practice-nav button, body .filter-tabs button,
+body .admin-tabs button, body .lesson-tabs button, body .theme-switch button,
+body input, body textarea, body select, body label, body summary {font-size: var(--text-control);}
+body main p, body main .prose, body main .prose li, body .practice-reading p,
+body .exercise-guide, body .lesson-content {font-size: var(--text-body); line-height: 1.7;}
+body small, body .badge, body .eyebrow, body .nav-caption, body .muted,
+body .small-label, body .side-foot, body footer {font-size: var(--text-meta);}
+body .eyebrow, body .nav-caption {letter-spacing: .06em;}
+html[data-theme="light"] .eyebrow,
+html[data-theme="light"] .nav-caption,
+html[data-theme="light"] .side-foot {color: var(--muted);}
+html[data-theme="light"] .panel p {color: var(--ink);}
+html[data-theme="light"] .panel p.muted {color: var(--muted);}
+.loading {color: var(--muted);}
+html[data-theme="light"] .back-link,
+html[data-theme="light"] .lesson-outline a,
+html[data-theme="light"] .lesson-outline a small {color: var(--muted);}
+html[data-theme="light"] .lesson-outline a.current,
+html[data-theme="light"] .lesson-outline a.current small {color: #8e2340;}
+html[data-theme="light"] .badge.free {color: #236547;}
+html[data-theme="light"] .badge.member {color: #8e2340;}
+body main h1 {font-size: clamp(1.75rem, 2.8vw, 2.25rem); line-height: 1.3; letter-spacing: -.025em;}
+body main h2 {font-size: 1.5rem; line-height: 1.4;}
+body main h3 {font-size: 1.25rem; line-height: 1.45;}
+body .lesson-content pre, body .lesson-content code, body .code-paragraph,
+body .practice-reading pre, body .exercise-guide pre, body .table-wrap code {
+  font-family: Consolas, "Cascadia Code", monospace; font-size: 1rem; line-height: 1.65;
+  overflow-x: auto; max-width: 100%; white-space: pre-wrap;
+}
+body .lesson-content pre, body .practice-reading pre {white-space: pre;}
+body .table-wrap table {font-size: 1rem;}
+body main :is(.prose,.practice-reading) {max-width: 75ch;}
+body main :is(.prose,.lesson-content,.exercise-guide) :is(p,ul,ol) + :is(p,ul,ol,h2,h3) {margin-top: 1.25rem;}
+body .sidebar {width: 17rem; padding: 0 1rem;}
+body .brand {height: 10rem; margin-bottom: 1.25rem;}
+body .sidebar-bottom {padding-top: 2rem;}
+body .main-wrap {margin-left: 17rem; width: calc(100% - 17rem);}
+body .main-wrap main {width: 100%; max-width: 96rem; margin: auto; padding: 2rem clamp(1.25rem,3vw,3.5rem) 3rem;}
+body .topbar {height: auto; min-height: 5rem; padding: 1rem 1.5rem; gap: 1rem; flex-wrap: wrap;}
+.topbar-home {font-weight: 800; color: var(--navy); white-space: nowrap;}
+body .search-box {height: auto; min-height: 2.75rem; width: min(24rem,40%); flex: 1 1 12rem; margin-left: auto;}
+body .search-box input {min-width: 0; width: 100%; background: transparent;}
+.search-submit {background: transparent; color: var(--ink); padding: .25rem .5rem; font-size: 1.125rem;}
+body .topbar .user-menu {min-width: 0;}
+body .topbar .user-menu > span {max-width: 11rem; overflow-wrap: anywhere;}
+body .btn {min-height: 2.75rem;}
+body .panel {min-width: 0;}
+body main :is(.button-row,.filters,.section-heading,.completion,.lesson-source) {flex-wrap: wrap;}
+body main :is(input,textarea,select) {max-width: 100%; min-width: 0;}
+body .table-wrap {max-width: 100%; overflow: auto;}
+body :is(.course-grid,.practice-grid,.pathway-levels) {grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr));}
+body .lesson-layout {grid-template-columns: minmax(0,1fr) minmax(16rem,20rem); gap: 1.75rem;}
+body .lesson-outline {position: static; max-height: none; align-self: start;}
+body .lesson-outline h3 {font-size: 1rem; padding: 1rem 0 .5rem;}
+body .lesson-outline a {font-size: 1rem; line-height: 1.55;}
+body .lesson-outline a small {font-size: .875rem; margin-top: .25rem;}
+body .lesson-source, body .lesson-tabs {gap: 1rem;}
+body .lesson-tabs {flex-wrap: wrap; overflow: visible;}
+body .lesson-tabs button {white-space: normal; min-height: 2.75rem;}
+body .video-box {min-height: 16rem;}
+body .reference-video {padding: 1.25rem; width: 100%;}
+body .reference-video h3 {font-size: 1.5rem;}
+body .reference-video p {max-width: 45ch; font-size: 1rem;}
+body .reference-video .btn {font-size: 1rem; min-height: 2.75rem;}
+body .handbook-contents li {gap: 1rem; font-size: 1rem;}
+body .handbook-contents li small {flex-shrink: 0;}
+body .track-nav a.current {background: var(--hub-accent-bg); color: var(--hub-accent-text); border-radius: .5rem; font-weight: 700;}
+body .local-review-banner {font-size: .875rem;}
+.subject-header {margin-bottom: 2rem;}
+.subject-heading {display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;}
+.subject-breadcrumb {display: flex; gap: .65rem; flex-wrap: wrap; color: var(--muted); font-size: .875rem;}
+.subject-breadcrumb a:hover {text-decoration: underline;}
+body main .subject-name {font-size: 1.5rem; font-weight: 750; color: var(--navy); margin-top: .4rem;}
+.subject-switch {display: flex; align-items: center; gap: .75rem; flex-shrink: 0;}
+.subject-switch select {width: auto; min-width: 10rem;}
+.subject-tabs {display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .5rem; margin-top: 1.5rem; padding-bottom: .5rem; border-bottom: 1px solid var(--line);}
+.subject-tabs a {display: flex; align-items: center; justify-content: center; gap: .6rem; padding: .85rem .65rem; border: 1px solid transparent; border-radius: .6rem; font-size: 1rem; font-weight: 600;}
+.subject-tabs a > span {font-size: .875rem; color: var(--muted);}
+.subject-tabs a:hover {background: var(--surface); border-color: var(--hub-border);}
+.subject-tabs a.selected {background: var(--hub-accent-bg); border-color: var(--hub-border); color: var(--hub-accent-text);}
+.subject-tabs a.selected > span {color: inherit;}
+.hub-home-title {max-width: 65ch; margin-bottom: 2rem;}
+.hub-home-title h1 {margin: .5rem 0 .75rem;}
+.hub-home-grid {display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem;}
+.hub-subject-card {padding: 0; overflow: hidden; display: flex; flex-direction: column;}
+.hub-subject-card .course-art {height: 10rem; min-height: 10rem; border-radius: 0;}
+.hub-subject-body {padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex: 1;}
+.hub-subject-body .btn {margin-top: auto; width: 100%;}
+.hub-subject-body h2 a:hover {text-decoration: underline;}
+.hub-how {margin-top: 2rem;}
+.hub-how > div {display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1rem 0;}
+.hub-how > div > span {display: flex; gap: .65rem; align-items: flex-start; flex: 1 1 16rem;}
+.hub-how svg {flex-shrink: 0; margin-top: .2rem;}
+.hub-how a, .hub-source a {text-decoration: underline; text-underline-offset: .2em; color: var(--navy);}
+.hub-intro {display: flex; flex-direction: column; gap: 1.25rem; padding: 2rem;}
+.hub-intro > p {max-width: 70ch;}
+.hub-counts {display: flex; flex-wrap: wrap; gap: .75rem 1.75rem; color: var(--muted);}
+.hub-counts b {color: var(--ink);}
+.hub-progress {display: grid; gap: .5rem; max-width: 34rem;}
+.hub-progress progress {width: 100%; height: .75rem; accent-color: var(--green);}
+.hub-overview-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0 2rem;}
+.hub-overview-grid .panel > p {margin-top: 1rem;}
+.hub-overview-grid li {margin-top: .75rem;}
+.hub-outcomes {list-style: none; padding: 0;}
+.hub-outcomes li {display: flex; align-items: flex-start; gap: .75rem;}
+.hub-outcomes svg {flex-shrink: 0; color: var(--green); margin-top: .25rem;}
+.hub-pathway > div {display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin: 1rem 0;}
+.hub-pathway h3 {margin: .75rem 0;}
+.hub-pathway a {text-decoration: underline; color: var(--navy);}
+body main .hub-source {font-size: 1rem; color: var(--muted); margin: 1.5rem 0; max-width: 80ch;}
+.hub-page-title {margin-bottom: 1.5rem;}
+.hub-page-title p {margin-top: .75rem; max-width: 75ch;}
+.hub-filters {display: grid; grid-template-columns: 2fr repeat(3,1fr); gap: 1rem; padding: 1.25rem; margin-bottom: 1rem;}
+.hub-filters label {display: flex; flex-direction: column; gap: .4rem;}
+.hub-filters input,.hub-filters select {width: 100%; min-height: 2.75rem;}
+.hub-chapters {display: grid; gap: 2.5rem; margin-top: 1.5rem;}
+.hub-chapter > h2 {display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem;}
+.hub-chapter > h2 span {font-size: 1rem; color: var(--muted); white-space: nowrap;}
+.hub-lesson-list {display: grid; gap: 1rem;}
+.hub-lesson-card {padding: 1.5rem; display: grid; gap: 1rem;}
+.hub-lesson-card .btn {justify-self: start;}
+.hub-lesson-card h3 a:hover {text-decoration: underline;}
+.lesson-badges {display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;}
+body .badge {white-space: normal; line-height: 1.5; padding: .3rem .65rem;}
+body .badge.published, body .badge.progress-badge {background: var(--hub-accent-bg); color: var(--hub-accent-text);}
+.lesson-goal {border-left: 3px solid var(--hub-border); padding-left: 1rem; max-width: 75ch;}
+.lesson-facts {display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 0;}
+.lesson-facts dt {font-size: .875rem; color: var(--muted);}
+.lesson-facts dd {margin: .2rem 0 0; font-size: 1rem; font-weight: 600;}
+.lesson-public-intro {display: grid; gap: 1.25rem; margin-bottom: 1.75rem;}
+.lesson-public-intro > p {max-width: 75ch;}
+.lesson-locked-body {display: grid; gap: 1rem; align-content: start;}
+.lesson-locked-body > svg {color: var(--red);}
+.lesson-pager {display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;}
+.lesson-pager a {flex: 1 1 15rem; text-align: left; justify-content: space-between;}
+.lesson-pager small {display: block; margin-bottom: .25rem; color: var(--muted);}
+.hub-materials {display: grid; gap: 1.5rem;}
+.hub-material {display: grid; grid-template-columns: auto minmax(0,1fr); align-items: start; gap: 1.25rem;}
+.hub-material > svg {color: var(--navy);}
+.hub-material > div {display: grid; gap: 1rem;}
+.hub-material .document-filename {font-size: .875rem; color: var(--muted);}
+body .pathway-level p {font-size: 1rem;}
+body .pathway-level h2 {margin: .75rem 0;}
+body .practice-note {font-size: 1rem; line-height: 1.65;}
+body main :is(.notice,.answer,.prerequisite) {font-size: 1rem;}
+body .auth-layout {max-width: 66rem;}
+body .auth-story p {font-size: 1rem;}
+body .auth-panel {min-width: 0;}
+body .payment-steps p, body .payment-steps b {font-size: 1rem;}
+body footer {flex-wrap: wrap; gap: 1rem;}
+body footer div {flex-wrap: wrap; gap: 1rem;}
+@media (max-width: 1300px) {
+  .hub-home-grid {grid-template-columns: 1fr;}
+  .hub-subject-card {display: grid; grid-template-columns: minmax(10rem,25%) minmax(0,1fr);}
+  .hub-subject-card .course-art {height: 100%; min-height: 12rem;}
+  .hub-filters {grid-template-columns: 1fr 1fr;}
+  body .lesson-layout {grid-template-columns: 1fr;}
+  body .lesson-outline {order: -1;}
+  body .lesson-outline {max-height: 22rem; overflow-y: auto;}
+}
+@media (max-width: 1020px) {
+  body .sidebar {transform: translateX(-100%); width: min(19rem,90vw); visibility: hidden;}
+  body .sidebar.is-open {transform: translateX(0); visibility: visible;}
+  body .main-wrap {margin-left: 0; width: 100%;}
+  body .mobile-toggle, body .mobile-close {display: inline-flex;}
+  body .overlay {display: block; position: fixed; inset: 0; z-index: 25; background: #0008;}
+  body .mobile-close {position: absolute; right: .75rem; top: .75rem;}
+  .hub-home-grid {grid-template-columns: 1fr;}
+  .hub-pathway > div {grid-template-columns: 1fr;}
+  body .auth-layout {grid-template-columns: 1fr;}
+  body .auth-story {display: none;}
+}
+@media (max-width: 650px) {
+  :root {--text-body: 1rem;}
+  body .main-wrap main {padding: 1.25rem 1rem 2rem;}
+  body .topbar {gap: .5rem; padding: .75rem 1rem;}
+  body .search-box {order: 5; flex-basis: 100%; width: 100%;}
+  body .topbar-home {margin-right: auto;}
+  body .theme-switch button {min-width: 2.5rem; min-height: 2.5rem;}
+  body .topbar .btn.small {min-height: 2.75rem; font-size: 1rem; padding: .5rem .7rem;}
+  body .topbar .user-menu > span {display: none;}
+  .hub-overview-grid, .hub-filters, .hub-subject-card {grid-template-columns: 1fr;}
+  .hub-subject-card .course-art {min-height: 7rem; height: 7rem;}
+  .subject-heading {gap: 1rem;}
+  .subject-switch {width: 100%; justify-content: space-between;}
+  .subject-switch select {max-width: 70%;}
+  .subject-tabs {grid-template-columns: 1fr 1fr;}
+  .subject-tabs a {justify-content: flex-start;}
+  .hub-intro, .hub-lesson-card, .hub-material {padding: 1.25rem;}
+  .hub-material {grid-template-columns: 1fr;}
+  .hub-material > svg {display: none;}
+  .hub-chapter > h2 {flex-wrap: wrap; gap: .25rem;}
+  .lesson-pager a {flex-basis: 100%;}
+  body .button-row {align-items: stretch;}
+  body .button-row .btn {flex: 1 1 12rem;}
+  body .lesson-source {align-items: flex-start;}
+  body .lesson-source > span {max-width: 100%;}
+  body .filters {align-items: stretch;}
+  body .filters > label {width: 100%;}
+  body .payment-steps {flex-direction: column; gap: 1rem;}
+  body .payment-steps > svg {display: none;}
+  body .handbook-contents li {align-items: flex-start;}
+}

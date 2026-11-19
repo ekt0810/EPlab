@@ -1,0 +1,164 @@
+.account-manager {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  min-width: 0;
+}
+.free-account-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.free-account-panel h2 {
+  margin-top: 0.8rem;
+}
+.free-account-panel p {
+  max-width: 65ch;
+}
+.support-contact {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.support-contact p {
+  margin: 0.45rem 0;
+}
+.support-contact a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.free-account-panel .button-row {
+  max-width: 26rem;
+}
+@media (max-width: 1100px) {
+  .free-account-panel {
+    grid-template-columns: 1fr;
+  }
+}
+.account-manager .panel {
+  min-width: 0;
+}
+.account-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+.account-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.account-empty {
+  padding: 1.25rem 0;
+  color: var(--muted);
+}
+.account-profile {
+  display: grid;
+  gap: 1.25rem;
+}
+.account-email {
+  overflow-wrap: anywhere;
+}
+.account-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+}
+.account-facts dt {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.account-facts dd {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.account-history .section-heading {
+  align-items: flex-end;
+}
+.history-detail {
+  min-width: 15rem;
+  max-width: 32rem;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.account-progress {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.account-progress article {
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  padding: 1rem;
+}
+.account-progress small,
+.account-sessions small {
+  display: block;
+  color: var(--muted);
+}
+.account-sessions {
+  padding-left: 1.25rem;
+}
+.account-sessions li {
+  padding: 0.75rem 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1100px) {
+  .account-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .account-progress {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .account-filters,
+  .account-facts {
+    grid-template-columns: 1fr;
+  }
+  .account-manager .section-heading {
+    align-items: stretch;
+  }
+  .account-history .field {
+    width: 100%;
+  }
+  .account-pagination .btn {
+    flex: 1 1 auto;
+  }
+}
+.lab-own-contact {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  overflow-wrap: anywhere;
+}
+.lab-own-contact h3 {
+  margin: 0 0 0.5rem;
+}
+.lab-own-contact dl {
+  display: grid;
+  gap: 0.6rem;
+}
+.lab-own-contact dt {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.lab-own-contact dd {
+  margin: 0.15rem 0 0;
+  font-weight: 600;
+}
+.lab-own-contact a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

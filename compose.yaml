@@ -1,0 +1,80 @@
+name: eplab
+x-app: &app
+  build:
+    context: .
+    dockerfile: infra/Dockerfile
+  image: ep-lab:local
+  restart: unless-stopped
+  init: true
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  env_file: .env
+services:
+  db:
+    image: postgres:18-bookworm
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: eplab
+      POSTGRES_PASSWORD: ${DB_ADMIN_PASSWORD:?Set DB_ADMIN_PASSWORD}
+      APP_DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql
+      - ./infra/init-db.sh:/docker-entrypoint-initdb.d/01-eplab.sh:ro
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U eplab -d eplab"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  api:
+    <<: *app
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://eplab:${DB_PASSWORD}@db:5432/eplab
+      API_HOST: 0.0.0.0
+      API_PORT: 4100
+      DATA_DIR: /app/data
+      LOCAL_POSTGRES: "false"
+      TRUST_PROXY: "172.30.84.0/24"
+    volumes:
+      - appdata:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4100/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+  web:
+    <<: *app
+    command: [node, node_modules/next/dist/bin/next, start, apps/web, --hostname, 0.0.0.0, --port, "3100"]
+    environment:
+      NODE_ENV: production
+      EP_API_URL: http://api:4100
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3100').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./infra/Caddyfile:/etc/caddy/Caddyfile:ro
+    depends_on:
+      web:
+        condition: service_healthy
+volumes:
+  pgdata:
+  appdata:
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.84.0/24

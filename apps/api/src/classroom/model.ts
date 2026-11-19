@@ -1,0 +1,76 @@
+export type Track = "embedded" | "kicad" | "solidworks";
+export type Level = "basic" | "intermediate" | "advanced";
+export type VideoReference = { id: string; start?: number; focus?: string };
+export type Quiz = {
+  question: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+};
+export type ClassroomLesson = {
+  id: string;
+  module: number;
+  title: string;
+  summary: string;
+  level: Level;
+  minutes: number;
+  preview: boolean;
+  prerequisites: string[];
+  objectives: string[];
+  concepts: [string, string][];
+  steps: string[];
+  mistakes: string[];
+  quiz: Quiz;
+  videos: VideoReference[];
+  visualGuide?: { watchFor: string[]; tryIt: string };
+  sources: string[];
+  deliverable: string;
+  rubric: string[];
+  discussion: string;
+  code?: string;
+  codeLanguage?: string;
+  example?: { title: string; body: string; rows?: string[][] };
+  questions?: [string, string][];
+  assignment?: {
+    id: string;
+    brief: string;
+    checks: string[][];
+    criteria: string[];
+  };
+};
+export type ClassroomCourse = {
+  track: Track;
+  title: string;
+  description: string;
+  version: string;
+  modules: { id: number; title: string; description: string }[];
+  lessons: ClassroomLesson[];
+};
+export type SourceRecord = {
+  id: string;
+  track: Track;
+  title: string | null;
+  duration: number | null;
+  kind: string;
+  reason: string;
+  url: string;
+  position: number;
+  verification?: string;
+  checkedAt?: string;
+  chapters?: { start_time: number; end_time: number; title: string }[] | null;
+  channel?: string;
+  upload_date?: string;
+  description?: string;
+  language?: "vi" | "en";
+  softwareVersion?: string;
+  playableInEmbed?: boolean;
+};
+export type SavedProgress = {
+  lesson_id: string;
+  scene: number;
+  note: string;
+  checklist: number[];
+  quiz_passed: boolean;
+  completed: boolean;
+  updated_at?: string;
+};

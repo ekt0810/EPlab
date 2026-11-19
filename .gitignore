@@ -1,0 +1,41 @@
+# Dependencies and generated builds (including named preview builds)
+node_modules/
+.next*/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Credentials: only the empty, documented template belongs in Git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.npmrc
+.netrc
+
+# Runtime accounts, sessions, uploads, mail tokens and database files
+/data/
+/backups/
+/work/
+/test-results/
+playwright-report/
+docs/reports/
+*.log
+*.eplab
+*.eplabkeys
+*.dpapi
+*.db
+*.sqlite*
+*.dump
+
+# Local editor / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

@@ -1,0 +1,15 @@
+# Only use after the owner explicitly requests public deployment.
+# Set APP_URL=https://your-domain.example and PUBLIC_MODE=true; require SMTP + admin MFA.
+your-domain.example {
+    request_body {
+        max_size 27MB
+    }
+    encode zstd gzip
+    header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    handle /api/* {
+        reverse_proxy api:4100
+    }
+    handle {
+        reverse_proxy web:3100
+    }
+}

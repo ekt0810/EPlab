@@ -1,0 +1,668 @@
+:root {
+  color-scheme: only light;
+  --logo-red: #b91232;
+  --logo-blue: #073956;
+  --logo-trace: #ffffff;
+}
+/* Soft light surfaces, with distinct controls and readable secondary text. */
+html[data-theme="light"] {
+  --bg: #e9edef;
+  --surface: #f5f6f7;
+  --ink: #1d303e;
+  --muted: #526271;
+  --line: #c9d2d9;
+  --green: #236c55;
+  --hub-accent-bg: #dce7ef;
+  --hub-accent-text: #163f5b;
+  --hub-border: #91a6b6;
+}
+html[data-theme="light"] .topbar {
+  background: #f1f3f5f7;
+}
+html[data-theme="light"] :is(.sidebar, .auth-layout) {
+  background: #f1f3f5;
+}
+html[data-theme="light"] body
+  :where(
+    .nav-link, .track-nav a, .side-note p, .side-foot, .crumb,
+    .welcome p, .quick-facts, .section-heading > a, .course-card p,
+    .course-meta, .course-bottom, .small-label, .preview-language,
+    .price small, .membership-card p, .back-link, .intro-chips,
+    .chapter > summary small, .chapter-index, .curriculum-row > span:first-child,
+    .checklist, .road-number, .roadmap-step small, .empty p, .field > small,
+    .auth-panel > p, .auth-switch, .form-terms, .local-hint, .lesson-source,
+    .lesson-source b, .version-note, .lesson-outline h4, .resource-row,
+    .resource-row small, .completion, .locked p, .account-banner > div > span,
+    .progress-row > span, .session-row small, .payment-steps p, .payment-steps b,
+    .payment-unavailable, .order-row small,
+    .transfer-details small, .stat > span, .table-wrap th, .table-wrap td small,
+    .pathway-level span, .handbook-contents li small, .handbook-chapters li a:first-child small,
+    .search-box, .search-box kbd, footer
+  ) {
+  color: var(--muted);
+}
+html[data-theme="light"]
+  :is(.filter-tabs > button, .admin-tabs > button, .lesson-tabs > button) {
+  color: var(--muted);
+}
+html[data-theme="light"]
+  :is(.filter-tabs > button.selected, .admin-tabs > button.selected, .practice-nav .selected) {
+  background: #163f5b;
+  color: #fff;
+}
+html[data-theme="light"] .lesson-tabs > button.selected {
+  color: var(--navy);
+  border-bottom-color: var(--red);
+}
+html[data-theme="light"]
+  :is(.field, .checkbox, .prose, .table-wrap td, .table-wrap td strong) {
+  color: var(--ink);
+}
+html[data-theme="light"] :is(input, textarea, select, .btn.secondary, .search-box) {
+  border-color: #7d8d99;
+}
+html[data-theme="light"] :is(input, textarea, select):hover {
+  border-color: #405d72;
+}
+html[data-theme="light"] :is(input, textarea)::placeholder {
+  color: #5d6b77;
+  opacity: 1;
+}
+html[data-theme="light"] :is(input, textarea, select, a, button, summary):focus-visible {
+  outline: 3px solid #26628b;
+  outline-offset: 3px;
+}
+html[data-theme="light"] .search-box:focus-within {
+  outline: 2px solid #26628b;
+  outline-offset: 2px;
+}
+html[data-theme="light"] .search-box input {
+  outline: none;
+}
+html[data-theme="light"] :is(.search-box, .side-note, input[readonly], .membership-card,
+  .chapter > summary, .lesson-outline h4, .table-wrap th, .prerequisite,
+  .code-paragraph, .practice-note, .exercise-checks article, .conversation-message) {
+  background-color: #e5eaee;
+}
+html[data-theme="light"]
+  :is(.document-card, .course-card, .pricing-panel, .side-note, .membership-card, .editor) {
+  border-color: var(--line);
+}
+html[data-theme="light"]
+  :is(.btn.secondary:hover, .icon-button:hover, .nav-link:hover, .curriculum-row:hover,
+    .lesson-outline a:hover, .filter-tabs > button:hover:not(.selected),
+    .admin-tabs > button:hover:not(.selected)) {
+  background-color: #dde5eb;
+}
+html[data-theme="light"] .nav-link.active {
+  background: #f2dfe5;
+  color: #98213e;
+  box-shadow: inset 3px 0 #ba1835;
+}
+html[data-theme="light"] .theme-switch {
+  border-color: #9eacb6;
+  background: #e1e6eb;
+}
+html[data-theme="light"] .theme-switch button[aria-pressed="true"] {
+  background: #163f5b;
+  color: #fff;
+  box-shadow: none;
+}
+html[data-theme="light"] .subject-tabs a.selected {
+  border-color: #7391a6;
+  box-shadow: inset 0 -3px #315d7c;
+}
+html[data-theme="light"] :is(.track-nav a:first-child svg, .category-label.blue, .play-box.blue) {
+  color: #315f82;
+}
+html[data-theme="light"] :is(.track-nav a:nth-child(2) svg, .category-label.green, .play-box.green) {
+  color: #2e7059;
+}
+html[data-theme="light"] :is(.track-nav a:nth-child(3) svg, .category-label.orange, .play-box.orange) {
+  color: #865b29;
+}
+html[data-theme="light"] :is(.course-art.embedded) {
+  background-color: #dce6ef;
+  color: #234e6c;
+}
+html[data-theme="light"] .course-art.kicad {
+  background-color: #dce9e2;
+  color: #326a55;
+}
+html[data-theme="light"] .course-art.solidworks {
+  background-color: #ece4d8;
+  color: #805b32;
+}
+html[data-theme="light"] :is(.code-caption > em, .code-sample i) {
+  color: #506679;
+}
+html[data-theme="light"] .code-sample b { color: #8e3350; }
+html[data-theme="light"] .code-sample span { color: #32644d; }
+html[data-theme="light"] .code-sample em { color: #7c531f; }
+html[data-theme="light"] .art-label { opacity: 1; }
+html[data-theme="light"] .art-icon { color: #416987; opacity: .65; }
+html[data-theme="light"] :is(.quick-facts svg, .course-bottom svg, .preview-row > svg,
+  .chapter > summary svg, .curriculum-row > svg, .roadmap-step > svg,
+  .locked > svg, .session-row > svg, .progress-row > svg, .stat svg, .payment-steps > svg) {
+  color: #536d80;
+}
+html[data-theme="light"] .checklist svg { color: #2e7059; }
+html[data-theme="light"] .lab-mark { color: #506679; }
+html[data-theme="light"] .badge.draft { background: #e1e6eb; color: #465a69; }
+html[data-theme="light"] .badge.free { background: #dceee3; }
+html[data-theme="light"] .badge.member { background: #f0dfe5; }
+html[data-theme="light"] .notice { background: #e2ecf3; color: #31576e; border-color: #9db6c8; }
+html[data-theme="light"] :is(.notice.success, .answer) {
+  background: #deeee4; color: #285d41; border-color: #92b7a1;
+}
+html[data-theme="light"] .notice.error {
+  background: #f4e1e5; color: #942c42; border-color: #c48d9b;
+}
+html[data-theme="light"] .prerequisite { color: #4b6172; }
+html[data-theme="light"] .green-text { color: #286747 !important; }
+html[data-theme="light"] .payment-steps > div > span {
+  color: #8e3f56;
+  border-color: #b77b8f;
+}
+/* Dark inset panels keep light copy even when the surrounding theme is light. */
+html[data-theme="light"] :is(.map-top, .map-step small, .map-footer, .step-symbol,
+  .auth-story p, .auth-story .eyebrow, .auth-story-bottom) {
+  color: #b6d1e2;
+}
+.ep-brand {
+  width: 174px;
+  height: 131px;
+  max-width: 100%;
+  aspect-ratio: 280 / 200;
+  display: block;
+  overflow: visible;
+}
+.logo-red {
+  fill: var(--logo-red);
+}
+.logo-blue {
+  fill: var(--logo-blue);
+}
+.logo-trace {
+  stroke: var(--logo-trace);
+}
+.logo-rule {
+  stroke: var(--logo-blue);
+}
+.theme-switch {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--bg);
+}
+.theme-switch button {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 9px;
+  font: inherit;
+  font-size: 0.875rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-switch button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 4px #00000016;
+}
+.theme-switch button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+.local-review-banner {
+  padding: 10px 12px;
+  background: #fff4da;
+  color: #583a00;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 20px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 55;
+}
+.is-local-review .sidebar {
+  top: 40px;
+  height: calc(100dvh - 40px);
+}
+html[data-theme="dark"] {
+  color-scheme: only dark;
+  /* Neutral surfaces separate navigation, content and controls without a blue cast. */
+  --navy: #e6e9ee;
+  --ink: #e1e4e9;
+  --muted: #a7afb9;
+  --red: #f0a0ae;
+  --red-hover: #ffc0cb;
+  --line: #33383f;
+  --surface: #1c1f24;
+  --bg: #131518;
+  --green: #91cbb5;
+  --surface-raised: #25292f;
+  --surface-inset: #171a1e;
+  --control-border: #555d68;
+  --focus: #b2c9e8;
+  --selected-bg: #303845;
+  --selected-text: #e3eaf5;
+  --selected-border: #78889e;
+  --brand-soft: #34262d;
+  --brand-text: #f3b7c3;
+  --success-bg: #23352e;
+  --success-text: #b7ddca;
+  --logo-red: #e46a80;
+  --logo-blue: #99bfd4;
+  --logo-trace: #171a1e;
+}
+html[data-theme="dark"] .topbar {
+  background: #171a1ef7;
+  backdrop-filter: blur(12px);
+}
+html[data-theme="dark"] .sidebar {
+  background: var(--surface-inset);
+}
+html[data-theme="dark"] :is(h1, h2, h3, h4, .topbar-home) {
+  color: #f0f1f3;
+}
+html[data-theme="dark"] :is(.panel, .course-card, .document-card, .pricing-panel) {
+  box-shadow: 0 4px 18px #00000012;
+}
+html[data-theme="dark"] :is(.hub-subject-card, .practice-exercise-card):hover {
+  border-color: var(--control-border);
+}
+html[data-theme="dark"] .nav-link.active {
+  box-shadow: inset 3px 0 #dc8093;
+}
+html[data-theme="dark"] :is(.nav-link:hover, .track-nav a:hover) {
+  color: var(--ink);
+}
+html[data-theme="dark"]
+  :is(
+    .document-card,
+    .course-card,
+    .pricing-panel,
+    .side-note,
+    .membership-card,
+    .editor
+  ) {
+  border-color: var(--line);
+}
+html[data-theme="dark"] :is(.btn.primary) {
+  background: #a83953;
+  border-color: #c36176;
+  color: #fff;
+}
+html[data-theme="dark"] .btn.primary:hover {
+  background: #bb4561;
+}
+html[data-theme="dark"] :is(.learning-map, .auth-story, .video-box, .btn.dark) {
+  background-color: #252e3a;
+}
+html[data-theme="dark"] .btn.dark {
+  border-color: #556174;
+  color: #edf1f7;
+}
+html[data-theme="dark"] .btn.dark:hover {
+  background: #354155;
+}
+html[data-theme="dark"]
+  :is(
+    .side-note,
+    .search-box,
+    input[readonly],
+    .membership-card,
+    .chapter > summary,
+    .lesson-outline h4,
+    .prerequisite,
+    .code-paragraph,
+    .recovery pre,
+    .table-wrap th,
+    .practice-note,
+    .practice-report pre,
+    .practice-score-preview,
+    .exercise-guide pre,
+    .exercise-checks article,
+    .conversation-message
+  ) {
+  background: var(--surface-raised);
+}
+html[data-theme="dark"]
+  :is(
+    .btn.secondary:hover,
+    .icon-button:hover,
+    .nav-link:hover,
+    .curriculum-row:hover,
+    .lesson-outline a:hover,
+    .filter-tabs > button:hover:not(.selected),
+    .admin-tabs > button:hover:not(.selected)
+  ) {
+  background: #2b3037;
+}
+html[data-theme="dark"]
+  :is(
+    .nav-link.active,
+    .avatar,
+    .auth-icon,
+    .badge.member,
+    .lesson-outline a.current,
+    .pathway-level.selected,
+    .conversation-message.host
+  ) {
+  background: var(--brand-soft);
+  color: var(--brand-text);
+}
+html[data-theme="dark"] :is(.course-art.embedded, .play-box.blue) {
+  background-color: #252f3d;
+  color: #b3c7e0;
+}
+html[data-theme="dark"]
+  :is(.course-art.kicad, .play-box.green, .practice-schematic) {
+  background-color: #24342f;
+  color: #b2d1c1;
+}
+html[data-theme="dark"] :is(.course-art.solidworks, .play-box.orange) {
+  background-color: #38312a;
+  color: #dec5a6;
+}
+html[data-theme="dark"]
+  :is(.category-label.blue, .practice-reading .button-row a) {
+  color: #b3c7e0;
+}
+html[data-theme="dark"] .category-label.green {
+  color: #b2d1c1;
+}
+html[data-theme="dark"] .category-label.orange {
+  color: #dec5a6;
+}
+html[data-theme="dark"] .code-sample b {
+  color: #e7a8bb;
+}
+html[data-theme="dark"] .code-sample span {
+  color: #abcdb8;
+}
+html[data-theme="dark"] .code-sample em {
+  color: #ddc094;
+}
+html[data-theme="dark"] :is(.notice, .badge.draft) {
+  background: #28323f;
+  color: #c6d5e8;
+  border-color: #53647b;
+}
+html[data-theme="dark"]
+  :is(.notice.success, .badge.free, .answer, .practice-criterion.met) {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border-color: #537b69;
+}
+html[data-theme="dark"] :is(.notice.error, .practice-criterion.not_met) {
+  background: #3b2830;
+  color: #f3bac7;
+  border-color: #925c6c;
+}
+html[data-theme="dark"] .practice-criterion {
+  background: #393225;
+  color: #e4cda5;
+}
+html[data-theme="dark"]
+  :is(
+    .danger,
+    .practice-rubric b,
+    .practice-video-chapters code,
+    .conversation-item.selected
+  ) {
+  color: var(--brand-text);
+}
+html[data-theme="dark"]
+  :is(
+    .field,
+    .checkbox,
+    .prose,
+    .practice-article li,
+    .conversation-message p,
+    .table-wrap td,
+    .table-wrap td strong,
+    .crumb strong,
+    .practice-score strong
+  ) {
+  color: var(--ink);
+}
+html[data-theme="dark"]
+  :where(
+    .nav-caption,
+    .nav-link,
+    .track-nav a,
+    .side-note p,
+    .side-foot,
+    .crumb,
+    .welcome p,
+    .quick-facts,
+    .section-heading > a,
+    .course-card p,
+    .course-meta,
+    .course-bottom,
+    .panel p,
+    .small-label,
+    .preview-language,
+    .price small,
+    .membership-card p,
+    .filter-tabs > button,
+    .admin-tabs > button,
+    .back-link,
+    .intro-chips,
+    .chapter > summary small,
+    .curriculum-row > span:first-child,
+    .checklist,
+    .roadmap-step small,
+    .loading,
+    .empty p,
+    .field > small,
+    .auth-panel > p,
+    .auth-switch,
+    .form-terms,
+    .local-hint,
+    .lesson-source,
+    .lesson-source b,
+    .version-note,
+    .lesson-tabs > button,
+    .lesson-outline h4,
+    .lesson-outline a,
+    .lesson-outline a small,
+    .resource-row,
+    .resource-row small,
+    .completion,
+    .locked p,
+    .account-banner > div > span,
+    .progress-row > span,
+    .session-row small,
+    .payment-steps p,
+    .payment-steps b,
+    .transfer-details small,
+    .stat > span,
+    .table-wrap th,
+    .table-wrap td small,
+    .pathway-level span,
+    .handbook-contents li small,
+    .handbook-chapters li a:first-child small,
+    .practice-schematic figcaption,
+    footer
+  ) {
+  color: var(--muted);
+}
+html[data-theme="dark"]
+  :is(
+    .preview-row,
+    .curriculum-row,
+    .lesson-tabs,
+    .copy-row,
+    .handbook-contents,
+    .handbook-contents li,
+    .handbook-chapters li,
+    .conversation-item
+  ) {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .local-review-banner {
+  background: #302c24;
+  color: #ddc9a8;
+}
+html[data-theme="dark"] .document-mark {
+  background: #293442;
+  border-left-color: #ba6175;
+  box-shadow: 5px 5px 0 #303640;
+}
+html[data-theme="dark"] .payment-steps > div > span {
+  color: var(--brand-text);
+  border-color: #925c6c;
+}
+/* Component states must remain more specific than general muted text. */
+html[data-theme="dark"] :is(.nav-link.active, .lesson-outline a.current) {
+  color: var(--brand-text);
+}
+html[data-theme="dark"]
+  :is(
+    .filter-tabs > button.selected,
+    .admin-tabs > button.selected,
+    .practice-nav .selected
+  ) {
+  background: var(--selected-bg);
+  border-color: var(--selected-border);
+  color: var(--selected-text);
+}
+html[data-theme="dark"] .lesson-tabs > button.selected {
+  color: var(--ink);
+  border-bottom-color: var(--brand-text);
+}
+html[data-theme="dark"] :is(.eyebrow, .chapter-index, .road-number) {
+  color: var(--muted);
+}
+html[data-theme="dark"]
+  :is(
+    .map-top,
+    .map-step small,
+    .map-footer,
+    .step-symbol,
+    .auth-story p,
+    .auth-story .eyebrow,
+    .auth-story-bottom
+  ) {
+  color: #c0cbd9;
+}
+html[data-theme="dark"]
+  :is(.code-caption > em, .code-sample i, .search-box, .search-box kbd) {
+  color: var(--muted);
+}
+html[data-theme="dark"] :is(.notice, .answer) p {
+  color: inherit;
+}
+html[data-theme="dark"] :is(input, textarea, select) {
+  background: var(--surface-inset);
+  border-color: var(--control-border);
+}
+html[data-theme="dark"] :is(input, textarea, select):hover {
+  border-color: #8491a2;
+}
+html[data-theme="dark"] :is(input, textarea, select, a, button, summary):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+html[data-theme="dark"] :is(input, textarea)::placeholder {
+  color: #a1aab6;
+  opacity: 1;
+}
+html[data-theme="dark"] select option {
+  background: var(--surface);
+  color: var(--ink);
+}
+html[data-theme="dark"] .search-box input {
+  background: transparent;
+  border: 0;
+}
+html[data-theme="dark"] body .search-box {
+  background: var(--surface-inset);
+  border-color: var(--control-border);
+}
+html[data-theme="dark"] .search-box:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+html[data-theme="dark"] .search-box input:focus-visible {
+  outline: none;
+}
+html[data-theme="dark"] .theme-switch {
+  background: var(--surface-inset);
+  border-color: var(--control-border);
+}
+html[data-theme="dark"] .theme-switch button[aria-pressed="true"] {
+  background: var(--selected-bg);
+  color: var(--selected-text);
+  box-shadow: inset 0 0 0 1px var(--selected-border);
+}
+html[data-theme="dark"] .theme-switch button:hover:not([aria-pressed="true"]) {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+html[data-theme="dark"] :is(.btn.secondary, .btn.white) {
+  border-color: var(--control-border);
+}
+html[data-theme="dark"] :is(.exercise-checks article, .search-box kbd,
+  .practice-study-intro, .practice-lesson-row, .practice-course-entry) {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .practice-images img {
+  background: var(--surface-inset);
+}
+html[data-theme="dark"] .practice-note {
+  border-left-color: var(--selected-border);
+}
+html[data-theme="dark"] .pathway-level.selected {
+  border-color: #ba7687;
+}
+html[data-theme="dark"] .green-text {
+  color: var(--green) !important;
+}
+html[data-theme="dark"] :is(.track-nav a:first-child svg, .art-icon) {
+  color: #9eb8d7;
+}
+html[data-theme="dark"] .track-nav a:nth-child(2) svg {
+  color: #a1c6b6;
+}
+html[data-theme="dark"] .track-nav a:nth-child(3) svg {
+  color: #cfb28e;
+}
+html[data-theme="dark"] ::selection {
+  background: #53647b;
+  color: #fff;
+}
+@media (max-width: 1020px) {
+  .ep-brand {
+    width: 155px;
+  }
+}
+@media (max-width: 650px) {
+  .theme-switch button span {
+    display: none;
+  }
+  .theme-switch button {
+    padding: 7px;
+  }
+  .topbar .search-box {
+    min-width: 0;
+  }
+  .topbar .search-box input {
+    min-width: 0;
+  }
+  .topbar .user-menu > span {
+    display: none;
+  }
+}

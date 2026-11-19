@@ -1,0 +1,1088 @@
+{
+  "channel": "Phil’s Lab",
+  "channelUrl": "https://www.youtube.com/@PhilsLab",
+  "checkedAt": "2026-11-12",
+  "indexedChannelVideos": 166,
+  "selectionRule": "Tiêu đề có KiCad hoặc các chủ đề thiết kế PCB liên quan. Bao gồm thông báo khóa học được đánh dấu riêng. Không bao gồm video ẩn/đã xóa và không khẳng định bao phủ toàn bộ nội dung trong video.",
+  "videos": [
+    {
+      "id": "aNYmOIMt7CY",
+      "title": "PCB Controlled Impedance - Phil's Lab #171",
+      "duration": 3072,
+      "url": "https://www.youtube.com/watch?v=aNYmOIMt7CY",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "zeH3WbMWvdg",
+      "title": "PCB Design Rules 101 - Phil's Lab #170",
+      "duration": 2504,
+      "url": "https://www.youtube.com/watch?v=zeH3WbMWvdg",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "igQWdVGZGpI",
+      "title": "KiCad 9 Hardware Design Tutorial (TI MSPM0) (2/2 PCB) - Phil's Lab #166",
+      "duration": 9105,
+      "url": "https://www.youtube.com/watch?v=igQWdVGZGpI",
+      "category": "KiCad",
+      "kind": "reference",
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 101
+        },
+        {
+          "start_time": 101,
+          "title": "JLCPCB (Ad)",
+          "end_time": 173
+        },
+        {
+          "start_time": 173,
+          "title": "PCB Set-Up",
+          "end_time": 856
+        },
+        {
+          "start_time": 856,
+          "title": "Component Import",
+          "end_time": 961
+        },
+        {
+          "start_time": 961,
+          "title": "Net Colours",
+          "end_time": 1113
+        },
+        {
+          "start_time": 1113,
+          "title": "Rough Layout",
+          "end_time": 2001
+        },
+        {
+          "start_time": 2001,
+          "title": "Board Outline",
+          "end_time": 2419
+        },
+        {
+          "start_time": 2419,
+          "title": "Refining Layout",
+          "end_time": 2557
+        },
+        {
+          "start_time": 2557,
+          "title": "Layout for MCU Supporting Components",
+          "end_time": 3286
+        },
+        {
+          "start_time": 3286,
+          "title": "Layout for USB-UART Supporting Components",
+          "end_time": 3494
+        },
+        {
+          "start_time": 3494,
+          "title": "Layout Accelerometer",
+          "end_time": 3698
+        },
+        {
+          "start_time": 3698,
+          "title": "Remapping MCU Pins",
+          "end_time": 3946
+        },
+        {
+          "start_time": 3946,
+          "title": "Layout Accelerometer (Continued)",
+          "end_time": 4039
+        },
+        {
+          "start_time": 4039,
+          "title": "Power Layout",
+          "end_time": 4549
+        },
+        {
+          "start_time": 4549,
+          "title": "Layer Assignment & Polygon Pours",
+          "end_time": 4830
+        },
+        {
+          "start_time": 4830,
+          "title": "Via Pre-Planning & Placement",
+          "end_time": 5093
+        },
+        {
+          "start_time": 5093,
+          "title": "Routing Decoupling/Bypass Caps",
+          "end_time": 5505
+        },
+        {
+          "start_time": 5505,
+          "title": "Routing Crystal & ROSC",
+          "end_time": 5735
+        },
+        {
+          "start_time": 5735,
+          "title": "Routing SWD",
+          "end_time": 5908
+        },
+        {
+          "start_time": 5908,
+          "title": "Routing I2C & UART",
+          "end_time": 6309
+        },
+        {
+          "start_time": 6309,
+          "title": "Routing USB",
+          "end_time": 6675
+        },
+        {
+          "start_time": 6675,
+          "title": "Power & Ground Routing",
+          "end_time": 7542
+        },
+        {
+          "start_time": 7542,
+          "title": "Teardrops",
+          "end_time": 7638
+        },
+        {
+          "start_time": 7638,
+          "title": "Design Rules Check",
+          "end_time": 8093
+        },
+        {
+          "start_time": 8093,
+          "title": "Silkscreen",
+          "end_time": 8222
+        },
+        {
+          "start_time": 8222,
+          "title": "Manufacturing Files",
+          "end_time": 8644
+        },
+        {
+          "start_time": 8644,
+          "title": "Ordering",
+          "end_time": 9060
+        },
+        {
+          "start_time": 9060,
+          "title": "Outro",
+          "end_time": 9105
+        }
+      ]
+    },
+    {
+      "id": "O-zNn5k5Bn4",
+      "title": "KiCad 9 Hardware Design Tutorial (TI MSPM0) (1/2 Schematic) - Phil's Lab #165",
+      "duration": 6977,
+      "url": "https://www.youtube.com/watch?v=O-zNn5k5Bn4",
+      "category": "KiCad",
+      "kind": "reference",
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 98
+        },
+        {
+          "start_time": 98,
+          "title": "KiCad 9",
+          "end_time": 134
+        },
+        {
+          "start_time": 134,
+          "title": "MCU Choice",
+          "end_time": 204
+        },
+        {
+          "start_time": 204,
+          "title": "Code Composer Studio (CCStudio)",
+          "end_time": 253
+        },
+        {
+          "start_time": 253,
+          "title": "JLCPCB (AD)",
+          "end_time": 326
+        },
+        {
+          "start_time": 326,
+          "title": "Project and Schematic Creation",
+          "end_time": 428
+        },
+        {
+          "start_time": 428,
+          "title": "Adding Components",
+          "end_time": 509
+        },
+        {
+          "start_time": 509,
+          "title": "Creating Schematic Symbols",
+          "end_time": 1449
+        },
+        {
+          "start_time": 1449,
+          "title": "Adding MCU to Schematic",
+          "end_time": 1545
+        },
+        {
+          "start_time": 1545,
+          "title": "MCU Power & GND Connections",
+          "end_time": 2084
+        },
+        {
+          "start_time": 2084,
+          "title": "Analog VREF",
+          "end_time": 2371
+        },
+        {
+          "start_time": 2371,
+          "title": "Net Labels",
+          "end_time": 2479
+        },
+        {
+          "start_time": 2479,
+          "title": "NRST",
+          "end_time": 2762
+        },
+        {
+          "start_time": 2762,
+          "title": "Oscillators",
+          "end_time": 3420
+        },
+        {
+          "start_time": 3420,
+          "title": "USB Connector & ESD Protection",
+          "end_time": 3848
+        },
+        {
+          "start_time": 3848,
+          "title": "Power",
+          "end_time": 4310
+        },
+        {
+          "start_time": 4310,
+          "title": "USB Continued...",
+          "end_time": 4486
+        },
+        {
+          "start_time": 4486,
+          "title": "Debug Interface",
+          "end_time": 4856
+        },
+        {
+          "start_time": 4856,
+          "title": "Pinout Planning/Assignment",
+          "end_time": 5226
+        },
+        {
+          "start_time": 5226,
+          "title": "USB-UART IC",
+          "end_time": 5735
+        },
+        {
+          "start_time": 5735,
+          "title": "I2C Peripheral (Accelerometer)",
+          "end_time": 6095
+        },
+        {
+          "start_time": 6095,
+          "title": "Schematic Clean-Up",
+          "end_time": 6351
+        },
+        {
+          "start_time": 6351,
+          "title": "Net Classes & Colours",
+          "end_time": 6492
+        },
+        {
+          "start_time": 6492,
+          "title": "Electrical Rules Check (ERC)",
+          "end_time": 6678
+        },
+        {
+          "start_time": 6678,
+          "title": "Footprint Assignment Tool",
+          "end_time": 6727
+        },
+        {
+          "start_time": 6727,
+          "title": "Mounting Holes & Fiducial Markers",
+          "end_time": 6894
+        },
+        {
+          "start_time": 6894,
+          "title": "Outro/Next Video",
+          "end_time": 6976
+        }
+      ]
+    },
+    {
+      "id": "c2JySJjjs0A",
+      "title": "PCB Design for Manufacturing (DFM) Q&A with Sierra Circuits - Phil's Lab #158",
+      "duration": 2113,
+      "url": "https://www.youtube.com/watch?v=c2JySJjjs0A",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "hOamoJ15hmA",
+      "title": "QFN PCB Design Tips & Tricks - Phil's Lab #144",
+      "duration": 2233,
+      "url": "https://www.youtube.com/watch?v=hOamoJ15hmA",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "M6_an34wQJk",
+      "title": "2-Layer PCB Design Tips - Phil's Lab #137",
+      "duration": 1947,
+      "url": "https://www.youtube.com/watch?v=M6_an34wQJk",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "sCHK3P5tn7s",
+      "title": "I2C Hardware & PCB Design - Phil's Lab #132",
+      "duration": 2090,
+      "url": "https://www.youtube.com/watch?v=sCHK3P5tn7s",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "g4m91gv-4oQ",
+      "title": "PCB Design Final Touches (Tips & Checklist) - Phil's Lab #131",
+      "duration": 2297,
+      "url": "https://www.youtube.com/watch?v=g4m91gv-4oQ",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "PlXd3lLZ4vc",
+      "title": "KiCad 7 STM32 Bluetooth Hardware Design (2/2 PCB) - Phil's Lab #128",
+      "duration": 10613,
+      "url": "https://www.youtube.com/watch?v=PlXd3lLZ4vc",
+      "category": "KiCad",
+      "kind": "reference",
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 63
+        },
+        {
+          "start_time": 63,
+          "title": "PCBWay (Ad)",
+          "end_time": 102
+        },
+        {
+          "start_time": 102,
+          "title": "Courses",
+          "end_time": 139
+        },
+        {
+          "start_time": 139,
+          "title": "PCB Set-Up",
+          "end_time": 494
+        },
+        {
+          "start_time": 494,
+          "title": "Design Rules",
+          "end_time": 767
+        },
+        {
+          "start_time": 767,
+          "title": "Trace and Vias Sizes",
+          "end_time": 833
+        },
+        {
+          "start_time": 833,
+          "title": "Controlled Impedance",
+          "end_time": 1155
+        },
+        {
+          "start_time": 1155,
+          "title": "Importing Components",
+          "end_time": 1219
+        },
+        {
+          "start_time": 1219,
+          "title": "Adding Missing 3D Models",
+          "end_time": 1493
+        },
+        {
+          "start_time": 1493,
+          "title": "Rats Nets and Net Colours",
+          "end_time": 1816
+        },
+        {
+          "start_time": 1816,
+          "title": "Initial Layout",
+          "end_time": 2176
+        },
+        {
+          "start_time": 2176,
+          "title": "Tag-Connect and USB Layout (Initial)",
+          "end_time": 2371
+        },
+        {
+          "start_time": 2371,
+          "title": "Mechanical Constraints",
+          "end_time": 2490
+        },
+        {
+          "start_time": 2490,
+          "title": "RF Layout (Initial)",
+          "end_time": 2556
+        },
+        {
+          "start_time": 2556,
+          "title": "Crystal Layout (Initial)",
+          "end_time": 2653
+        },
+        {
+          "start_time": 2653,
+          "title": "SMPS Layout (Initial)",
+          "end_time": 2728
+        },
+        {
+          "start_time": 2728,
+          "title": "UART Layout (Initial)",
+          "end_time": 2811
+        },
+        {
+          "start_time": 2811,
+          "title": "Layout Fine-Tuning",
+          "end_time": 3166
+        },
+        {
+          "start_time": 3166,
+          "title": "Decoupling Caps Layout",
+          "end_time": 3957
+        },
+        {
+          "start_time": 3957,
+          "title": "Misc. Layout",
+          "end_time": 4875
+        },
+        {
+          "start_time": 4875,
+          "title": "Board Outline",
+          "end_time": 5175
+        },
+        {
+          "start_time": 5175,
+          "title": "Routing Introduction",
+          "end_time": 5293
+        },
+        {
+          "start_time": 5293,
+          "title": "Ground Planes",
+          "end_time": 5498
+        },
+        {
+          "start_time": 5498,
+          "title": "Mounting Holes & Fiducial Markers",
+          "end_time": 5871
+        },
+        {
+          "start_time": 5871,
+          "title": "Via Placement",
+          "end_time": 6510
+        },
+        {
+          "start_time": 6510,
+          "title": "RF Routing",
+          "end_time": 6680
+        },
+        {
+          "start_time": 6680,
+          "title": "Crystal Routing",
+          "end_time": 6880
+        },
+        {
+          "start_time": 6880,
+          "title": "SMPS Routing",
+          "end_time": 7110
+        },
+        {
+          "start_time": 7110,
+          "title": "SWD Routing",
+          "end_time": 7221
+        },
+        {
+          "start_time": 7221,
+          "title": "USB Routing",
+          "end_time": 7529
+        },
+        {
+          "start_time": 7529,
+          "title": "Misc. Routing (NRST, BOOT0, UART, LED)",
+          "end_time": 8104
+        },
+        {
+          "start_time": 8104,
+          "title": "Power & Ground Routing",
+          "end_time": 8757
+        },
+        {
+          "start_time": 8757,
+          "title": "Stitching",
+          "end_time": 8888
+        },
+        {
+          "start_time": 8888,
+          "title": "Clean-Up (Silkscreen, Teardrops, Non-Functional Pads)",
+          "end_time": 9192
+        },
+        {
+          "start_time": 9192,
+          "title": "Design Rule Check (DRC)",
+          "end_time": 9363
+        },
+        {
+          "start_time": 9363,
+          "title": "Further Checks",
+          "end_time": 9491
+        },
+        {
+          "start_time": 9491,
+          "title": "Bill of Materials (BoM) and Pick 'n' Place (CPL)",
+          "end_time": 9683
+        },
+        {
+          "start_time": 9683,
+          "title": "Gerber",
+          "end_time": 9834
+        },
+        {
+          "start_time": 9834,
+          "title": "Additional Documents",
+          "end_time": 10185
+        },
+        {
+          "start_time": 10185,
+          "title": "Ordering",
+          "end_time": 10556
+        },
+        {
+          "start_time": 10556,
+          "title": "Outro",
+          "end_time": 10613
+        }
+      ]
+    },
+    {
+      "id": "nkHFoxe0mrU",
+      "title": "KiCad 7 STM32 Bluetooth Hardware Design (1/2 Schematic) - Phil's Lab #127",
+      "duration": 7671,
+      "url": "https://www.youtube.com/watch?v=nkHFoxe0mrU",
+      "category": "KiCad",
+      "kind": "reference",
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 64
+        },
+        {
+          "start_time": 64,
+          "title": "PCBWay (Ad)",
+          "end_time": 103
+        },
+        {
+          "start_time": 103,
+          "title": "Pre-Requisites/Overview",
+          "end_time": 264
+        },
+        {
+          "start_time": 264,
+          "title": "Courses",
+          "end_time": 301
+        },
+        {
+          "start_time": 301,
+          "title": "Project Creation",
+          "end_time": 331
+        },
+        {
+          "start_time": 331,
+          "title": "Schematic Editor Basics",
+          "end_time": 548
+        },
+        {
+          "start_time": 548,
+          "title": "Adding Microcontroller (MCU)",
+          "end_time": 851
+        },
+        {
+          "start_time": 851,
+          "title": "STM32CubeIDE",
+          "end_time": 1153
+        },
+        {
+          "start_time": 1153,
+          "title": "MCU Power and Decoupling",
+          "end_time": 1895
+        },
+        {
+          "start_time": 1895,
+          "title": "MCU SMPS",
+          "end_time": 2211
+        },
+        {
+          "start_time": 2211,
+          "title": "MCU HSE & LSE Crystals",
+          "end_time": 2775
+        },
+        {
+          "start_time": 2775,
+          "title": "RF Section",
+          "end_time": 3036
+        },
+        {
+          "start_time": 3036,
+          "title": "Schematic Symbol Creation",
+          "end_time": 3341
+        },
+        {
+          "start_time": 3341,
+          "title": "Footprint Creation",
+          "end_time": 4018
+        },
+        {
+          "start_time": 4018,
+          "title": "RF Section Continued",
+          "end_time": 4157
+        },
+        {
+          "start_time": 4157,
+          "title": "Programming Interface (SWD/BOOT0)",
+          "end_time": 5014
+        },
+        {
+          "start_time": 5014,
+          "title": "USB",
+          "end_time": 5581
+        },
+        {
+          "start_time": 5581,
+          "title": "Power (LDO Regulator)",
+          "end_time": 5967
+        },
+        {
+          "start_time": 5967,
+          "title": "Adding Peripherals (UART, LED)",
+          "end_time": 6339
+        },
+        {
+          "start_time": 6339,
+          "title": "Cleaning Up Schematic",
+          "end_time": 6653
+        },
+        {
+          "start_time": 6653,
+          "title": "Annotation",
+          "end_time": 6766
+        },
+        {
+          "start_time": 6766,
+          "title": "Electrical Rules Check (ERC)",
+          "end_time": 6870
+        },
+        {
+          "start_time": 6870,
+          "title": "Assigning Footprints",
+          "end_time": 7402
+        },
+        {
+          "start_time": 7402,
+          "title": "Adding Component Information",
+          "end_time": 7562
+        },
+        {
+          "start_time": 7562,
+          "title": "Net Classes",
+          "end_time": 7644
+        },
+        {
+          "start_time": 7644,
+          "title": "Part 2 (Next Video - PCB Design)",
+          "end_time": 7670
+        }
+      ]
+    },
+    {
+      "id": "1g-D8T65SJU",
+      "title": "Boost Converter PCB Design - Phil's Lab #106",
+      "duration": 1572,
+      "url": "https://www.youtube.com/watch?v=1g-D8T65SJU",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "cmS0J4ZFhv4",
+      "title": "FPGA/SoC Board Bring-Up - QSPI (Zynq Part 3) - Phil's Lab #98",
+      "duration": 809,
+      "url": "https://www.youtube.com/watch?v=cmS0J4ZFhv4",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "W3Jt_y6PHjA",
+      "title": "FPGA/SoC Board Bring-Up - DDR3 (Zynq Part 2) - Phil's Lab #97",
+      "duration": 1543,
+      "url": "https://www.youtube.com/watch?v=W3Jt_y6PHjA",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "B-CbDfrfJRk",
+      "title": "FPGA/SoC Board Bring-Up Tutorial (Zynq Part 1) - Phil's Lab #96",
+      "duration": 1815,
+      "url": "https://www.youtube.com/watch?v=B-CbDfrfJRk",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "0KbINAq0hcU",
+      "title": "BGA PCB Design Tips - Phil's Lab #95",
+      "duration": 1701,
+      "url": "https://www.youtube.com/watch?v=0KbINAq0hcU",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "8v-wC5cM_Yk",
+      "title": "Thermal PCB Design Tips - Phil's Lab #93",
+      "duration": 1274,
+      "url": "https://www.youtube.com/watch?v=8v-wC5cM_Yk",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "v6fTa6LRJLI",
+      "title": "(Sponsored) Mixed-Signal Hardware/PCB Design Tips - Phil's Lab #88",
+      "duration": 1100,
+      "url": "https://www.youtube.com/watch?v=v6fTa6LRJLI",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "aODkA2mrimQ",
+      "title": "How To Learn PCB Design (My Thoughts, Journey, and Resources) - Phil's Lab #87",
+      "duration": 1129,
+      "url": "https://www.youtube.com/watch?v=aODkA2mrimQ",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "n75MWImVTNI",
+      "title": "(Sponsored) FPGA PCB Design Review - Phil's Lab #85",
+      "duration": 1993,
+      "url": "https://www.youtube.com/watch?v=n75MWImVTNI",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "D2UaRPkRExw",
+      "title": "(Sponsored) Aesthetic PCB Design Tips - Phil's Lab #84",
+      "duration": 1076,
+      "url": "https://www.youtube.com/watch?v=D2UaRPkRExw",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "xwrdvhm4vgw",
+      "title": "(Sponsored) Differential Pairs - PCB Design Basics - Phil's Lab #83",
+      "duration": 1312,
+      "url": "https://www.youtube.com/watch?v=xwrdvhm4vgw",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "71bW_sKZIZw",
+      "title": "(Sponsored) RF + MCU PCB Design Review - Phil's Lab #76",
+      "duration": 1612,
+      "url": "https://www.youtube.com/watch?v=71bW_sKZIZw",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "MmG_m4xVNfQ",
+      "title": "(Sponsored) ESD Protection Basics - TVS Diode Selection & Routing - Phil's Lab #75",
+      "duration": 858,
+      "url": "https://www.youtube.com/watch?v=MmG_m4xVNfQ",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "FqT_Ofd54fo",
+      "title": "(Sponsored) Switching Regulator Component Selection & Sizing - Phil's Lab #71",
+      "duration": 1020,
+      "url": "https://www.youtube.com/watch?v=FqT_Ofd54fo",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "aVUqaB0IMh4",
+      "title": "KiCad 6 STM32 PCB Design Full Tutorial - Phil's Lab #65",
+      "duration": 6006,
+      "url": "https://www.youtube.com/watch?v=aVUqaB0IMh4",
+      "category": "KiCad",
+      "kind": "reference",
+      "chapters": [
+        {
+          "start_time": 0,
+          "title": "Introduction",
+          "end_time": 86
+        },
+        {
+          "start_time": 86,
+          "title": "What You'll Learn",
+          "end_time": 234
+        },
+        {
+          "start_time": 234,
+          "title": "STM32 Microcontroller, Decoupling",
+          "end_time": 901
+        },
+        {
+          "start_time": 901,
+          "title": "STM32 Configuration Pins",
+          "end_time": 1275
+        },
+        {
+          "start_time": 1275,
+          "title": "Pin-Out and STM32CubeIDE",
+          "end_time": 1619
+        },
+        {
+          "start_time": 1619,
+          "title": "Crystal Circuitry",
+          "end_time": 1849
+        },
+        {
+          "start_time": 1849,
+          "title": "USB",
+          "end_time": 2037
+        },
+        {
+          "start_time": 2037,
+          "title": "Power Supply and Connectors",
+          "end_time": 2574
+        },
+        {
+          "start_time": 2574,
+          "title": "Electrical Rules Check (ERC), Annotation",
+          "end_time": 2965
+        },
+        {
+          "start_time": 2965,
+          "title": "Footprint Assignment",
+          "end_time": 3131
+        },
+        {
+          "start_time": 3131,
+          "title": "PCB Set-Up",
+          "end_time": 3423
+        },
+        {
+          "start_time": 3423,
+          "title": "MCU, Decoupling Caps, Crystal Layout",
+          "end_time": 3795
+        },
+        {
+          "start_time": 3795,
+          "title": "USB and SWD Layout",
+          "end_time": 3997
+        },
+        {
+          "start_time": 3997,
+          "title": "Changing Footprints, Adding 3D Models",
+          "end_time": 4178
+        },
+        {
+          "start_time": 4178,
+          "title": "Switch and Connector Placement",
+          "end_time": 4331
+        },
+        {
+          "start_time": 4331,
+          "title": "Power Supply Layout",
+          "end_time": 4490
+        },
+        {
+          "start_time": 4490,
+          "title": "Mounting Holes, Board Outline",
+          "end_time": 4794
+        },
+        {
+          "start_time": 4794,
+          "title": "Decoupling, Crystal Routing",
+          "end_time": 5050
+        },
+        {
+          "start_time": 5050,
+          "title": "Signal Routing",
+          "end_time": 5246
+        },
+        {
+          "start_time": 5246,
+          "title": "Power Routing",
+          "end_time": 5565
+        },
+        {
+          "start_time": 5565,
+          "title": "Finishing Touches, Design Rule Check (DRC)",
+          "end_time": 5721
+        },
+        {
+          "start_time": 5721,
+          "title": "Producing Manufacturing Files (BOM, CPL, Gerber, Drill)",
+          "end_time": 5984
+        },
+        {
+          "start_time": 5984,
+          "title": "Outro",
+          "end_time": 6005
+        }
+      ]
+    },
+    {
+      "id": "AmfLhT5SntE",
+      "title": "Switching Regulator PCB Design - Phil's Lab #60",
+      "duration": 1506,
+      "url": "https://www.youtube.com/watch?v=AmfLhT5SntE",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "QAOEtfvCaMw",
+      "title": "PCB Stack-Up and Build-Up - Phil's Lab #56",
+      "duration": 1215,
+      "url": "https://www.youtube.com/watch?v=QAOEtfvCaMw",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "dRKSs3wms4U",
+      "title": "(Sponsored) STM32 Board Bring-Up (Firmware and Test) - Phil's Lab #54",
+      "duration": 1428,
+      "url": "https://www.youtube.com/watch?v=dRKSs3wms4U",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "icDearHYboI",
+      "title": "Udemy Course - KiCad V6 and STM32 Hardware Design - Phil's Lab #47",
+      "duration": 106,
+      "url": "https://www.youtube.com/watch?v=icDearHYboI",
+      "category": "KiCad",
+      "kind": "announcement"
+    },
+    {
+      "id": "7uupuor2Dc8",
+      "title": "Course Release - Mixed-Signal Hardware Design with KiCad - Phil's Lab #44",
+      "duration": 442,
+      "url": "https://www.youtube.com/watch?v=7uupuor2Dc8",
+      "category": "KiCad",
+      "kind": "announcement"
+    },
+    {
+      "id": "eQYJLRH4WPs",
+      "title": "Critiquing My Own PCB Designs - Phil's Lab #43",
+      "duration": 1494,
+      "url": "https://www.youtube.com/watch?v=eQYJLRH4WPs",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "PMEpQZ90f34",
+      "title": "STM32 PCB Design - Complete Walkthrough - Altium Designer & JLCPCB - Phil's Lab #41",
+      "duration": 10110,
+      "url": "https://www.youtube.com/watch?v=PMEpQZ90f34",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "T922aFyN6bw",
+      "title": "PCB Design for Manufacturing Tips (DFM) - Phil's Lab #40",
+      "duration": 922,
+      "url": "https://www.youtube.com/watch?v=T922aFyN6bw",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "8S8ez1-YwkU",
+      "title": "(Sponsored) KiCad Breakout Board Design (STM32 + Sensor) - Phil's Lab #36",
+      "duration": 516,
+      "url": "https://www.youtube.com/watch?v=8S8ez1-YwkU",
+      "category": "KiCad",
+      "kind": "reference"
+    },
+    {
+      "id": "UFAj4jJ74oA",
+      "title": "(Sponsored) IMU + USB-to-UART Pmod PCB for FPGA | KiCad +  Giveaway - Phil's Lab #26",
+      "duration": 368,
+      "url": "https://www.youtube.com/watch?v=UFAj4jJ74oA",
+      "category": "KiCad",
+      "kind": "reference"
+    },
+    {
+      "id": "VRJI0X-6yTg",
+      "title": "(Sponsored) High-Speed PCB Design Tips - Phil's Lab #25",
+      "duration": 647,
+      "url": "https://www.youtube.com/watch?v=VRJI0X-6yTg",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "_Hfzq1QES-Q",
+      "title": "(Sponsored) Practical RF Hardware and PCB Design Tips - Phil's Lab #19",
+      "duration": 1126,
+      "url": "https://www.youtube.com/watch?v=_Hfzq1QES-Q",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "IclJ9nbtYgI",
+      "title": "(Sponsored) How To Improve Your PCB Designs (Common Mistakes) - Phil's Lab #18",
+      "duration": 567,
+      "url": "https://www.youtube.com/watch?v=IclJ9nbtYgI",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "foQeAhx_j9Y",
+      "title": "Mixed-Signal PCB Design Course Preview & JLCPCB 6-Layer Assembly - Phil's Lab #16",
+      "duration": 363,
+      "url": "https://www.youtube.com/watch?v=foQeAhx_j9Y",
+      "category": "Thiết kế phần cứng",
+      "kind": "announcement"
+    },
+    {
+      "id": "qMUzLU636s8",
+      "title": "STM32 + SWD + ST-Link + CubeIDE | Debugging on Custom Hardware Tutorial - Phil's Lab #4",
+      "duration": 771,
+      "url": "https://www.youtube.com/watch?v=qMUzLU636s8",
+      "category": "Thiết kế phần cứng",
+      "kind": "reference"
+    },
+    {
+      "id": "0fteCxn5XXA",
+      "title": "KiCad Controlled Impedance Traces (e.g. 50Ω) - Phil's Lab #3",
+      "duration": 721,
+      "url": "https://www.youtube.com/watch?v=0fteCxn5XXA",
+      "category": "KiCad",
+      "kind": "reference"
+    },
+    {
+      "id": "rLDqQ2L_mUQ",
+      "title": "Flight Control System Design: Hardware and PCB Design with KiCAD - Phil's Lab #1",
+      "duration": 1537,
+      "url": "https://www.youtube.com/watch?v=rLDqQ2L_mUQ",
+      "category": "KiCad",
+      "kind": "reference"
+    }
+  ]
+}
